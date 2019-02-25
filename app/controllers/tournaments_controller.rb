@@ -8,4 +8,10 @@ class TournamentsController < ApplicationController
   def show
     @tournament = Tournament.find(params[:id])
   end
+
+  private
+
+  def find_tournament
+    @tournament = Tournament.find(params[:id])
+  end
 end

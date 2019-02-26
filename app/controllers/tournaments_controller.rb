@@ -1,6 +1,9 @@
 class TournamentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+<<<<<<< HEAD
+=======
   before_action :set_find_tournament, only: [:show]
+>>>>>>> master
 
   def index
     # @tournaments = Tournament.all

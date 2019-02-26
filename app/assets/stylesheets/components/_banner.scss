@@ -2,12 +2,20 @@
   color: white;
   text-align: center;
   height: calc(100vh - 70px);
-  background-size: cover !important;
+  background-size: cover;
+  background-position: center;
   display: flex;
   padding: 120px 0;
   align-items: center;
   justify-content: center;
 }
+
+@media (min-width: 480px) {
+  .banner {
+    width: 100%;
+  }
+}
+
 .banner h1 {
   font-size: 50px;
   font-weight: bold;

@@ -1,37 +1,16 @@
-<div class="container">
-  <div class="row">
-  </div>
-  <h1 class="text-center"><strong>Tournaments around the world</strong></h1>
-</div>
-
-<div class="text-left">
-  <div class="formbar">
-  <%= form_tag tournaments_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a city"
-    %>
-  <% end %>
-  </div>
-</div>
-
-<div id = "my-flex">
-  <div class="cards">
-    <div class="row">
+    <div
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
       <% @tournaments.each do |tournament| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <%= render 'shared/cards', tournament: tournament %>
         </div>
       <% end %>
-    </div>
-  </div>
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
-</div>
+
+
+
 

@@ -3,3 +3,10 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+@import "sand";
+
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 100px;
+}

@@ -2,7 +2,11 @@ class TournamentsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @tournaments = Tournament.all
+    if params[:query].present?
+      @tournaments = Tournament.search_by_address_serie_and_name(params[:query])
+    else
+      @tournaments = Tournament.all
+    end
   end
 
   def show

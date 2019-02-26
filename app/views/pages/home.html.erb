@@ -2,6 +2,12 @@
   <div class="banner-content">
     <h1>Trouve ton tournoi ! </h1>
     <p>Tous les tournois du Beach Volley français au même endroit</p>
-
+    <%= form_tag movies_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: ""
+      %>
+    <% end %>
   </div>
 </div>

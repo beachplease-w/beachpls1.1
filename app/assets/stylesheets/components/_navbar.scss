@@ -12,17 +12,22 @@
   justify-content: center;
   flex-direction: column;
   z-index: 2000;
-  transition: height .5s, background .5s;
+  transition: height 1s, background 1s;
 }
 
 .navbar-beach-scrolled {
   height: 60px !important;
-  background: rgba(255,255,255,0.6) !important;
+  background: rgba(255,255,255,1) !important;
 }
 
 /* Logo */
 .navbar-beach-brand img {
   height: 50px;
+  transition: display 1.5s;
+}
+
+.logo-scrolled {
+  display : none;
 }
 
 /* User Avatar */

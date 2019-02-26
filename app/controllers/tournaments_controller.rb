@@ -1,7 +1,6 @@
 class TournamentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_find_tournament, only: [:show]
-
+  before_action :find_tournament, only: [:show]
 
   def index
     # @tournaments = Tournament.all
@@ -24,7 +23,6 @@ class TournamentsController < ApplicationController
   end
 
   def show
-
   end
 
   private

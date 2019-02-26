@@ -8,7 +8,7 @@
   text-align: center;
   box-shadow: 2px 2px 2px grey;
   width: 300px;
-  height: 200px;
+  height: 180px;
   border-radius: 10px;
   margin-top: 25px;
   padding-top: 20px;
@@ -16,13 +16,29 @@
 
 .service-first {
   margin-left: 20px;
+  .icon {
+    padding-top: 15px;
+  }
+  p {
+    margin-top: 15px;
+  }
 }
 
 .service-second {
   margin-right: 20px;
   margin-left: 20px;
+  p {
+    margin-top: 10px;
+  }
 }
 
 .service-third {
   margin-right: 20px;
+  .icon {
+    padding-top: 25px;
+  }
+  p {
+    margin-top: 20px;
+  }
 }
+

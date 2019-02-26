@@ -17,6 +17,15 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'jquery-rails'
+gem 'momentjs-rails', '>= 2.9'
+gem "geocoder"
+
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'pg_search'
+
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

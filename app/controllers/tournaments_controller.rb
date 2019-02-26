@@ -9,8 +9,8 @@ class TournamentsController < ApplicationController
     @markers = @tournaments.map do |tournament|
       {
         lng: tournament.longitude,
-        lat: tournament.latitude
-        # infoWindow: render_to_string(partial: "infowindow", locals: { tournament: tournament }),
+        lat: tournament.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { tournament: tournament })
         # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end

@@ -14,13 +14,12 @@ class TournamentsController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { tournament: tournament }),
         image_url: helpers.asset_url('tab-icon')
       }
-    end
 
-    if params[:query].present?
-      @tournaments = Tournament.search_by_address_serie_and_name(params[:query])
-    else
-      @tournaments = Tournament.all
-
+      if params[:query].present?
+        @tournaments = Tournament.search_by_address_serie_and_name(params[:query])
+      else
+        @tournaments = Tournament.all
+      end
     end
   end
 

@@ -3,11 +3,7 @@ class TournamentsController < ApplicationController
 
   def index
     if params[:query].present?
-        pg_search_scope :search_by_adress_serie_and_name,
-          against: [ :adress, :serie, :name ],
-          using: {
-            tsearch: { prefix: true } # <-- now `superman batm` will return something!
-          }
+      @tournaments = Tournament.search_by_address_serie_and_name(params[:query])
     else
       @tournaments = Tournament.all
     end
@@ -23,4 +19,3 @@ class TournamentsController < ApplicationController
     @tournament = Tournament.find(params[:id])
   end
 end
-

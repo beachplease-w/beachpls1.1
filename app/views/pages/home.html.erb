@@ -1,13 +1,1 @@
-<div class="banner" style="background-image: linear-gradient(rgba(200,200,200,0.2), rgba(200,200,200,0.2)), url('<%= image_path "banner.jpg" %>');">
-  <div class="banner-content">
-    <h1>Trouve ton tournoi ! </h1>
-    <p>Tous les tournois du Beach Volley français au même endroit</p>
-    <%= form_tag tournaments_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: ""
-      %>
-    <% end %>
-  </div>
-</div>
+<%= render 'shared/banner' %>

@@ -1,44 +1,210 @@
 
+<div class="container text-center">
+  <div class="flextitle">
+    <span>
+      <h2> <%= @tournament.name %> </h2>
+      <p> <%= @tournament.address %> </p>
+    </span>
+      <p class="btn btn-yours2"> M'inscrire </p>
+  </div>
+</div>
 
-<h2> <%= @tournament.name %> </h2>
-<p> <%= @tournament.address %> </p>
-
-<div class="container">
+<div class="container" id="tabs">
 <main>
 
-  <input id="tab1" type="radio" name="tabs" checked>
-  <label for="tab1">Informations</label>
+    <input id="tab1" type="radio" name="tabs" checked>
+    <label for="tab1">Informations</label>
 
-  <input id="tab2" type="radio" name="tabs">
-  <label for="tab2">Equipes</label>
+    <input id="tab2" type="radio" name="tabs">
+    <label for="tab2">Equipes</label>
 
-  <input id="tab3" type="radio" name="tabs">
-  <label for="tab3">Le tableau</label>
+    <input id="tab3" type="radio" name="tabs">
+    <label for="tab3">Le tableau</label>
 
-  <input id="tab4" type="radio" name="tabs">
-  <label for="tab4">Je cherche un partenaire</label>
+    <input id="tab4" type="radio" name="tabs">
+    <label for="tab4">Je cherche un partenaire</label>
+
 
   <section id="content1">
-    <p>
-      Addresse entière du tournoi
-      Dates
-      Prize Money
 
-      Tableau Qualif - Tableau Principal
-    </p>
+    <div class="boxes">
+        <div class="rdg-expertise-category"><span>Organisateur</span></div>
+        <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+        <div style="clear: both;"></div>
+        <div class="rdg-expertise-description"><span>
+          Sand System <br>
+          Vincent Brand - 0678700684 - vincent@sandsystem.com <br>
+          Stade Jules Ladoumègue
+          37 route des petits ponts
+          75019 - PARIS
+        </span></div>
+    </div>
+    <div class="boxes">
+        <div class="rdg-expertise-category"><span>Rankings</span></div>
+        <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+        <!-- <div style="clear: both;"></div> -->
+        <div class="rdg-expertise-description"><span>
+          Série 3 - 150 <br>
+          <i class="fas fa-trophy" style="color: gold"></i> 130€ <br>
+          Tableau principal : 12 équipes <br>
+          Tableau qualif: 8 équipes
+        </span></div>
+    </div>
+    <div class="boxes">
+        <div class="rdg-expertise-category"><span>Dates & Remarques</span></div>
+        <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+        <!-- <div style="clear: both;"></div> -->
+        <div class="rdg-expertise-description"><span>
+          Tableau principal: 03/09/2019 - 11h00 <br>
+          Tableau qualif:    03/09/2019 - 09h00 <br>
+          Remarques: Pas d'arbitrage - Pas de textile compétition
+        </span></div>
+    </div>
+
+
+
   </section>
 
   <section id="content2">
-    <p>
-      Tableau avec les équipes inscrites
-    </p>
+
+    <div class="beach-boxes">
+        <div class="rdg-expertise-category-beach"><span>Photo</span></div>
+        <div class="rdg-expertise-bar-beach rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+        <div style="clear: both;"></div>
+        <div class="rdg-expertise-description-beach"><span>
+          Guillaume Imary / Adrien Chevallier
+        </span></div>
+    </div>
+    <div class="beach-boxes">
+        <div class="rdg-expertise-category-beach"><span>Photo</span></div>
+        <div class="rdg-expertise-bar-beach rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+        <div style="clear: both;"></div>
+        <div class="rdg-expertise-description-beach"><span>
+          Antoine Balmes / Philippe Mourlaque
+        </span></div>
+    </div>
+    <div class="beach-boxes">
+        <div class="rdg-expertise-category-beach"><span>Photo</span></div>
+        <div class="rdg-expertise-bar-beach rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+        <div style="clear: both;"></div>
+        <div class="rdg-expertise-description-beach"><span>
+          Julien Repiton / Igor Deus
+        </span></div>
+    </div>
+
+
 
   </section>
 
   <section id="content3">
-    <p>
-      Le tableau du tournoi
-    </p>
+<div class="beachbody">
+
+<div class="beachmain" id="tournament">
+    <ul class="round round-1">
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top winner">team <span>79</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">team <span>48</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top winner">team <span>84</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">team <span>72</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">team <span>55</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom winner">team <span>68</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top winner">team <span>64</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">team <span>44</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top winner">team <span>54</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">team <span>52</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top winner">team <span>65</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">team <span>54</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top winner">team <span>67</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">team <span>63</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top winner">team <span>73</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">team <span>61</span></li>
+
+        <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-2">
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top winner">team <span>82</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">team <span>56</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top winner">team <span>74</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">team <span>57</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">team <span>48</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom winner">team <span>70</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">team <span>50</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom winner">team <span>66</span></li>
+
+        <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-3">
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top winner">team <span>77</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">team <span>69</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">team <span>61</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom winner">team <span>71</span></li>
+
+        <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-4">
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top winner">team <span>85</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">team <span>63</span></li>
+
+        <li class="spacer">&nbsp;</li>
+    </ul>
+</main>
+</div>
+</div>
   </section>
 
   <section id="content4">

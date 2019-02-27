@@ -1,2 +1,52 @@
+
+
 <h2> <%= @tournament.name %> </h2>
 <p> <%= @tournament.address %> </p>
+
+<div class="container">
+<main>
+
+  <input id="tab1" type="radio" name="tabs" checked>
+  <label for="tab1">Informations</label>
+
+  <input id="tab2" type="radio" name="tabs">
+  <label for="tab2">Equipes</label>
+
+  <input id="tab3" type="radio" name="tabs">
+  <label for="tab3">Le tableau</label>
+
+  <input id="tab4" type="radio" name="tabs">
+  <label for="tab4">Je cherche un partenaire</label>
+
+  <section id="content1">
+    <p>
+      Addresse entière du tournoi
+      Dates
+      Prize Money
+
+      Tableau Qualif - Tableau Principal
+    </p>
+  </section>
+
+  <section id="content2">
+    <p>
+      Tableau avec les équipes inscrites
+    </p>
+
+  </section>
+
+  <section id="content3">
+    <p>
+      Le tableau du tournoi
+    </p>
+  </section>
+
+  <section id="content4">
+
+    <p>
+      Feature à venir avec la possibilité de poster un message "je cherche un copain"
+    </p>
+  </section>
+
+</main>
+</div>

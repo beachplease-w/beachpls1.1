@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="<%= image_path('tab-icon') %>">
+    <link rel="icon" href="<%= image_path('tab-icon.png') %>">
     <title>BeachPlease</title>
     <meta name="description" content="Changez votre façon de réserver vos tournois de Beach Volley !">
     <link href="https://fonts.googleapis.com/css?family=Nixie+One|Quicksand:400,700" rel="stylesheet">
@@ -15,13 +15,6 @@
     <div class="wrapper">
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
-
-
-
-
-      <!-- <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p> -->
-
       <%= yield %>
       <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>

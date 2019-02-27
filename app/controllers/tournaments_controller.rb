@@ -16,7 +16,7 @@ class TournamentsController < ApplicationController
         lng: tournament.longitude,
         lat: tournament.latitude,
         # infoWindow: render_to_string(partial: "infowindow", locals: { tour: tour })
-        image_url: helpers.asset_url('tab-icon')
+        image_url: helpers.asset_url('tab-icon.png')
       }
     end
   end

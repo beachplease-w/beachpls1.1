@@ -1,0 +1,5 @@
+<% @teams.each do |team| %>
+<% team.users.each do |user| %>
+<%= user[0].first_name %> / <%= user[1.last_name] %>
+<% end %>
+<% end %>

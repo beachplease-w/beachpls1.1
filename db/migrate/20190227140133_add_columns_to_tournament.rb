@@ -14,9 +14,9 @@ class AddColumnsToTournament < ActiveRecord::Migration[5.2]
     add_column :tournaments, :limit_inscription, :date
     add_column :tournaments, :reunion_qualif, :datetime
     add_column :tournaments, :reunion_principal, :datetime
-    add_column :tournaments, :ville, :string, null: false
+    add_column :tournaments, :ville, :string
     add_column :tournaments, :club_organisateur, :string
     add_column :tournaments, :contact, :string
-    add_column :tournaments, :genre, :boolean, null: false
+    add_column :tournaments, :genre, :boolean
   end
 end

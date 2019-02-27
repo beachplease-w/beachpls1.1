@@ -18,9 +18,7 @@
     background-color: #0c7489;
     color: #fff;
 }
-.nav-sidebar .active a:hover {
-    background-color: #ffda63;
-}
+
 .nav-sidebar .text-overflow a,
 .nav-sidebar .text-overflow .media-body {
     white-space: nowrap;
@@ -29,30 +27,41 @@
     text-overflow: ellipsis;
 }
 
-.btn-blog {
-    color: #ffffff;
-    background-color: #E50000;
-    border-color: #E50000;
-    border-radius:0;
-    margin-bottom:10px
+.tab-content {
+  width: auto;
+  background-color: rgba(255,255,255,0.5);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 70px 100px;
 }
-.btn-blog:hover,
-.btn-blog:focus,
-.btn-blog:active,
-.btn-blog.active,
-.open .dropdown-toggle.btn-blog {
-    color: white;
-    background-color:#0b56a8;
-    border-color: #0b56a8;
-}
-article h2{color:#333333;}
-h2{color:#0b56a8;}
- .margin10{margin-bottom:10px; margin-right:10px;}
 
- .container .text-style
-{
-  text-align: justify;
-  line-height: 23px;
-  margin: 0 13px 0 0;
-  font-size: 19px;
+.nav>li.active>a:hover, .nav>li.active>a:focus {
+  background-color: #0c7489;
+}
+
+.fas {
+  color: #0c7489;
+}
+
+i:hover {
+    color: #ffda63;
+  }
+
+.avatar {
+  border-radius: 50%;
+}
+
+// .team {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
+
+.player_one {
+  background-color: blue;
+}
+
+.player_two {
+  background-color: red;
 }

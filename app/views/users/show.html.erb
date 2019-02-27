@@ -16,46 +16,52 @@
 </div>
 <!-- tab content -->
 <div class="tab-content">
-<div class="tab-pane active text-style" id="informations">
+<div class="tab-pane active" id="informations">
+  <%= cl_image_tag current_user.photo, width: 100, height: 100, crop: :thumb, class: "avatar"%>
+  <hr>
   <p><%= current_user.first_name %> <%= current_user.last_name.upcase %> </p>
-       <p><%= current_user.birth_date %></p>
-       <p><%= current_user.license_no %></p>
-       <p><%= current_user.email %></p>
-       <%= link_to edit_user_registration_path do %>
-       <i class="fas fa-user-edit"></i>
-       <% end %>
-       <hr>
-       <div class="profile-img">
-           <%= cl_image_tag current_user.photo %>
-       </div>
+
+  <p>Date de naissance: <%= current_user.birth_date %></p>
+
+  <p>Numéro de licence: <%= current_user.license_no %></p>
+
+  <p>Email: <%= current_user.email %></p>
+  <%= link_to edit_user_registration_path do %>
+  <i class="fas fa-user-edit"></i>
+  <% end %>
 </div>
-<div class="tab-pane text-style" id="tournois">
+<div class="tab-pane" id="tournois">
   <h2>Mes tournois</h2>
-   <div class="container">
-   <p>À venir</p>
-     <% @tournaments.each do |tournament| %>
-      <%= tournament.name %>
-     <% end %>
-   </div>
-   <p>Passés</p>
-    <hr>
-          <img src="http://placehold.it/150x90" class="img-rounded pull-left">
+  <p>À venir</p>
+     <%# @tournaments.each do |tournament| %>
+      <%#= tournament.name %>
+     <%# end %>
+  <p>Passés</p>
+  <hr>
 </div>
-<div class="tab-pane text-style" id="equipes">
-  <h2>Mes équipes</h2>
-  <p>Voici mes équipes</p>
-    <hr>
-    <div class="col-xs-6 col-md-3">
-      <img src="http://placehold.it/150x150" class="img-rounded pull-right">
+<div class="tab-pane" id="equipes">
+  <div class="row">
+    <div class="col-xs-6 col-md-4">
+      <div class="player_one">
+        <p>Photo Joueur 1</p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-4">
+      <div class="names">
+        <p>Guillaume Imary <i class="fas fa-ellipsis-v"></i> Adrien Chevallier</p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-4">
+      <div class="player_two">
+        <p>Photo Joueur 2</p>
+      </div>
+    </div>
   </div>
 </div>
-<div class="tab-pane text-style" id="stats">
+<div class="tab-pane" id="stats">
   <h2>Mes stats</h2>
   <p>Voici mes stats</p>
     <hr>
-    <div class="col-xs-6 col-md-3">
-      <img src="http://placehold.it/150x150" class="img-rounded pull-right">
-  </div>
 </div>
 
 </div>

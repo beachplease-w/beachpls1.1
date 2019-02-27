@@ -25,6 +25,7 @@ gem "geocoder"
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'pg_search'
 
+gem 'money-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

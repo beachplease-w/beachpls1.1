@@ -1,13 +1,13 @@
 <div class="card-trip">
   <img src="https://www.sandsystem.com/beach-volley/wp-content/uploads/2019/01/cropped-jersey.jpg" class="simple-linear">
   <div class="card-trip-infos">
-    <h2>SSA Beach Series #1</h2>
+    <h2><%= tournament.name %></h2>
     <div class="tournament-info">
-      <p>Paris</p>
-      <p><i class="fas fa-trophy"></i> 500€</p>
+      <p><%= tournament.address %></p>
+      <p><i class="fas fa-trophy"></i> 500<%#= tournament.price %></p>
       <p><i class="fas fa-male"></i><i class="fas fa-male"></i> 15 / 24</p>
-      <p><i class="fas fa-volleyball-ball"></i> Mikasa</p>
-      <p><i class="far fa-calendar-alt"></i> 09/03/2019</p>
+      <p><%= image_tag "ball_mikasa.jpg", width: 20 %> </i>Mikasa</p>
+      <p><i class="far fa-calendar-alt"></i> <%= tournament.date %></p>
     </div>
     <h2 class="series">S1 - 1500</h2>
     <button type="button" class="btn-yours btn-position-card" data-toggle="modal" data-target="#myModal">

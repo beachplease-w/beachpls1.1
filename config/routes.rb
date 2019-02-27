@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :teams, only: [:create]
   resources :tournaments, only: [:index, :show] do
     resources :teams, only: [:index] do
       resources :inscriptions, only: [:new, :create]

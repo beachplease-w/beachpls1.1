@@ -1,4 +1,4 @@
-<%= simple_form_for @team_player do |f| %>
-<%=  f.input :user %>
+<%= simple_form_for @team_player, url: team_players_path do |f| %>
+  <%= f.input :user, collection: User.all, label_method: :email %>
   <%= f.submit "Create Team" %>
 <% end %>

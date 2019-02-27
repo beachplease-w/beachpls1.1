@@ -1,6 +1,5 @@
 class TeamPlayersController < ApplicationController
   def new
-
    @team = Team.new
    @team_player = TeamPlayer.new
   end
@@ -8,19 +7,15 @@ class TeamPlayersController < ApplicationController
   def create
     team = Team.create
     @team_player1 = TeamPlayer.new
-    @team_player2 = TeamPlayer.new(params[:user])
-    raise
-    # if @team_player.user.team.present?
-    # @team_player.team = @team_player.user.team
-    # else
+    @team_player2 = TeamPlayer.new
     @team_player1.team = team
     @team_player2.team = team
-    # end
     @user = current_user
     @team_player1.user = @user
     @team_player1.save
+    @team_player2.user = User.find(params[:team_player][:user])
     @team_player2.save
-
+    redirect_to tournaments_path
   end
 
   def edit

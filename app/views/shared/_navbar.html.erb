@@ -20,7 +20,7 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-beach-dropdown-menu">
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Profil") %>
               <% end %>
             </li>
             <li>
@@ -33,7 +33,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-beach-item navbar-beach-link" %>
+      <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-beach-item navbar-beach-link" %>
     <% end %>
   </div>
 

@@ -26,6 +26,10 @@ class TournamentsController < ApplicationController
 
   private
 
+  def tournament_params
+    params.require(:tournament).permit(:photo)
+  end
+
   def find_tournament
     @tournament = Tournament.find(params[:id])
   end

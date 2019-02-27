@@ -13,11 +13,14 @@
     <%= f.input :password,
                 hint: "Laisser vite si aucune modification requise",
                 required: false,
+                placeholder: "••••••",
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: false,
+                placeholder: "••••••",
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :current_password,
+                placeholder: "••••••",
                 hint: "Nous avons besoin de ton nouveau mot de passe pour confirmer les changements",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>

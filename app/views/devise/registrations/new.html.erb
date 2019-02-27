@@ -36,6 +36,9 @@
                 label: "Confirmation du mot de passe",
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Ajoute une photo' %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
   </div>
 
   <div class="form-actions">

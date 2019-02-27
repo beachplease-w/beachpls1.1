@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @tournaments = @user.tournaments
+    @tournaments = @user.teams.inscriptions.tournaments
   end
 
   private

@@ -17,7 +17,7 @@
 <!-- tab content -->
 <div class="tab-content">
 <div class="tab-pane active text-style" id="informations">
-  <h2><%= current_user.first_name %> <%= current_user.last_name.upcase %> </h2>
+  <p><%= current_user.first_name %> <%= current_user.last_name.upcase %> </p>
        <p><%= current_user.birth_date %></p>
        <p><%= current_user.license_no %></p>
        <p><%= current_user.email %></p>
@@ -25,11 +25,18 @@
        <i class="fas fa-user-edit"></i>
        <% end %>
        <hr>
-      <%#= image_tag %>
+       <div class="profile-img">
+           <%= cl_image_tag current_user.photo %>
+       </div>
 </div>
 <div class="tab-pane text-style" id="tournois">
   <h2>Mes tournois</h2>
+   <div class="container">
    <p>À venir</p>
+     <% @tournaments.each do |tournament| %>
+      <%= tournament.name %>
+     <% end %>
+   </div>
    <p>Passés</p>
     <hr>
           <img src="http://placehold.it/150x90" class="img-rounded pull-left">

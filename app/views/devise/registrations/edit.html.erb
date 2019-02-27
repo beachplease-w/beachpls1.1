@@ -27,6 +27,9 @@
                 hint: "Nous avons besoin de ton mot de passe pour confirmer les changements",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Ajoute une photo' %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
   </div>
 
   <div class="form-actions">

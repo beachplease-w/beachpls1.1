@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_143515) do
   create_table "teams", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "tournaments", force: :cascade do |t|

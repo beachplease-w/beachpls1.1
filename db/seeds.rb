@@ -49,16 +49,16 @@ puts 'user 4 created !!'
 
 
 require 'faker'
-
+address = %w[Paris Marseille Lyon Toulouse Nice Nantes Montpellier Strasbourg Bordeaux Lille Rennes Reims Saint-Etienne Le\ Havre Toulon Grenoble Dijon Angers Nimes Villeurbanne]
 puts "Creating some tournaments"
-20.times do
+address.each do |ad|
   Tournament.create!({
     name: Faker::Esport.event,
     date: Faker::Date.between(Date.today, 1.year.from_now),
     serie: ['Série 1 - 250', 'Série 1 - 1500', 'Série 2 - 50', 'Série 2 - 100'].sample,
-    address: Faker::Address.city,
+    address: ad,
   })
 end
-puts 'Tours created'
+puts 'Tournaments created'
 
 puts 'Everything is ready guys!!'

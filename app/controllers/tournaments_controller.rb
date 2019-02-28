@@ -3,22 +3,21 @@ class TournamentsController < ApplicationController
   before_action :find_tournament, only: [:show]
 
   def index
-    # @tournaments = Tournament.all
-    @tournaments = Tournament.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @tournaments = Tournament.search_by_address_serie_and_name(params[:query])
+      @tournaments_for_map = Tournament.where.not(latitude: nil, longitude: nil)
+    else
+      @tournaments = Tournament.all
+      @tournaments_for_map = Tournament.where.not(latitude: nil, longitude: nil)
+    end
 
-    @markers = @tournaments.map do |tournament|
+    @markers = @tournaments_for_map.map do |tournament|
       {
         lng: tournament.longitude,
         lat: tournament.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { tournament: tournament }),
-        image_url: helpers.asset_url('tab-icon')
+        # infoWindow: render_to_string(partial: "infowindow", locals: { tour: tour })
+        image_url: helpers.asset_url('tab-icon.png')
       }
-
-      if params[:query].present?
-        @tournaments = Tournament.search_by_address_serie_and_name(params[:query])
-      else
-        @tournaments = Tournament.all
-      end
     end
   end
 

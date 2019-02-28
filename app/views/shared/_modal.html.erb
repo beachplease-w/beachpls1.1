@@ -1,6 +1,5 @@
 <!-- Button trigger modal -->
 
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -11,30 +10,7 @@
       </div>
       <div class="scroll-box">
         <div class="modal-body">
-          <%#= simple_form_for(@tournament) do |f| %>
-          <div class="card-product">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-            <div class="card-product-infos">
-              <h2>Jules Rivoire / Guillaume Imary</h2>
-            </div>
-          </div>
-          <br>
-          <div class="card-product">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-            <div class="card-product-infos">
-              <h2>Marine Sourin / Guillaume Imary</h2>
-            </div>
-          </div>
-          <br>
-          <div class="card-product">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-            <div class="card-product-infos">
-              <h2>Yohan Bendavid / Guillaume Imary</h2>
-            </div>
-          </div>
-
-          <%# end %>
-
+          <%=  render 'teams/index', teams: teams, tournament: tournament %>
         </div>
       </div>
       <div class="modal-footer">

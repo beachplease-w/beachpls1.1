@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   has_many :team_players
   has_many :teams, through: :team_players
-  # has_many :inscriptions, through: :teams
-  # has_many :tournaments, through: :inscriptions
-  
+  has_many :inscriptions, through: :teams
+  has_many :tournaments, through: :inscriptions
+
   validates :last_name, presence: true
   validates :first_name, presence: true
   validates :email, presence: true, format: { with: /\A.*@.*\.com\z/ }

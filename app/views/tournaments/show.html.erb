@@ -5,7 +5,7 @@
       <h2> <%= @tournament.name %> </h2>
       <p> <%= @tournament.address %> </p>
     </span>
-      <p class="btn btn-yours2"> M'inscrire </p>
+      <p class="btn btn-yours2"><%=  link_to "M'inscrire", tournament_teams_path(@tournament) %> </p>
   </div>
 </div>
 

@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_143515) do
     t.string "name"
     t.float "latitude"
     t.float "longitude"
+    t.string "photo"
     t.text "remarques"
     t.integer "equipe_tableau_principal"
     t.integer "wildcard_principal"
@@ -68,7 +69,6 @@ ActiveRecord::Schema.define(version: 2019_02_27_143515) do
     t.boolean "genre"
     t.string "sku"
     t.integer "price_cents", default: 0, null: false
-    t.string "photo"
   end
 
   create_table "users", force: :cascade do |t|

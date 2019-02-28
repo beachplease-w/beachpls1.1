@@ -52,12 +52,13 @@ counter = 5
 10.times do
   puts 'creating a fake users..'
   newuser = User.new
-  name = Faker::Name.name
-  email = name.downcase.gsub(/ /, ".") + "@gmail.com"
+  f_name = Faker::Name.first_name
+  l_name = Faker::Name.last_name
+  email = f_name + "." + l_name + "@gmail.com"
   newuser.email = email
   newuser.password = "BeachPlease"
-  newuser.first_name = name.split[0]
-  newuser.last_name = name.split[1]
+  newuser.first_name = f_name
+  newuser.last_name = l_name
   newuser.license_no = "#{counter}#{counter}#{counter}#{counter}#{counter}".to_i
   newuser.birth_date = Faker::Date.birthday(18, 50)
   newuser.save!
@@ -95,10 +96,91 @@ address.each do |city, ad|
       contact: Faker::PhoneNumber.cell_phone,
       genre: %w[Femme Homme],
       sku: "qwerty",
-      price_cents: (100..300).to_a.sample,
+      price_cents: [100, 150, 200, 250, 300].to_a.sample,
     })
   end
 end
 puts 'Tournaments created'
+
+puts 'Creating some "teams" for Marine'
+5.times do
+  counter = (6..14).to_a.sample,
+  team = Team.create
+  team_player = TeamPlayer.new
+  team_player.team = team
+  team_player.user = User.find_by(license_no: 11111)
+  team_player.save
+  team_player = TeamPlayer.new
+  team_player.team = team
+  licence = "#{counter}#{counter}#{counter}#{counter}#{counter}".to_i
+  team_player.user = User.find_by(license_no: licence)
+  team_player.save
+end
+
+puts '5 "teams" created for Marine'
+
+puts 'Creating some "teams" for Jules'
+5.times do
+  counter = (6..14).to_a.sample,
+  team = Team.create
+  team_player = TeamPlayer.new
+  team_player.team = team
+  team_player.user = User.find_by(license_no: 22222)
+  team_player.save
+  team_player = TeamPlayer.new
+  team_player.team = team
+  licence = "#{counter}#{counter}#{counter}#{counter}#{counter}".to_i
+  team_player.user = User.find_by(license_no: licence)
+  team_player.save
+end
+
+puts '5 "teams" created for Jules'
+
+puts 'Creating some "teams" for Yohan'
+5.times do
+  counter = (6..14).to_a.sample,
+  team = Team.create
+  team_player = TeamPlayer.new
+  team_player.team = team
+  team_player.user = User.find_by(license_no: 33333)
+  team_player.save
+  team_player = TeamPlayer.new
+  team_player.team = team
+  licence = "#{counter}#{counter}#{counter}#{counter}#{counter}".to_i
+  team_player.user = User.find_by(license_no: licence)
+  team_player.save
+end
+
+puts '5 "teams" created for Yohan'
+
+puts 'Creating some "teams" for Guitou'
+5.times do
+  counter = (6..14).to_a.sample,
+  team = Team.create
+  team_player = TeamPlayer.new
+  team_player.team = team
+  team_player.user = User.find_by(license_no: 44444)
+  team_player.save
+  team_player = TeamPlayer.new
+  team_player.team = team
+  licence = "#{counter}#{counter}#{counter}#{counter}#{counter}".to_i
+  team_player.user = User.find_by(license_no: licence)
+  team_player.save
+end
+
+puts '5 "teams" created for Guitou'
+
+puts "Creating inscriptions"
+  tournois = Tournament.all
+  tournois.each do |tournoi|
+    3.times do
+      team = (1..20).to_a.sample
+      inscription = Inscription.new
+      inscription.team = Team.find(team)
+      inscription.tournament = tournoi
+    end
+  end
+
+puts "Created 3 inscriptions for each tournament"
 
 puts 'Everything is ready guys!!'

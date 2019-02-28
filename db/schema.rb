@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_02_27_113010) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_113010) do
   create_table "teams", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "tournaments", force: :cascade do |t|
@@ -48,6 +51,26 @@ ActiveRecord::Schema.define(version: 2019_02_27_113010) do
     t.float "latitude"
     t.float "longitude"
     t.string "photo"
+    t.text "remarques"
+    t.integer "equipe_tableau_principal"
+    t.integer "wildcard_principal"
+    t.integer "place_reservees_qualif"
+    t.integer "equipe_qualif"
+    t.integer "wildcard_qualif"
+    t.integer "terrains_normes"
+    t.date "date_qualif"
+    t.date "date_principal"
+    t.integer "prize_money"
+    t.string "split_prize_money"
+    t.date "limit_inscription"
+    t.datetime "reunion_qualif"
+    t.datetime "reunion_principal"
+    t.string "ville"
+    t.string "club_organisateur"
+    t.string "contact"
+    t.boolean "genre"
+    t.string "sku"
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "users", force: :cascade do |t|

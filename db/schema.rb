@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(version: 2019_02_27_143515) do
     t.string "contact"
     t.boolean "genre"
     t.string "sku"
-    t.string "photo"
     t.integer "price_cents", default: 0, null: false
     t.string "photo"
   end

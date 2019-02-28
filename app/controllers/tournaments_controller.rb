@@ -1,5 +1,5 @@
 class TournamentsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:show]
   before_action :find_tournament, only: [:show]
 
   def index
@@ -19,6 +19,7 @@ class TournamentsController < ApplicationController
         image_url: helpers.asset_url('tab-icon.png')
       }
     end
+    @my_teams = current_user.teams
   end
 
   def show

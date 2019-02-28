@@ -94,7 +94,7 @@ address.each do |city, ad|
       ville: city,
       club_organisateur: Faker::Company.name,
       contact: Faker::PhoneNumber.cell_phone,
-      genre: %w[Femme Homme],
+      genre: %w[Femme Homme].sample,
       sku: "qwerty",
       price_cents: [100, 150, 200, 250, 300].to_a.sample,
     })

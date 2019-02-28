@@ -44,6 +44,16 @@
 .fas {
   color: #0c7489;
 }
+.fa {
+  color: #0c7489;
+}
+
+.contenant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
 
 i:hover {
     color: #ffda63;

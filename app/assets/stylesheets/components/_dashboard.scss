@@ -33,7 +33,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 70px 0;
+  padding: 40px 0;
   width: 600px;
 }
 
@@ -55,6 +55,10 @@
   margin-top: 50px;
 }
 
+.simple-calendar {
+
+}
+
 i:hover {
     color: #ffda63;
   }
@@ -67,17 +71,16 @@ i:hover {
   width: 100%;
 }
 
+.names p {
+  margin: 0;
+}
 .team {
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 100%;
+  margin-top: 20px;
+  padding: 10px 0;
+  border: 0.5px solid lightgray;
 }
 
-.player_one {
-  background-color: blue;
-}
-
-.player_two {
-  background-color: red;
-}

@@ -32,13 +32,19 @@
 </div>
 <div class="tab-pane" id="tournois">
   <h2>Mes tournois</h2>
-  <p>À venir</p>
      <%# @tournaments.each do |tournament| %>
       <%#= tournament.name %>
      <%# end %>
      <%= month_calendar do |date| %>
        <%= date.day %>
+
+     <!--   <%# tournaments.each do |tournament| %>
+           <div>
+             <%#= tournament.name %>
+           </div>
+         <%# end %> -->
      <% end %>
+  <p>À venir</p>
   <p>Passés</p>
   <hr>
 </div>
@@ -54,6 +60,9 @@
       <p>Photo Joueur 2</p>
     </div>
   </div>
+  <%= link_to new_team_player_path do %>
+    <i class="fas fa-plus-circle"></i>
+  <% end %>
 </div>
 <div class="tab-pane" id="stats">
   <h2>Mes stats</h2>

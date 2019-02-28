@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     # @tournaments = @user.teams.inscriptions.tournaments
   end
 
+  def update
+    @user = current_user
+  end
+
   private
 
   def user_params

@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Mise à jour du profil</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -11,16 +11,25 @@
     <% end %>
 
     <%= f.input :password,
-                hint: "Laisser vite si aucune modification requise",
+                label: "Nouveau mot de passe",
+                hint: "Laisser vide si aucune modification n'est requise",
                 required: false,
+                placeholder: "••••••",
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
+                label: "Confirmation du nouveau mot de passe",
                 required: false,
+                placeholder: "••••••",
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :current_password,
-                hint: "Nous avons besoin de ton nouveau mot de passe pour confirmer les changements",
+                label: "Mot de passe actuel",
+                placeholder: "••••••",
+                hint: "Nous avons besoin de ton mot de passe pour confirmer les changements",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Ajoute une photo' %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
   </div>
 
   <div class="form-actions">
@@ -28,8 +37,7 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Es-tu sûr ?" }, method: :delete %></p>
-
 <%= link_to "Retour", :back %>
+
+<p>Mécontent ? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Es-tu sûr ?" }, method: :delete %></p>
+

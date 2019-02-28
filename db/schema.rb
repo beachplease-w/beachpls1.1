@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_143515) do
   create_table "teams", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "tournaments", force: :cascade do |t|
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_143515) do
     t.boolean "genre"
     t.string "sku"
     t.integer "price_cents", default: 0, null: false
+    t.string "photo"
   end
 
   create_table "users", force: :cascade do |t|
@@ -81,6 +83,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_143515) do
     t.string "last_name"
     t.integer "license_no"
     t.date "birth_date"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

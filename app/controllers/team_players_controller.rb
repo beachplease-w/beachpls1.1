@@ -15,7 +15,7 @@ class TeamPlayersController < ApplicationController
     @team_player1.save
     @team_player2.user = User.find(params[:team_player][:user])
     @team_player2.save
-    redirect_to tournaments_path
+    redirect_to user_path(current_user.id)
   end
 
   def edit

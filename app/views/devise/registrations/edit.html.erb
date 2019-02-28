@@ -1,43 +1,44 @@
-<h2>Mise à jour du profil</h2>
+<div class="container">
+  <h2>Mise à jour du profil</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <%= f.input :password,
+                    label: "Nouveau mot de passe",
+                    hint: "Laisser vide si aucune modification n'est requise",
+                    required: false,
+                    placeholder: "••••••",
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    label: "Confirmation du nouveau mot de passe",
+                    required: false,
+                    placeholder: "••••••",
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :current_password,
+                    label: "Mot de passe actuel",
+                    placeholder: "••••••",
+                    hint: "Nous avons besoin de ton mot de passe pour confirmer les changements",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+        <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Ajoute une photo' %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Mettre à jour" %>
+      </div>
     <% end %>
 
-    <%= f.input :password,
-                label: "Nouveau mot de passe",
-                hint: "Laisser vide si aucune modification n'est requise",
-                required: false,
-                placeholder: "••••••",
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                label: "Confirmation du nouveau mot de passe",
-                required: false,
-                placeholder: "••••••",
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                label: "Mot de passe actuel",
-                placeholder: "••••••",
-                hint: "Nous avons besoin de ton mot de passe pour confirmer les changements",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Ajoute une photo' %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-  </div>
+    <%= link_to "Retour", :back %>
+  <p class='text-right'>Mécontent ? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Es-tu sûr ?" }, method: :delete %></p>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Mettre à jour" %>
-  </div>
-<% end %>
-
-<%= link_to "Retour", :back %>
-
-<p>Mécontent ? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Es-tu sûr ?" }, method: :delete %></p>
 

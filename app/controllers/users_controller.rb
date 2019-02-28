@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     # @tournaments = @user.teams.inscriptions.tournaments
+    # @team = TeamPlayer.first
   end
 
   def update

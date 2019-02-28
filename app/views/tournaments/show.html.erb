@@ -26,43 +26,50 @@
 
 
   <section id="content1">
+      <div class="boxes">
+          <div class="rdg-expertise-category"><span>Organisateur</span></div>
+          <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+          <div style="clear: both;"></div>
+          <div class="rdg-expertise-description"><span>
+            <%= @tournament.club_organisateur %> <br>
+            <%= @tournament.contact %> <br>
+            <%= @tournament.address %>
+          </span></div>
+      </div>
+      <div class="boxes">
+          <div class="rdg-expertise-category"><span>Rankings</span></div>
+          <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+          <!-- <div style="clear: both;"></div> -->
+          <div class="rdg-expertise-description"><span>
+            <%= @tournament.serie %> <br>
+            <i class="fas fa-trophy" style="color: gold"></i> <%= @tournament.prize_money %> <br>
+            Inscription: <%= @tournament.price_cents %>
+          </span></div>
+      </div>
+      <div class="boxes">
+          <div class="rdg-expertise-category"><span>Tableaux</span></div>
+          <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+          <!-- <div style="clear: both;"></div> -->
+          <div class="rdg-expertise-description"><span>
+            Tableau principal : <%= @tournament.equipe_tableau_principal %> <br>
+            Tableau qualif: <%= @tournament.equipe_qualif %> <br>
+            Tableau principal: <%= @tournament.date_principal %> <br>
+            Tableau qualif:    <%= @tournament.date_qualif %> <br>
+          </span></div>
+      </div>
+      <div class="boxes">
+          <div class="rdg-expertise-category"><span>Autres Infos</span></div>
+          <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+          <!-- <div style="clear: both;"></div> -->
+          <div class="rdg-expertise-description"><span>
 
-    <div class="boxes">
-        <div class="rdg-expertise-category"><span>Organisateur</span></div>
-        <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-        <div style="clear: both;"></div>
-        <div class="rdg-expertise-description"><span>
-          Sand System <br>
-          Vincent Brand - 0678700684 - vincent@sandsystem.com <br>
-          Stade Jules Ladoumègue
-          37 route des petits ponts
-          75019 - PARIS
-        </span></div>
-    </div>
-    <div class="boxes">
-        <div class="rdg-expertise-category"><span>Rankings</span></div>
-        <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-        <!-- <div style="clear: both;"></div> -->
-        <div class="rdg-expertise-description"><span>
-          Série 3 - 150 <br>
-          <i class="fas fa-trophy" style="color: gold"></i> 130€ <br>
-          Tableau principal : 12 équipes <br>
-          Tableau qualif: 8 équipes
-        </span></div>
-    </div>
-    <div class="boxes">
-        <div class="rdg-expertise-category"><span>Dates & Remarques</span></div>
-        <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-        <!-- <div style="clear: both;"></div> -->
-        <div class="rdg-expertise-description"><span>
-          Tableau principal: 03/09/2019 - 11h00 <br>
-          Tableau qualif:    03/09/2019 - 09h00 <br>
-          Remarques: Pas d'arbitrage - Pas de textile compétition
-        </span></div>
-    </div>
-
-
-
+            Date limite d'inscription: <%= @tournament.limit_inscription %> <br>
+            Réunion technique qualif: <%= @tournament.reunion_qualif %> <br>
+            Réunion technique principal: <%= @tournament.reunion_principal %> <br>
+              <%= @tournament.remarques %> <br>
+              Terrains :<%= @tournament.terrains_normes %>
+          </span></div>
+      </div>
   </section>
 
   <section id="content2">
@@ -202,7 +209,6 @@
 
         <li class="spacer">&nbsp;</li>
     </ul>
-</main>
 </div>
 </div>
   </section>

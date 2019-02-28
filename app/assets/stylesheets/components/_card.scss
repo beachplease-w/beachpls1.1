@@ -64,6 +64,16 @@
   color: white;
 }
 
+.card-link {
+ top:0;
+ right:0;
+ left:0;
+ position: absolute;
+ bottom:0;
+ background-color: black;
+ opacity:0;
+ z-index: 500;
+}
 // Fliping
 
 // .beachcard {

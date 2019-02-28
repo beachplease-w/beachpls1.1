@@ -1,5 +1,7 @@
 class TeamsController < ApplicationController
   def index
-    @teams = Team.all.select { |team| team.user == current_user }
+    @tournament = Tournament.find(params[:tournament_id])
+    @teams = Team.all
+    @my_teams = current_user.teams
   end
 end

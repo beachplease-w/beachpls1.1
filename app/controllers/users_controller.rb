@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     # @team = TeamPlayer.first
   end
 
+  def update
+    @user = current_user
+  end
+
   private
 
   def user_params

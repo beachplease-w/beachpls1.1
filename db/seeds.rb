@@ -104,68 +104,68 @@ puts 'Tournaments created'
 
 puts 'Creating some "teams" for Marine'
 5.times do
-  counter = (6..14).to_a.sample,
+  counter = (6..14).to_a.sample
   team = Team.create
   team_player = TeamPlayer.new
   team_player.team = team
   team_player.user = User.find_by(license_no: 11111)
   team_player.save
-  team_player = TeamPlayer.new
-  team_player.team = team
+  team_player1 = TeamPlayer.new
+  team_player1.team = team
   licence = "#{counter}#{counter}#{counter}#{counter}#{counter}".to_i
-  team_player.user = User.find_by(license_no: licence)
-  team_player.save
+  team_player1.user = User.find_by(license_no: licence)
+  team_player1.save
 end
 
 puts '5 "teams" created for Marine'
 
 puts 'Creating some "teams" for Jules'
 5.times do
-  counter = (6..14).to_a.sample,
+  counter = (6..14).to_a.sample
   team = Team.create
   team_player = TeamPlayer.new
   team_player.team = team
   team_player.user = User.find_by(license_no: 22222)
   team_player.save
-  team_player = TeamPlayer.new
-  team_player.team = team
+  team_player1 = TeamPlayer.new
+  team_player1.team = team
   licence = "#{counter}#{counter}#{counter}#{counter}#{counter}".to_i
-  team_player.user = User.find_by(license_no: licence)
-  team_player.save
+  team_player1.user = User.find_by(license_no: licence)
+  team_player1.save
 end
 
 puts '5 "teams" created for Jules'
 
 puts 'Creating some "teams" for Yohan'
 5.times do
-  counter = (6..14).to_a.sample,
+  counter = (6..14).to_a.sample
   team = Team.create
   team_player = TeamPlayer.new
   team_player.team = team
   team_player.user = User.find_by(license_no: 33333)
   team_player.save
-  team_player = TeamPlayer.new
-  team_player.team = team
+  team_player1 = TeamPlayer.new
+  team_player1.team = team
   licence = "#{counter}#{counter}#{counter}#{counter}#{counter}".to_i
-  team_player.user = User.find_by(license_no: licence)
-  team_player.save
+  team_player1.user = User.find_by(license_no: licence)
+  team_player1.save
 end
 
 puts '5 "teams" created for Yohan'
 
 puts 'Creating some "teams" for Guitou'
 5.times do
-  counter = (6..14).to_a.sample,
+  counter = (6..14).to_a.sample
   team = Team.create
   team_player = TeamPlayer.new
   team_player.team = team
   team_player.user = User.find_by(license_no: 44444)
   team_player.save
-  team_player = TeamPlayer.new
-  team_player.team = team
+  team_player1 = TeamPlayer.new
+  team_player1.team = team
   licence = "#{counter}#{counter}#{counter}#{counter}#{counter}".to_i
-  team_player.user = User.find_by(license_no: licence)
-  team_player.save
+  team_player1.user = User.find_by(license_no: licence)
+  team_player1.save
 end
 
 puts '5 "teams" created for Guitou'

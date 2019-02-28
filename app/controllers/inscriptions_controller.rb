@@ -1,14 +1,13 @@
 class InscriptionsController < ApplicationController
-  def new
-    @inscription = Inscription.new
-  end
 
   def create
-    @inscription = Inscription.new(inscriptions_params)
+    @inscription = Inscription.new
+    @inscription.team = Team.find(params[:team_id])
+    @inscription.tournament = Tournament.find(params[:tournament_id])
     if @inscription.save
       redirect_to tournaments_path
     else
-      render :new
+      redirect_to tournament_teams_path(@tournament)
     end
   end
 

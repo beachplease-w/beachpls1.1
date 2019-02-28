@@ -121,8 +121,8 @@ end
 puts '5 "teams" created for Marine'
 
 puts 'Creating some "teams" for Jules'
+counter = 6
 5.times do
-  counter = (6..14).to_a.sample
   team = Team.create
   team_player = TeamPlayer.new
   team_player.team = team
@@ -133,13 +133,14 @@ puts 'Creating some "teams" for Jules'
   licence = "#{counter}#{counter}#{counter}#{counter}#{counter}".to_i
   team_player1.user = User.find_by(license_no: licence)
   team_player1.save
+  counter += 1
 end
 
 puts '5 "teams" created for Jules'
 
 puts 'Creating some "teams" for Yohan'
+counter = 6
 5.times do
-  counter = (6..14).to_a.sample
   team = Team.create
   team_player = TeamPlayer.new
   team_player.team = team
@@ -150,6 +151,7 @@ puts 'Creating some "teams" for Yohan'
   licence = "#{counter}#{counter}#{counter}#{counter}#{counter}".to_i
   team_player1.user = User.find_by(license_no: licence)
   team_player1.save
+  counter += 1
 end
 
 puts '5 "teams" created for Yohan'
@@ -180,6 +182,7 @@ puts "Creating inscriptions"
       inscription = Inscription.new
       inscription.team = Team.find(team)
       inscription.tournament = tournoi
+      inscription.save
     end
   end
 

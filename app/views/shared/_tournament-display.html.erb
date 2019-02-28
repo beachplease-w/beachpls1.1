@@ -1,0 +1,9 @@
+<% @user.teams.each do |team| %>
+  <% team.tournaments.each do |tournament| %>
+    <div class="tournament">
+      <%= tournament.name %>
+      <%= tournament.date %>
+    </div>
+  <% end %>
+<% end %>
+

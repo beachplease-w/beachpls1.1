@@ -25,9 +25,10 @@
         <% end %>
       </div>
       <div class="tab-pane" id="tournois">
-        <%= render 'shared/calendar' %>
-        <p>À venir</p>
-        <p>Passés</p>
+        <div id="events_calendar">
+          <%= render 'shared/calendar' %>
+        </div>
+        <%= render 'shared/tournament-display' %>
         <hr>
       </div>
       <%= render 'shared/team-display' %>

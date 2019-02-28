@@ -1,3 +1,11 @@
-<%= month_calendar do |date| %>
+<%= month_calendar attribute: :date, events: @user.tournaments do |date, tournaments| %>
   <%= date.day %>
+
+  <% tournaments.each do |tournament| %>
+    <%= link_to render 'shared/tournament-display' do %>
+      <i class="fas fa-circle">
+        <% tournament.name %>
+      </i>
+    <% end %>
+  <% end %>
 <% end %>

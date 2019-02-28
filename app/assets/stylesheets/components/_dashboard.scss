@@ -35,6 +35,8 @@
   text-align: center;
   padding: 40px 0;
   width: 600px;
+  height: 400px;
+  overflow: scroll;
 }
 
 .nav>li.active>a:hover, .nav>li.active>a:focus {
@@ -56,7 +58,18 @@
 }
 
 .simple-calendar {
+  .table.table-striped {
+    width: 10px;
+  }
+  th {
+    text-align: center;
+  }
+}
 
+.simple-calendar {
+  .fas {
+    font-size: 10px;
+  }
 }
 
 i:hover {
@@ -81,5 +94,6 @@ i:hover {
   margin: 20px;
   padding: 10px 0;
   border: 0.5px solid lightgray;
+  background-color: white;
 }
 

@@ -174,18 +174,18 @@ end
 
 puts '5 "teams" created for Guitou'
 
-puts "Creating inscriptions"
-  tournois = Tournament.all
-  tournois.each do |tournoi|
-    3.times do
-      team = (1..20).to_a.sample
-      inscription = Inscription.new
-      inscription.team = Team.find(team)
-      inscription.tournament = tournoi
-      inscription.save
-    end
-  end
+# puts "Creating inscriptions"
+#   tournois = Tournament.all
+#   tournois.each do |tournoi|
+#     3.times do
+#       team = (1..20).to_a.sample
+#       inscription = Inscription.new
+#       inscription.team = Team.find(team)
+#       inscription.tournament = tournoi
+#       inscription.save
+#     end
+#   end
 
-puts "Created 3 inscriptions for each tournament"
+# puts "Created 3 inscriptions for each tournament"
 
 puts 'Everything is ready guys!!'

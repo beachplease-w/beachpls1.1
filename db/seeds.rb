@@ -49,15 +49,38 @@ puts 'user 4 created !!'
 
 
 require 'faker'
-address = %w[Paris Marseille Lyon Toulouse Nice Nantes Montpellier Strasbourg Bordeaux Lille Rennes Reims Saint-Etienne Le\ Havre Toulon Grenoble Dijon Angers Nimes Villeurbanne]
+address = { "Paris" => ["17 rue Bausset, Paris, France", "6 rue de Remusat, Paris, France", "16 Villa Gaudelet, Paris, France"], "Marseille" => ["5 rue paradis, Marseille, France", "10 rue roger brun, Marseille, France", "18 rue ferrari, Marseille, France"], "Lyon" => ["5 Rue de l'université, Lyon, France", "5 Rue Cuvier, Lyon, France", "9 Rue Billon, Lyon, France"], "Toulouse" => ["5 Rue des Fontaines, Toulouse, France", "5 Rue Corneille, Toulouse, France", "5 Rue Bernadette, Toulouse, France"], "Bordeaux" => ["5 Rue dr Bert, Bordeaux, France", "5 Rue Coli, Bordeaux, France", "5 Rue Tranchere, Bordeaux, France"]}
 puts "Creating some tournaments"
-address.each do |ad|
-  Tournament.create!({
-    name: Faker::Esport.event,
-    date: Faker::Date.between(Date.today, 1.year.from_now),
-    serie: ['Série 1 - 250', 'Série 1 - 1500', 'Série 2 - 50', 'Série 2 - 100'].sample,
-    address: ad,
-  })
+address.each do |city, ad|
+  ad.each do |address|
+    date = Faker::Date.between(Date.today, 1.year.from_now)
+    Tournament.create!({
+      name: Faker::Esport.event,
+      date: date,
+      serie: ['Série 3 - 150', 'Série 2 - 1000', 'Série 2 - 250', 'Série 2 - 500', 'Série 2 - 750', 'Série 1 - 1500', 'Série 1 - 2500'].sample,
+      address: address,
+      remarques: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, vero." ,
+      equipe_tableau_principal: (12..16).to_a.sample,
+      wildcard_principal: (0..4).to_a.sample,
+      place_reservees_qualif: (0..4).to_a.sample,
+      equipe_qualif: (0..4).to_a.sample,
+      wildcard_qualif: (0..4).to_a.sample,
+      terrains_normes: (0..4).to_a.sample,
+      date_qualif: date,
+      date_principal: date,
+      prize_money: (100..500).to_a.sample,
+      split_prize_money: "1-60€ 2-40€ 3-30€",
+      limit_inscription: date,
+      reunion_qualif: date ,
+      reunion_principal: date,
+      ville: city,
+      club_organisateur: Faker::Company.name,
+      contact: Faker::PhoneNumber.cell_phone,
+      genre: %w[Femme Homme],
+      sku: "qwerty",
+      price_cents: (100..300).to_a.sample,
+    })
+  end
 end
 puts 'Tournaments created'
 

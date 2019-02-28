@@ -28,7 +28,7 @@ puts 'user 2 created !'
 puts 'creating user 3..'
 user3 = User.new
 user3.email = 'yohan@bendavid.com'
-user3.password = 'yoanbendavid'
+user3.password = 'yohanbendavid'
 user3.first_name = 'Yohan'
 user3.last_name = 'Bendavid'
 user3.license_no = 33333
@@ -47,8 +47,25 @@ user4.birth_date = "26/02/1991"
 user4.save!
 puts 'user 4 created !!'
 
-
 require 'faker'
+counter = 5
+10.times do
+  puts 'creating a fake users..'
+  newuser = User.new
+  name = Faker::Name.name
+  email = name.downcase.gsub(/ /, ".") + "@gmail.com"
+  newuser.email = email
+  newuser.password = "BeachPlease"
+  newuser.first_name = name.split[0]
+  newuser.last_name = name.split[1]
+  newuser.license_no = "#{counter}#{counter}#{counter}#{counter}#{counter}".to_i
+  newuser.birth_date = Faker::Date.birthday(18, 50)
+  newuser.save!
+  counter +=1
+end
+puts ' 10 fake users created !!'
+
+
 address = { "Paris" => ["17 rue Bausset, Paris, France", "6 rue de Remusat, Paris, France", "16 Villa Gaudelet, Paris, France"], "Marseille" => ["5 rue paradis, Marseille, France", "10 rue roger brun, Marseille, France", "18 rue ferrari, Marseille, France"], "Lyon" => ["5 Rue de l'université, Lyon, France", "5 Rue Cuvier, Lyon, France", "9 Rue Billon, Lyon, France"], "Toulouse" => ["5 Rue des Fontaines, Toulouse, France", "5 Rue Corneille, Toulouse, France", "5 Rue Bernadette, Toulouse, France"], "Bordeaux" => ["5 Rue dr Bert, Bordeaux, France", "5 Rue Coli, Bordeaux, France", "5 Rue Tranchere, Bordeaux, France"]}
 puts "Creating some tournaments"
 address.each do |city, ad|

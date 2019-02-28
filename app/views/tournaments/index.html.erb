@@ -4,6 +4,7 @@
       <% @tournaments.each do |tournament| %>
         <div class="col-xs-12 col-sm-6">
           <%= render 'shared/cards', tournament: tournament %>
+          <%= render 'shared/modal', teams: @my_teams, tournament: tournament %>
         </div>
       <% end %>
     </div>

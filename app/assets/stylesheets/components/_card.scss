@@ -30,6 +30,7 @@
   right: 15px;
   padding: 8px 15px !important;
   font-size: 15px;
+  z-index: 1;
 }
 
 
@@ -65,14 +66,14 @@
 }
 
 .card-link {
- top:0;
- right:0;
- left:0;
+ top: 15px;
+ right: 15px;
+ left: 15px;
  position: absolute;
- bottom:0;
+ bottom: 0;
  background-color: black;
  opacity:0;
- z-index: 500;
+ z-index: 0;
 }
 // Fliping
 

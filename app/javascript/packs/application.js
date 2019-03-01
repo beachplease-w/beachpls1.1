@@ -15,3 +15,7 @@ initMapbox();
 import { previewImageOnFileSelect } from '../components/photo_preview'
 
 previewImageOnFileSelect();
+
+import { initFullCalendar } from '../plugins/init_calendar'
+
+initFullCalendar();

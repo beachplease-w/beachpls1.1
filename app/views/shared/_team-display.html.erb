@@ -1,4 +1,8 @@
 <div class="tab-pane" id="equipes">
+  <%= link_to new_team_player_path do %>
+    <i class="fas fa-plus-circle"></i>
+  <% end %>
+  <hr>
   <% @user.teams.each do |team| %>
   <div class="team">
     <div class="player_one">
@@ -13,9 +17,5 @@
       <%= cl_image_tag current_user.photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
     </div>
   </div>
-  <% end %>
-  <hr>
-  <%= link_to new_team_player_path do %>
-    <i class="fas fa-plus-circle"></i>
   <% end %>
 </div>

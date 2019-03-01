@@ -25,9 +25,7 @@
         <% end %>
       </div>
       <div class="tab-pane" id="tournois">
-        <div id="events_calendar">
-          <%= render 'shared/calendar' %>
-        </div>
+
         <%= render 'shared/tournament-display' %>
         <hr>
       </div>
@@ -37,6 +35,9 @@
         <p>Voici mes stats</p>
           <hr>
       </div>
+    </div>
+    <div id="events_calendar" class="text-center">
+      <%= render 'shared/calendar' %>
     </div>
   </div>
 </div>

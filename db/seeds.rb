@@ -3,8 +3,8 @@ Tournament.destroy_all
 puts "Cleaning Users"
 User.destroy_all
 puts "Cleaning team players"
-TeamPlayer.destroy_allputs
-"Cleaning Teams"
+TeamPlayer.destroy_all
+puts "Cleaning Teams"
 Team.destroy_all
 
 puts 'creating user 1..'

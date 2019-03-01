@@ -5,9 +5,9 @@
       <h2> <%= @tournament.name %> </h2>
       <p> <%= @tournament.address %> </p>
     </span>
-    <%# if !current_user.tournaments.where(id: tournament.id).any?  %>
+    <% if !current_user.tournaments.where(id: @tournament).any?  %>
       <button type="button" class="btn btn-yours2" data-toggle="modal" data-target="#myModal-<%= @tournament.id %>">S'inscrire</button>
-    <%# end %>
+    <% end %>
   </div>
 </div>
 <%= render 'shared/modal', teams: @my_teams, tournament: @tournament %>
@@ -44,8 +44,8 @@
             <!-- <div style="clear: both;"></div> -->
             <div class="rdg-expertise-description"><span>
               <%= @tournament.serie %> <br>
-              <i class="fas fa-trophy" style="color: gold"></i> <%= @tournament.prize_money %> <br>
-              Inscription: <%= @tournament.price_cents %>
+              <i class="fas fa-trophy" style="color: gold"></i></i><%= humanized_money_with_symbol(@tournament.prize_money) %> <br>
+            Inscription: <%= humanized_money_with_symbol(@tournament.price) %>
             </span></div>
         </div>
         <div class="boxes">

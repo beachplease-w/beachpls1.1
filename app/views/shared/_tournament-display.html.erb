@@ -1,9 +1,14 @@
-<% @user.teams.each do |team| %>
-  <% team.tournaments.each do |tournament| %>
-    <div class="tournament">
-      <%= tournament.name %>
-      <%= tournament.date %>
+  <div class="tournament-product">
+    <img src="https://www.sandsystem.com/beach-volley/wp-content/uploads/2019/01/cropped-jersey.jpg">
+    <div class="tournament-product-infos">
+      <% @user.teams.each do |team| %>
+        <% team.tournaments.each do |tournament| %>
+          <div class="tournament">
+            <p><%= tournament.name %></p>
+            <p><%= tournament.date %></p>
+            <p><%= tournament.address %></p>
+          </div>
+        <% end %>
+      <% end %>
     </div>
-  <% end %>
-<% end %>
-
+  </div>

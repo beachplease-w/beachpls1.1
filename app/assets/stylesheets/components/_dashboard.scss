@@ -28,13 +28,12 @@
 }
 
 .tab-content {
-  width: auto;
+  width: 100%;
   background-color: rgba(255,255,255,0.5);
   display: flex;
   justify-content: center;
   text-align: center;
   padding: 40px 0;
-  width: 600px;
   height: 400px;
   overflow: scroll;
 }
@@ -58,7 +57,7 @@
 }
 
 .simple-calendar {
-
+  margin-left: 15px;
 }
 
 .simple-calendar {

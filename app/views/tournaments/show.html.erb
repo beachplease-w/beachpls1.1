@@ -44,8 +44,8 @@
           <!-- <div style="clear: both;"></div> -->
           <div class="rdg-expertise-description"><span>
             <%= @tournament.serie %> <br>
-            <i class="fas fa-trophy" style="color: gold"></i> <%= @tournament.prize_money %> <br>
-            Inscription: <%= @tournament.price_cents %>
+            <i class="fas fa-trophy" style="color: gold"></i></i><%= humanized_money_with_symbol(@tournament.prize_money) %> <br>
+            Inscription: <%= humanized_money_with_symbol(@tournament.price) %>
           </span></div>
       </div>
       <div class="boxes">

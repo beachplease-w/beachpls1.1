@@ -66,6 +66,106 @@ counter = 5
 end
 puts ' 10 fake users created !!'
 
+address = { "Paris" => ["50 rue du Ranelagh, Paris, France"] }
+puts "Tournois Parisien"
+address.each do |city, ad|
+  ad.each do |address|
+    date = "Sat, 02 Mar 2019"
+    Tournament.create!({
+      name: Faker::Esport.event,
+      date: date,
+      serie: ['Série 3 - 150', 'Série 2 - 1000', 'Série 2 - 250', 'Série 2 - 500', 'Série 2 - 750', 'Série 1 - 1500', 'Série 1 - 2500'].sample,
+      address: address,
+      remarques: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, vero." ,
+      equipe_tableau_principal: (12..16).to_a.sample,
+      wildcard_principal: (0..4).to_a.sample,
+      place_reservees_qualif: (0..4).to_a.sample,
+      equipe_qualif: (0..4).to_a.sample,
+      wildcard_qualif: (0..4).to_a.sample,
+      terrains_normes: (0..4).to_a.sample,
+      date_qualif: date,
+      date_principal: date,
+      prize_money: [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000].sample,
+      split_prize_money: "1-60€ 2-40€ 3-30€",
+      limit_inscription: date,
+      reunion_qualif: date ,
+      reunion_principal: date,
+      ville: city,
+      club_organisateur: Faker::Company.name,
+      contact: Faker::PhoneNumber.cell_phone,
+      genre: "Homme",
+      sku: "qwerty",
+      price_cents: [10000, 15000, 20000, 25000, 30000].sample,
+    })
+  end
+end
+puts 'Tournaments created'
+
+address = { "Marseille" => ["1 rue des Catalans, 13007 Marseille, France"] }
+puts "Tournois Marseillais"
+address.each do |city, ad|
+  ad.each do |address|
+    date = "Sat, 09 Mar 2019"
+    Tournament.create!({
+      name: Faker::Esport.event,
+      date: date,
+      serie: ['Série 3 - 150', 'Série 2 - 1000', 'Série 2 - 250', 'Série 2 - 500', 'Série 2 - 750', 'Série 1 - 1500', 'Série 1 - 2500'].sample,
+      address: address,
+      remarques: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, vero." ,
+      equipe_tableau_principal: (12..16).to_a.sample,
+      wildcard_principal: (0..4).to_a.sample,
+      place_reservees_qualif: (0..4).to_a.sample,
+      equipe_qualif: (0..4).to_a.sample,
+      wildcard_qualif: (0..4).to_a.sample,
+      terrains_normes: (0..4).to_a.sample,
+      date_qualif: date,
+      date_principal: date,
+      prize_money: [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000].sample,
+      split_prize_money: "1-60€ 2-40€ 3-30€",
+      limit_inscription: date,
+      reunion_qualif: date ,
+      reunion_principal: date,
+      ville: city,
+      club_organisateur: Faker::Company.name,
+      contact: Faker::PhoneNumber.cell_phone,
+      genre: "Homme",
+      sku: "qwerty",
+      price_cents: [10000, 15000, 20000, 25000, 30000].sample,
+    })
+  end
+end
+address.each do |city, ad|
+  ad.each do |address|
+    date = "Sat, 09 Mar 2019"
+    Tournament.create!({
+      name: Faker::Esport.event,
+      date: date,
+      serie: ['Série 3 - 150', 'Série 2 - 1000', 'Série 2 - 250', 'Série 2 - 500', 'Série 2 - 750', 'Série 1 - 1500', 'Série 1 - 2500'].sample,
+      address: address,
+      remarques: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, vero." ,
+      equipe_tableau_principal: (12..16).to_a.sample,
+      wildcard_principal: (0..4).to_a.sample,
+      place_reservees_qualif: (0..4).to_a.sample,
+      equipe_qualif: (0..4).to_a.sample,
+      wildcard_qualif: (0..4).to_a.sample,
+      terrains_normes: (0..4).to_a.sample,
+      date_qualif: date,
+      date_principal: date,
+      prize_money: [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000].sample,
+      split_prize_money: "1-60€ 2-40€ 3-30€",
+      limit_inscription: date,
+      reunion_qualif: date ,
+      reunion_principal: date,
+      ville: city,
+      club_organisateur: Faker::Company.name,
+      contact: Faker::PhoneNumber.cell_phone,
+      genre: "Femme",
+      sku: "qwerty",
+      price_cents: [10000, 15000, 20000, 25000, 30000].sample,
+    })
+  end
+end
+puts 'Tournaments created'
 
 address = { "Paris" => ["17 rue Bausset, Paris, France", "6 rue de Remusat, Paris, France", "16 Villa Gaudelet, Paris, France"], "Marseille" => ["5 rue paradis, Marseille, France", "10 rue roger brun, Marseille, France", "18 rue ferrari, Marseille, France"], "Lyon" => ["5 Rue de l'université, Lyon, France", "5 Rue Cuvier, Lyon, France", "9 Rue Billon, Lyon, France"], "Toulouse" => ["5 Rue des Fontaines, Toulouse, France", "5 Rue Corneille, Toulouse, France", "5 Rue Bernadette, Toulouse, France"], "Bordeaux" => ["5 Rue dr Bert, Bordeaux, France", "5 Rue Coli, Bordeaux, France", "5 Rue Tranchere, Bordeaux, France"]}
 puts "Creating some tournaments"
@@ -86,7 +186,7 @@ address.each do |city, ad|
       terrains_normes: (0..4).to_a.sample,
       date_qualif: date,
       date_principal: date,
-      prize_money: (100..500).to_a.sample,
+      prize_money: [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000].sample,
       split_prize_money: "1-60€ 2-40€ 3-30€",
       limit_inscription: date,
       reunion_qualif: date ,
@@ -96,7 +196,7 @@ address.each do |city, ad|
       contact: Faker::PhoneNumber.cell_phone,
       genre: %w[Femme Homme].sample,
       sku: "qwerty",
-      price_cents: [100, 150, 200, 250, 300].to_a.sample,
+      price_cents: [10000, 15000, 20000, 25000, 30000].sample,
     })
   end
 end

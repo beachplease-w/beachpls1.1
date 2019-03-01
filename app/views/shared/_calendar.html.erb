@@ -1,4 +1,4 @@
-<%= month_calendar attribute: :date, events: @user.tournaments do |date, tournaments| %>
+<%= month_calendar attribute: :date, events: events do |date, tournaments| %>
   <%= date.day %>
 
   <% tournaments.each do |tournament| %>

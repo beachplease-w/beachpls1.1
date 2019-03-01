@@ -37,7 +37,7 @@
       </div>
     </div>
     <div id="events_calendar" class="text-center">
-      <%= render 'shared/calendar' %>
+      <%= render 'shared/calendar', events: @user.tournaments %>
     </div>
   </div>
 </div>

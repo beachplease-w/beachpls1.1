@@ -1,5 +1,12 @@
 <div id="my-flex">
   <div class="cards">
+    <%= form_tag tournaments_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Adresse, série ou nom"
+      %>
+    <% end %>
     <div class="row">
       <% @tournaments.each do |tournament| %>
         <div class="col-xs-12 col-sm-6">

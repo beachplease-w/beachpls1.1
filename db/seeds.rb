@@ -95,7 +95,7 @@ address.each do |city, ad|
       contact: Faker::PhoneNumber.cell_phone,
       genre: "Homme",
       sku: "qwerty",
-      price_cents: [10000, 15000, 20000, 25000, 30000].sample,
+      price_cents: [1000, 1500, 2000, 2500, 3000].sample,
     })
   end
 end
@@ -130,7 +130,7 @@ address.each do |city, ad|
       contact: Faker::PhoneNumber.cell_phone,
       genre: "Homme",
       sku: "qwerty",
-      price_cents: [10000, 15000, 20000, 25000, 30000].sample,
+      price_cents: [1000, 1500, 2000, 2500, 3000].sample,
     })
   end
 end
@@ -161,7 +161,7 @@ address.each do |city, ad|
       contact: Faker::PhoneNumber.cell_phone,
       genre: "Femme",
       sku: "qwerty",
-      price_cents: [10000, 15000, 20000, 25000, 30000].sample,
+      price_cents: [1000, 1500, 2000, 2500, 3000].sample,
     })
   end
 end
@@ -196,7 +196,7 @@ address.each do |city, ad|
       contact: Faker::PhoneNumber.cell_phone,
       genre: %w[Femme Homme].sample,
       sku: "qwerty",
-      price_cents: [10000, 15000, 20000, 25000, 30000].sample,
+      price_cents: [1000, 1500, 2000, 2500, 3000].sample,
     })
   end
 end

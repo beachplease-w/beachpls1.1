@@ -85,7 +85,7 @@ address.each do |city, ad|
       terrains_normes: (0..4).to_a.sample,
       date_qualif: date,
       date_principal: date,
-      prize_money: [100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
+      prize_money: [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000].sample,
       split_prize_money: "1-60€ 2-40€ 3-30€",
       limit_inscription: date,
       reunion_qualif: date ,
@@ -95,7 +95,7 @@ address.each do |city, ad|
       contact: Faker::PhoneNumber.cell_phone,
       genre: "Homme",
       sku: "qwerty",
-      price_cents: [100, 150, 200, 250, 300].sample,
+      price_cents: [10000, 15000, 20000, 25000, 30000].sample,
     })
   end
 end
@@ -120,7 +120,7 @@ address.each do |city, ad|
       terrains_normes: (0..4).to_a.sample,
       date_qualif: date,
       date_principal: date,
-      prize_money: [100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
+      prize_money: [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000].sample,
       split_prize_money: "1-60€ 2-40€ 3-30€",
       limit_inscription: date,
       reunion_qualif: date ,
@@ -130,7 +130,7 @@ address.each do |city, ad|
       contact: Faker::PhoneNumber.cell_phone,
       genre: "Homme",
       sku: "qwerty",
-      price_cents: [100, 150, 200, 250, 300].sample,
+      price_cents: [10000, 15000, 20000, 25000, 30000].sample,
     })
   end
 end
@@ -151,7 +151,7 @@ address.each do |city, ad|
       terrains_normes: (0..4).to_a.sample,
       date_qualif: date,
       date_principal: date,
-      prize_money: [100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
+      prize_money: [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000].sample,
       split_prize_money: "1-60€ 2-40€ 3-30€",
       limit_inscription: date,
       reunion_qualif: date ,
@@ -161,7 +161,7 @@ address.each do |city, ad|
       contact: Faker::PhoneNumber.cell_phone,
       genre: "Femme",
       sku: "qwerty",
-      price_cents: [100, 150, 200, 250, 300].sample,
+      price_cents: [10000, 15000, 20000, 25000, 30000].sample,
     })
   end
 end
@@ -186,7 +186,7 @@ address.each do |city, ad|
       terrains_normes: (0..4).to_a.sample,
       date_qualif: date,
       date_principal: date,
-      prize_money: [100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
+      prize_money: [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000].sample,
       split_prize_money: "1-60€ 2-40€ 3-30€",
       limit_inscription: date,
       reunion_qualif: date ,
@@ -196,7 +196,7 @@ address.each do |city, ad|
       contact: Faker::PhoneNumber.cell_phone,
       genre: %w[Femme Homme].sample,
       sku: "qwerty",
-      price_cents: [100, 150, 200, 250, 300].sample,
+      price_cents: [10000, 15000, 20000, 25000, 30000].sample,
     })
   end
 end

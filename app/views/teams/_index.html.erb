@@ -3,7 +3,7 @@
   <%= link_to tournament_team_inscriptions_path(tournament,team), class: "team-link", method: :post do %>
     <div class="team">
       <div class="player_one">
-        <img width="50" height="50" class="avatar">
+        <%= cl_image_tag team.users[0].photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
       </div>
       <div class="names">
         <p><%= team.users[0].first_name %></p>
@@ -11,7 +11,7 @@
         <p><%= team.users[1].first_name %></p>
       </div>
       <div class="player_two">
-        <img width="50" height="50" class="avatar">
+        <%= cl_image_tag team.users[1].photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
       </div>
     </div>
   <% end %>

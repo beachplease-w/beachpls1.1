@@ -23,6 +23,7 @@ class TournamentsController < ApplicationController
   end
 
   def show
+    @my_teams = current_user.teams
   end
 
   private

@@ -76,7 +76,7 @@ address.each do |city, ad|
   ad.each do |address|
     date = "Sat, 02 Mar 2019"
     Tournament.create!({
-      name: Faker::Esport.event,
+      name: ['SSA Open #1', 'Beach Chiller #2', 'Beach Open #3', 'Mangeurs de sables #1', 'SSA Open #2', 'Beach Chiller #3', 'Beach Open #4', 'Mangeurs de sables #2'].sample
       date: date,
       serie: ['Série 3 - 150', 'Série 2 - 1000', 'Série 2 - 250', 'Série 2 - 500', 'Série 2 - 750', 'Série 1 - 1500', 'Série 1 - 2500'].sample,
       address: address,
@@ -96,7 +96,7 @@ address.each do |city, ad|
       reunion_principal: date,
       ville: city,
       club_organisateur: Faker::Company.name,
-      contact: Faker::PhoneNumber.cell_phone,
+      contact: ['0607080910', '0611121314', '0621222324'].sample
       genre: "Homme",
       sku: "qwerty",
       price_cents: [1000, 1500, 2000, 2500, 3000].sample,

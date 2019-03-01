@@ -1,6 +1,6 @@
 .rdg-expertise-category { margin-left: 150px; margin-right: 50px; width: 120px;}
 .rdg-expertise-category span { margin-top:auto; font-size: 18px; font-weight: bold; float: right; }
-
+.rdg-expertise-category .avatar { border-radius: 50%;}
 .rdg-expertise-description {}
 .rdg-expertise-description span { margin-top:auto; }
 
@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   border : #0C7489 1px dashed;
-  width: 1000px;
+  width: 90%;
   margin: 10px;
   height: 150px;
 }
@@ -37,9 +37,9 @@
   display: flex;
   align-items: center;
   border : #0C7489 1px dashed;
-  width: 1000px;
+  width: 90%;
   margin: 10px;
-  height: 50px;
+  height: 60px;
 }
 
 .rdg-expertise-category-beach { margin-left: 150px; margin-right: 50px; width: 120px;}

@@ -2,6 +2,10 @@ puts "Cleaning Tournaments"
 Tournament.destroy_all
 puts "Cleaning Users"
 User.destroy_all
+puts "Cleaning team players"
+TeamPlayer.destroy_allputs
+"Cleaning Teams"
+Team.destroy_all
 
 puts 'creating user 1..'
 user1 = User.new

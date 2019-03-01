@@ -4,7 +4,7 @@
       <h2><%= tournament.name %></h2>
       <div class="tournament-info">
         <p><%= tournament.address %></p>
-        <p><i class="fas fa-trophy"></i> 500<%#= tournament.price %></p>
+        <p><i class="fas fa-trophy"></i><%= humanized_money_with_symbol(tournament.price) %></p>
         <p><i class="fas fa-male"></i><i class="fas fa-male"></i> 15 / 24</p>
         <p><%= image_tag "ball_mikasa.jpg", width: 20 %> </i>Mikasa</p>
         <p><i class="far fa-calendar-alt"></i> <%= tournament.date %></p>

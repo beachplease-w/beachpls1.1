@@ -1,21 +1,21 @@
-      <div class="tab-pane" id="equipes">
-        <% @user.teams.each do |team| %>
-        <div class="team">
-          <div class="player_one">
-            <%= cl_image_tag current_user.photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
-          </div>
-          <div class="names">
-            <p><%= team.users.first.first_name %> <%= team.users.first.last_name.upcase %></p>
-            <p> <%= image_tag "filet-volley.png", width: 25, height: 25%> </p>
-            <p><%= team.users.last.first_name %> <%= team.users.last.last_name.upcase %></p>
-          </div>
-          <div class="player_two">
-            <%= cl_image_tag current_user.photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
-          </div>
-        </div>
-        <% end %>
-        <hr>
-        <%= link_to new_team_player_path do %>
-          <i class="fas fa-plus-circle"></i>
-        <% end %>
-      </div>
+<div class="tab-pane" id="equipes">
+  <%= link_to new_team_player_path do %>
+    <i class="fas fa-plus-circle"></i>
+  <% end %>
+  <hr>
+  <% @user.teams.each do |team| %>
+  <div class="team">
+    <div class="player_one">
+      <%= cl_image_tag current_user.photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
+    </div>
+    <div class="names">
+      <p><%= team.users.first.first_name %> <%= team.users.first.last_name.upcase %></p>
+      <p> <%= image_tag "filet-volley.png", width: 25, height: 25%> </p>
+      <p><%= team.users.last.first_name %> <%= team.users.last.last_name.upcase %></p>
+    </div>
+    <div class="player_two">
+      <%= cl_image_tag current_user.photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
+    </div>
+  </div>
+  <% end %>
+</div>

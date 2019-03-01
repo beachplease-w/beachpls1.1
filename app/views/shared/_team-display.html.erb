@@ -6,7 +6,7 @@
   <% @user.teams.each do |team| %>
   <div class="team">
     <div class="player_one">
-      <%= cl_image_tag current_user.photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
+      <%= cl_image_tag eam.users.first.photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
     </div>
     <div class="names">
       <p><%= team.users.first.first_name %> <%= team.users.first.last_name.upcase %></p>
@@ -14,7 +14,7 @@
       <p><%= team.users.last.first_name %> <%= team.users.last.last_name.upcase %></p>
     </div>
     <div class="player_two">
-      <%= cl_image_tag current_user.photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
+      <%= cl_image_tag team.users.last.photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
     </div>
   </div>
   <% end %>

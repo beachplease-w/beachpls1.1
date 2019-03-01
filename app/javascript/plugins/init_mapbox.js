@@ -26,8 +26,9 @@ const initMapbox = () => {
         element.style.height = '25px';
 
       new mapboxgl.Marker(element)
-      .setLngLat([marker.lng, marker.lat])
-    .addTo(map);
+      .setLngLat([marker.lng, marker.lat]);
+      .setPopup(popup);
+      .addTo(map);
     });
     fitMapToMarkers(map, markers);
   }

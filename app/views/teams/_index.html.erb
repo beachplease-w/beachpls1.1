@@ -1,10 +1,20 @@
 
 <% teams.each do |team| %>
-
-  <%= link_to tournament_team_inscriptions_path(tournament,team), method: :post do %>
-    <span> <%= team.users[0].first_name %> / <%= team.users[1].first_name %> </span>
+  <%= link_to tournament_team_inscriptions_path(tournament,team), class: "team-link", method: :post do %>
+    <div class="team">
+      <div class="player_one">
+        <img width="50" height="50" class="avatar">
+      </div>
+      <div class="names">
+        <p><%= team.users[0].first_name %></p>
+        <p> <img width="25" height="25" src="/assets/filet-volley-7f2eed79cec68cf62944d9db3c5a04d895d1b69ba8c4281869ff372714fa4965.png"> </p>
+        <p><%= team.users[1].first_name %></p>
+      </div>
+      <div class="player_two">
+        <img width="50" height="50" class="avatar">
+      </div>
+    </div>
   <% end %>
 <% end %>
-
 
 

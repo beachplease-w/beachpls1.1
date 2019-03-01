@@ -5,9 +5,9 @@
       <h2> <%= @tournament.name %> </h2>
       <p> <%= @tournament.address %> </p>
     </span>
-    <%# if !current_user.tournaments.where(id: tournament.id).any?  %>
+    <% if !current_user.tournaments.where(id: @tournament).any?  %>
       <button type="button" class="btn btn-yours2" data-toggle="modal" data-target="#myModal-<%= @tournament.id %>">S'inscrire</button>
-    <%# end %>
+    <% end %>
   </div>
 </div>
 <%= render 'shared/modal', teams: @my_teams, tournament: @tournament %>

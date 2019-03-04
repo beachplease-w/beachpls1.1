@@ -15,6 +15,16 @@ ActiveRecord::Schema.define(version: 2019_03_04_133204) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "classements", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "category"
+    t.integer "point"
+    t.string "club"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "inscriptions", force: :cascade do |t|
     t.bigint "team_id"
     t.bigint "tournament_id"
@@ -22,6 +32,16 @@ ActiveRecord::Schema.define(version: 2019_03_04_133204) do
     t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_inscriptions_on_team_id"
     t.index ["tournament_id"], name: "index_inscriptions_on_tournament_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "tournament_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tournament_id"], name: "index_messages_on_tournament_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -101,6 +121,8 @@ ActiveRecord::Schema.define(version: 2019_03_04_133204) do
 
   add_foreign_key "inscriptions", "teams"
   add_foreign_key "inscriptions", "tournaments"
+  add_foreign_key "messages", "tournaments"
+  add_foreign_key "messages", "users"
   add_foreign_key "orders", "users"
   add_foreign_key "team_players", "teams"
   add_foreign_key "team_players", "users"

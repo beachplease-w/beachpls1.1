@@ -5,220 +5,202 @@
       <h2> <%= @tournament.name %> </h2>
       <p> <%= @tournament.address %> </p>
     </span>
-      <p class="btn btn-yours2"><%=  link_to "M'inscrire", tournament_teams_path(@tournament) %> </p>
+    <% if !current_user.tournaments.where(id: @tournament).any?  %>
+      <button type="button" class="btn btn-yours2" data-toggle="modal" data-target="#myModal-<%= @tournament.id %>">S'inscrire</button>
+    <% end %>
   </div>
 </div>
+<%= render 'shared/modal', teams: @my_teams, tournament: @tournament %>
 
 <div class="container" id="tabs">
-<main>
+  <main>
 
-    <input id="tab1" type="radio" name="tabs" checked>
-    <label for="tab1">Informations</label>
+      <input id="tab1" type="radio" name="tabs" checked>
+      <label for="tab1">Informations</label>
 
-    <input id="tab2" type="radio" name="tabs">
-    <label for="tab2">Equipes</label>
+      <input id="tab2" type="radio" name="tabs">
+      <label for="tab2">Equipes</label>
 
-    <input id="tab3" type="radio" name="tabs">
-    <label for="tab3">Le tableau</label>
+      <input id="tab3" type="radio" name="tabs">
+      <label for="tab3">Le tableau</label>
 
-    <input id="tab4" type="radio" name="tabs">
-    <label for="tab4">Je cherche un partenaire</label>
+      <input id="tab4" type="radio" name="tabs">
+      <label for="tab4">Je cherche un partenaire</label>
 
+    <section id="content1">
+        <div class="boxes">
+            <div class="rdg-expertise-category"><span>Organisateur</span></div>
+            <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+            <div style="clear: both;"></div>
+            <div class="rdg-expertise-description"><span>
+              <%= @tournament.club_organisateur %> <br>
+              <%= @tournament.contact %> <br>
+              <%= @tournament.address %>
+            </span></div>
+        </div>
+        <div class="boxes">
+            <div class="rdg-expertise-category"><span>Rankings</span></div>
+            <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+            <!-- <div style="clear: both;"></div> -->
+            <div class="rdg-expertise-description"><span>
+              <%= @tournament.serie %> <br>
+              <i class="fas fa-trophy" style="color: gold"></i></i><%= humanized_money_with_symbol(@tournament.prize_money) %> <br>
+            Inscription: <%= humanized_money_with_symbol(@tournament.price) %>
+            </span></div>
+        </div>
+        <div class="boxes">
+            <div class="rdg-expertise-category"><span>Tableaux</span></div>
+            <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+            <!-- <div style="clear: both;"></div> -->
+            <div class="rdg-expertise-description"><span>
+              Tableau principal : <%= @tournament.equipe_tableau_principal %> <br>
+              Tableau qualif: <%= @tournament.equipe_qualif %> <br>
+              Tableau principal: <%= @tournament.date_principal.iso8601 %> <br>
+              Tableau qualif:    <%= @tournament.date_qualif %> <br>
+            </span></div>
+        </div>
+        <div class="boxes">
+            <div class="rdg-expertise-category"><span>Autres Infos</span></div>
+            <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+            <!-- <div style="clear: both;"></div> -->
+            <div class="rdg-expertise-description"><span>
 
-  <section id="content1">
-      <div class="boxes">
-          <div class="rdg-expertise-category"><span>Organisateur</span></div>
-          <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-          <div style="clear: both;"></div>
-          <div class="rdg-expertise-description"><span>
-            <%= @tournament.club_organisateur %> <br>
-            <%= @tournament.contact %> <br>
-            <%= @tournament.address %>
-          </span></div>
+              Date limite d'inscription: <%= @tournament.limit_inscription %> <br>
+              Horaire réunion technique qualif: <%= @tournament.reunion_qualif.strftime("%I:%M%p")  %> <br>
+              Horaire réunion technique principal: <%= @tournament.reunion_principal.strftime("%I:%M%p")  %> <br>
+                <%= @tournament.remarques %> <br>
+                Terrains :<%= @tournament.terrains_normes %>
+            </span></div>
+        </div>
+    </section>
+
+    <section id="content2">
+      <% @tournament.inscriptions.each do |t| %>
+        <div class="beach-boxes">
+            <div class="rdg-expertise-category-beach"><span><%=cl_image_tag t.team.users[0].photo, width: 50, height: 50, crop: :thumb, class: 'avatar'%> <%=cl_image_tag t.team.users[1].photo, width: 50, height: 50, crop: :thumb, class: 'avatar' %></span></div>
+            <div class="rdg-expertise-bar-beach rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+            <div style="clear: both;"></div>
+            <div class="rdg-expertise-description-beach"><span>
+              <%= t.team.users[0].first_name %> <%= t.team.users[0].last_name %> / <%= t.team.users[1].first_name %> <%= t.team.users[1].last_name %>
+            </span></div>
+        </div>
+      <% end %>
+    </section>
+
+    <section id="content3">
+      <div class="beachbody">
+        <div class="beachmain" id="tournament">
+            <ul class="round round-1">
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top winner">team <span>79</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom ">team <span>48</span></li>
+
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top winner">team <span>84</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom ">team <span>72</span></li>
+
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top ">team <span>55</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom winner">team <span>68</span></li>
+
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top winner">team <span>64</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom ">team <span>44</span></li>
+
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top winner">team <span>54</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom ">team <span>52</span></li>
+
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top winner">team <span>65</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom ">team <span>54</span></li>
+
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top winner">team <span>67</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom ">team <span>63</span></li>
+
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top winner">team <span>73</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom ">team <span>61</span></li>
+
+                <li class="spacer">&nbsp;</li>
+            </ul>
+            <ul class="round round-2">
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top winner">team <span>82</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom ">team <span>56</span></li>
+
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top winner">team <span>74</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom ">team <span>57</span></li>
+
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top ">team <span>48</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom winner">team <span>70</span></li>
+
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top ">team <span>50</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom winner">team <span>66</span></li>
+
+                <li class="spacer">&nbsp;</li>
+            </ul>
+            <ul class="round round-3">
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top winner">team <span>77</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom ">team <span>69</span></li>
+
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top ">team <span>61</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom winner">team <span>71</span></li>
+
+                <li class="spacer">&nbsp;</li>
+            </ul>
+            <ul class="round round-4">
+                <li class="spacer">&nbsp;</li>
+
+                <li class="game game-top winner">team <span>85</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom ">team <span>63</span></li>
+
+                <li class="spacer">&nbsp;</li>
+            </ul>
+        </div>
       </div>
-      <div class="boxes">
-          <div class="rdg-expertise-category"><span>Rankings</span></div>
-          <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-          <!-- <div style="clear: both;"></div> -->
-          <div class="rdg-expertise-description"><span>
-            <%= @tournament.serie %> <br>
-            <i class="fas fa-trophy" style="color: gold"></i> <%= @tournament.prize_money %> <br>
-            Inscription: <%= @tournament.price_cents %>
-          </span></div>
-      </div>
-      <div class="boxes">
-          <div class="rdg-expertise-category"><span>Tableaux</span></div>
-          <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-          <!-- <div style="clear: both;"></div> -->
-          <div class="rdg-expertise-description"><span>
-            Tableau principal : <%= @tournament.equipe_tableau_principal %> <br>
-            Tableau qualif: <%= @tournament.equipe_qualif %> <br>
-            Tableau principal: <%= @tournament.date_principal %> <br>
-            Tableau qualif:    <%= @tournament.date_qualif %> <br>
-          </span></div>
-      </div>
-      <div class="boxes">
-          <div class="rdg-expertise-category"><span>Autres Infos</span></div>
-          <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-          <!-- <div style="clear: both;"></div> -->
-          <div class="rdg-expertise-description"><span>
+    </section>
 
-            Date limite d'inscription: <%= @tournament.limit_inscription %> <br>
-            Réunion technique qualif: <%= @tournament.reunion_qualif %> <br>
-            Réunion technique principal: <%= @tournament.reunion_principal %> <br>
-              <%= @tournament.remarques %> <br>
-              Terrains :<%= @tournament.terrains_normes %>
-          </span></div>
-      </div>
-  </section>
+    <section id="content4">
+      <p>
+        Feature à venir avec la possibilité de poster un message "je cherche un copain"
+      </p>
+    </section>
 
-  <section id="content2">
-
-    <div class="beach-boxes">
-        <div class="rdg-expertise-category-beach"><span>Photo</span></div>
-        <div class="rdg-expertise-bar-beach rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-        <div style="clear: both;"></div>
-        <div class="rdg-expertise-description-beach"><span>
-          Guillaume Imary / Adrien Chevallier
-        </span></div>
-    </div>
-    <div class="beach-boxes">
-        <div class="rdg-expertise-category-beach"><span>Photo</span></div>
-        <div class="rdg-expertise-bar-beach rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-        <div style="clear: both;"></div>
-        <div class="rdg-expertise-description-beach"><span>
-          Antoine Balmes / Philippe Mourlaque
-        </span></div>
-    </div>
-    <div class="beach-boxes">
-        <div class="rdg-expertise-category-beach"><span>Photo</span></div>
-        <div class="rdg-expertise-bar-beach rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-        <div style="clear: both;"></div>
-        <div class="rdg-expertise-description-beach"><span>
-          Julien Repiton / Igor Deus
-        </span></div>
-    </div>
-
-
-
-  </section>
-
-  <section id="content3">
-<div class="beachbody">
-
-<div class="beachmain" id="tournament">
-    <ul class="round round-1">
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top winner">team <span>79</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom ">team <span>48</span></li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top winner">team <span>84</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom ">team <span>72</span></li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top ">team <span>55</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom winner">team <span>68</span></li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top winner">team <span>64</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom ">team <span>44</span></li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top winner">team <span>54</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom ">team <span>52</span></li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top winner">team <span>65</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom ">team <span>54</span></li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top winner">team <span>67</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom ">team <span>63</span></li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top winner">team <span>73</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom ">team <span>61</span></li>
-
-        <li class="spacer">&nbsp;</li>
-    </ul>
-    <ul class="round round-2">
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top winner">team <span>82</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom ">team <span>56</span></li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top winner">team <span>74</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom ">team <span>57</span></li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top ">team <span>48</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom winner">team <span>70</span></li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top ">team <span>50</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom winner">team <span>66</span></li>
-
-        <li class="spacer">&nbsp;</li>
-    </ul>
-    <ul class="round round-3">
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top winner">team <span>77</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom ">team <span>69</span></li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top ">team <span>61</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom winner">team <span>71</span></li>
-
-        <li class="spacer">&nbsp;</li>
-    </ul>
-    <ul class="round round-4">
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top winner">team <span>85</span></li>
-        <li class="game game-spacer">&nbsp;</li>
-        <li class="game game-bottom ">team <span>63</span></li>
-
-        <li class="spacer">&nbsp;</li>
-    </ul>
-</div>
-</div>
-  </section>
-
-  <section id="content4">
-
-    <p>
-      Feature à venir avec la possibilité de poster un message "je cherche un copain"
-    </p>
-  </section>
-
-</main>
+  </main>
 </div>

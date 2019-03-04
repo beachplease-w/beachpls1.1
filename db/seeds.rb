@@ -2,6 +2,10 @@ puts "Cleaning Tournaments"
 Tournament.destroy_all
 puts "Cleaning Users"
 User.destroy_all
+puts "Cleaning team players"
+TeamPlayer.destroy_all
+puts "Cleaning Teams"
+Team.destroy_all
 
 puts 'creating user 1..'
 user1 = User.new
@@ -66,14 +70,13 @@ counter = 5
 end
 puts ' 10 fake users created !!'
 
-
-address = { "Paris" => ["17 rue Bausset, Paris, France", "6 rue de Remusat, Paris, France", "16 Villa Gaudelet, Paris, France"], "Marseille" => ["5 rue paradis, Marseille, France", "10 rue roger brun, Marseille, France", "18 rue ferrari, Marseille, France"], "Lyon" => ["5 Rue de l'université, Lyon, France", "5 Rue Cuvier, Lyon, France", "9 Rue Billon, Lyon, France"], "Toulouse" => ["5 Rue des Fontaines, Toulouse, France", "5 Rue Corneille, Toulouse, France", "5 Rue Bernadette, Toulouse, France"], "Bordeaux" => ["5 Rue dr Bert, Bordeaux, France", "5 Rue Coli, Bordeaux, France", "5 Rue Tranchere, Bordeaux, France"]}
-puts "Creating some tournaments"
+address = { "Paris" => ["50 rue du Ranelagh, Paris, France"] }
+puts "Tournois Parisien"
 address.each do |city, ad|
   ad.each do |address|
-    date = Faker::Date.between(Date.today, 1.year.from_now)
+    date = "Sat, 02 Mar 2019"
     Tournament.create!({
-      name: Faker::Esport.event,
+      name: ['SSA Open #1', 'Beach Chiller #2', 'Beach Open #3', 'Mangeurs de sables #1', 'SSA Open #2', 'Beach Chiller #3', 'Beach Open #4', 'Mangeurs de sables #2'].sample,
       date: date,
       serie: ['Série 3 - 150', 'Série 2 - 1000', 'Série 2 - 250', 'Série 2 - 500', 'Série 2 - 750', 'Série 1 - 1500', 'Série 1 - 2500'].sample,
       address: address,
@@ -86,17 +89,118 @@ address.each do |city, ad|
       terrains_normes: (0..4).to_a.sample,
       date_qualif: date,
       date_principal: date,
-      prize_money: (100..500).to_a.sample,
+      prize_money: [100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
       split_prize_money: "1-60€ 2-40€ 3-30€",
       limit_inscription: date,
       reunion_qualif: date ,
       reunion_principal: date,
       ville: city,
       club_organisateur: Faker::Company.name,
-      contact: Faker::PhoneNumber.cell_phone,
+      contact: ['0607080910', '0611121314', '0621222324'].sample,
+      genre: "Homme",
+      sku: "qwerty",
+      price_cents: [1000, 1500, 2000, 2500, 3000].sample,
+    })
+  end
+end
+puts 'Tournaments created'
+
+address = { "Marseille" => ["1 rue des Catalans, 13007 Marseille, France"] }
+puts "Tournois Marseillais"
+address.each do |city, ad|
+  ad.each do |address|
+    date = "Sat, 09 Mar 2019"
+    Tournament.create!({
+      name: ['SSA Open #1', 'Beach Chiller #2', 'Beach Open #3', 'Mangeurs de sables #1', 'SSA Open #2', 'Beach Chiller #3', 'Beach Open #4', 'Mangeurs de sables #2'].sample,
+      date: date,
+      serie: ['Série 3 - 150', 'Série 2 - 1000', 'Série 2 - 250', 'Série 2 - 500', 'Série 2 - 750', 'Série 1 - 1500', 'Série 1 - 2500'].sample,
+      address: address,
+      remarques: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, vero." ,
+      equipe_tableau_principal: (12..16).to_a.sample,
+      wildcard_principal: (0..4).to_a.sample,
+      place_reservees_qualif: (0..4).to_a.sample,
+      equipe_qualif: (0..4).to_a.sample,
+      wildcard_qualif: (0..4).to_a.sample,
+      terrains_normes: (0..4).to_a.sample,
+      date_qualif: date,
+      date_principal: date,
+      prize_money: [100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
+      split_prize_money: "1-60€ 2-40€ 3-30€",
+      limit_inscription: date,
+      reunion_qualif: date ,
+      reunion_principal: date,
+      ville: city,
+      club_organisateur: Faker::Company.name,
+      contact: ['0607080910', '0611121314', '0621222324'].sample,
+      genre: "Homme",
+      sku: "qwerty",
+      price_cents: [1000, 1500, 2000, 2500, 3000].sample,
+    })
+  end
+end
+address.each do |city, ad|
+  ad.each do |address|
+    date = "Sat, 09 Mar 2019"
+    Tournament.create!({
+      name: ['SSA Open #1', 'Beach Chiller #2', 'Beach Open #3', 'Mangeurs de sables #1', 'SSA Open #2', 'Beach Chiller #3', 'Beach Open #4', 'Mangeurs de sables #2'].sample,
+      date: date,
+      serie: ['Série 3 - 150', 'Série 2 - 1000', 'Série 2 - 250', 'Série 2 - 500', 'Série 2 - 750', 'Série 1 - 1500', 'Série 1 - 2500'].sample,
+      address: address,
+      remarques: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, vero." ,
+      equipe_tableau_principal: (12..16).to_a.sample,
+      wildcard_principal: (0..4).to_a.sample,
+      place_reservees_qualif: (0..4).to_a.sample,
+      equipe_qualif: (0..4).to_a.sample,
+      wildcard_qualif: (0..4).to_a.sample,
+      terrains_normes: (0..4).to_a.sample,
+      date_qualif: date,
+      date_principal: date,
+      prize_money: [100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
+      split_prize_money: "1-60€ 2-40€ 3-30€",
+      limit_inscription: date,
+      reunion_qualif: date ,
+      reunion_principal: date,
+      ville: city,
+      club_organisateur: Faker::Company.name,
+      contact: ['0607080910', '0611121314', '0621222324'].sample,
+      genre: "Femme",
+      sku: "qwerty",
+      price_cents: [1000, 1500, 2000, 2500, 3000].sample,
+    })
+  end
+end
+puts 'Tournaments created'
+
+address = { "Paris" => ["17 rue Bausset, Paris, France", "6 rue de Remusat, Paris, France", "16 Villa Gaudelet, Paris, France"], "Marseille" => ["5 rue paradis, Marseille, France", "10 rue roger brun, Marseille, France", "18 rue ferrari, Marseille, France"], "Lyon" => ["5 Rue de l'université, Lyon, France", "5 Rue Cuvier, Lyon, France", "9 Rue Billon, Lyon, France"], "Toulouse" => ["5 Rue des Fontaines, Toulouse, France", "5 Rue Corneille, Toulouse, France", "5 Rue Bernadette, Toulouse, France"], "Bordeaux" => ["5 Rue dr Bert, Bordeaux, France", "5 Rue Coli, Bordeaux, France", "5 Rue Tranchere, Bordeaux, France"]}
+puts "Creating some tournaments"
+address.each do |city, ad|
+  ad.each do |address|
+    date = Faker::Date.between(Date.today, 1.year.from_now)
+    Tournament.create!({
+      name: ['SSA Open #1', 'Beach Chiller #2', 'Beach Open #3', 'Mangeurs de sables #1', 'SSA Open #2', 'Beach Chiller #3', 'Beach Open #4', 'Mangeurs de sables #2'].sample,
+      date: date,
+      serie: ['Série 3 - 150', 'Série 2 - 1000', 'Série 2 - 250', 'Série 2 - 500', 'Série 2 - 750', 'Série 1 - 1500', 'Série 1 - 2500'].sample,
+      address: address,
+      remarques: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, vero." ,
+      equipe_tableau_principal: (12..16).to_a.sample,
+      wildcard_principal: (0..4).to_a.sample,
+      place_reservees_qualif: (0..4).to_a.sample,
+      equipe_qualif: (0..4).to_a.sample,
+      wildcard_qualif: (0..4).to_a.sample,
+      terrains_normes: (0..4).to_a.sample,
+      date_qualif: date,
+      date_principal: date,
+      prize_money: [100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
+      split_prize_money: "1-60€ 2-40€ 3-30€",
+      limit_inscription: date,
+      reunion_qualif: date ,
+      reunion_principal: date,
+      ville: city,
+      club_organisateur: Faker::Company.name,
+      contact: ['0607080910', '0611121314', '0621222324'].sample,
       genre: %w[Femme Homme].sample,
       sku: "qwerty",
-      price_cents: [100, 150, 200, 250, 300].to_a.sample,
+      price_cents: [1000, 1500, 2000, 2500, 3000].sample,
     })
   end
 end

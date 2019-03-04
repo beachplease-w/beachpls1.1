@@ -1,5 +1,5 @@
 class Tournament < ApplicationRecord
-  # monetize :price_cents
+  monetize :price_cents
   has_many :inscriptions
 
   geocoded_by :address

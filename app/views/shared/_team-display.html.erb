@@ -4,14 +4,25 @@
   <% end %>
   <hr>
   <% @user.teams.each do |team| %>
-  <div class="team">
-    <div class="player_two">
-      <%= cl_image_tag team.users.last.photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
+    <div class="team">
+      <% first_player = team.users.first %>
+      <% if first_player == current_user %>
+        <div class="player_two">
+          <%= cl_image_tag team.users.last.photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
+        </div>
+        <div class="names">
+          <p><%= team.users.last.first_name %> <%= team.users.last.last_name.upcase %></p>
+        </div>
+         <p> <%= image_tag "filet-volley.png", width: 25, height: 25%> </p>
+      <% else %>
+        <div class="player_one">
+          <%= cl_image_tag team.users.first.photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
+        </div>
+        <div class="names">
+          <p><%= team.users.first.first_name %> <%= team.users.first.last_name.upcase %></p>
+        </div>
+        <p> <%= image_tag "filet-volley.png", width: 25, height: 25%> </p>
+      <% end %>
     </div>
-    <div class="names">
-      <p><%= team.users.last.first_name %> <%= team.users.last.last_name.upcase %></p>
-    </div>
-      <p> <%= image_tag "filet-volley.png", width: 25, height: 25%> </p>
-  </div>
   <% end %>
 </div>

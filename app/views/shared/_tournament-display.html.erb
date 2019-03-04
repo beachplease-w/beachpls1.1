@@ -1,14 +1,39 @@
+<p>Tournois à venir</p>
+  <% @user.teams.each do |team| %>
+    <% team.tournaments.each do |tournament| %>
+      <% if tournament.date >= Date.today %>
+        <%= link_to tournament_url do %>
+          <div class="tournament-product">
+            <img src="https://www.sandsystem.com/beach-volley/wp-content/uploads/2019/01/cropped-jersey.jpg">
+            <div class="tournament-product-infos">
+              <div class="tournament">
+                <p><%= tournament.name %></p>
+                <p><%= tournament.date %></p>
+                <p><%= tournament.address %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<hr>
+<p>Tournois passés</p>
 <% @user.teams.each do |team| %>
   <% team.tournaments.each do |tournament| %>
-    <div class="tournament-product">
-      <img src="https://www.sandsystem.com/beach-volley/wp-content/uploads/2019/01/cropped-jersey.jpg">
-      <div class="tournament-product-infos">
-        <div class="tournament">
-          <p><%= tournament.name %></p>
-          <p><%= tournament.date %></p>
-          <p><%= tournament.address %></p>
+    <% if tournament.date < Date.today %>
+      <%= link_to tournament_url do %>
+        <div class="tournament-product">
+          <img src="https://www.sandsystem.com/beach-volley/wp-content/uploads/2019/01/cropped-jersey.jpg">
+          <div class="tournament-product-infos">
+            <div class="tournament">
+              <p><%= tournament.name %></p>
+              <p><%= tournament.date %></p>
+              <p><%= tournament.address %></p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
   <% end %>
 <% end %>

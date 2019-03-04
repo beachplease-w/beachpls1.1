@@ -2,9 +2,17 @@ import $ from 'jquery';
 import 'fullcalendar';
 
 const initFullCalendar = () => {
+  const calendar = document.getElementById("calendar");
+  const events = JSON.parse(calendar.dataset.events);
+
   $('#calendar').fullCalendar({
-    defaultView: 'month'
-  })
+    locale: "fr",
+    eventSources: [{
+      events: events,
+      color: "#0c7489"
+    }]
+  });
+
 };
 
 

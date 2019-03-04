@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @events = @user.tournaments.map do |tournament|
+      {
+        title: tournament.name,
+        start: tournament.date,
+        allDay: true,
+      }
+    end
   end
 
   def update

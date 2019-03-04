@@ -1,3 +1,5 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 $base-spacing-unit: 24px;
 $half-spacing-unit: $base-spacing-unit / 2;
 
@@ -29,12 +31,13 @@ h1,h2,h3,h4,h5,h6 {
 .table-row {
   display:flex;
   width:100%;
-  padding:($half-spacing-unit * 1.5) 0;
+  align-items: center;
 
   &:nth-of-type(odd) {
     background:$color-form-highlight;
   }
 }
+
 
 .table-data, .header__item {
   flex: 1 1 20%;
@@ -72,3 +75,100 @@ h1,h2,h3,h4,h5,h6 {
   }
 
 }
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+// *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html,body{height:100vh;}body{display:flex;align-items:center;justify-content:center;padding:0px;font:14px/1.5 'Open Sans',sans-serif;color:#345;background:#f0f2f4;}
+
+#tabsA {
+  p:not(:last-child) {
+    margin: 0 0 20px;
+  }
+
+  main {
+    border: 1px solid rgba(0,0,0,.2);
+    background: #fff;
+    opacity: 0.8;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    border-radius: 14px;
+    margin-top: 25px;
+  }
+
+  section {
+    display: none;
+    padding: 0 20px ;
+    border-top: 1px solid #abc;
+  }
+
+  input {
+    display: none;
+    }
+
+  label {
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #2A2A2A;
+    border: 1px solid transparent;
+  }
+
+  label:before {
+    font-family: fontawesome;
+    font-weight: normal;
+    margin-right: 10px;
+  }
+
+  label[for*='1']:before { content: '\f183'; }
+  label[for*='2']:before { content: '\f182'; }
+
+
+  label:hover {
+    color: #789;
+    cursor: pointer;
+  }
+
+  input:checked + label {
+    color: #0C7489;
+    border: 1px solid #abc;
+    border-top: 2px solid #0C7489;
+    border-bottom: 1px solid #fff;
+    border-top-right-radius: 14px;
+    border-top-left-radius: 14px;
+  }
+
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4 {
+    display: block;
+  }
+
+  @media screen and (max-width: 800px) {
+    label {
+      font-size: 0;
+    }
+    label:before {
+      margin: 0;
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    label {
+      padding: 15px;
+    }
+  }
+
+}
+
+
+  .flextitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+

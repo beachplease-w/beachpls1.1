@@ -1,5 +1,5 @@
 class ClassementsController < ApplicationController
 
-  def show
+  def index
   end
 end

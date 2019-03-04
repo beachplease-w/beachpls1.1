@@ -1,0 +1,17 @@
+<div class="container" id="tabsA">
+  <main>
+    <input id="tab1" class="men" type="radio" name="tabs" checked>
+      <label for="tab1">Homme</label>
+
+      <input id="tab2" class="women" type="radio" name="tabs">
+      <label for="tab2">Femme</label>
+
+      <section id="content1" class="classement_1">
+        <%= render 'shared/table-men' %>
+      </section>
+
+      <section id="content2" class="classement_2">
+        <%= render 'shared/table-women' %>
+      </section>
+  </main>
+</div>

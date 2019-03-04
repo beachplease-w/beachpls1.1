@@ -2,17 +2,24 @@
 <% teams.each do |team| %>
   <%= link_to tournament_team_inscriptions_path(tournament,team), class: "team-link", method: :post do %>
     <div class="team">
-      <div class="player_one">
-        <%= cl_image_tag team.users[0].photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
-      </div>
-      <div class="names">
-        <p><%= team.users[0].first_name %></p>
+      <% first_player = team.users[0] %>
+      <% if first_player == current_user %>
+        <div class="player_two">
+          <%= cl_image_tag team.users[1].photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
+        </div>
+        <div class="names">
+          <p><%= team.users[1].first_name %></p>
+        </div>
         <p> <img width="25" height="25" src="/assets/filet-volley-7f2eed79cec68cf62944d9db3c5a04d895d1b69ba8c4281869ff372714fa4965.png"> </p>
-        <p><%= team.users[1].first_name %></p>
-      </div>
-      <div class="player_two">
-        <%= cl_image_tag team.users[1].photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
-      </div>
+      <% else %>
+        <div class="player_one">
+          <%= cl_image_tag team.users[0].photo, width: 50, height: 50, crop: :thumb, class: "avatar"%>
+        </div>
+        <div class="names">
+          <p><%= team.users[0].first_name %></p>
+        </div>
+        <p> <img width="25" height="25" src="/assets/filet-volley-7f2eed79cec68cf62944d9db3c5a04d895d1b69ba8c4281869ff372714fa4965.png"> </p>
+      <% end %>
     </div>
   <% end %>
 <% end %>

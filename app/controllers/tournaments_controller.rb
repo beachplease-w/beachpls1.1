@@ -15,7 +15,7 @@ class TournamentsController < ApplicationController
       {
         lng: tournament.longitude,
         lat: tournament.latitude,
-        # infoWindow: render_to_string(partial: "infowindow", locals: { tour: tour })
+        infoWindow: render_to_string(partial: "infowindow", locals: { tournament: tournament }),
         image_url: helpers.asset_url('tab-icon.png')
       }
     end
@@ -24,6 +24,7 @@ class TournamentsController < ApplicationController
 
   def show
     @my_teams = current_user.teams
+    @message = Message.new
   end
 
   private

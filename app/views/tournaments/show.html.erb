@@ -197,9 +197,19 @@
     </section>
 
     <section id="content4">
-      <p>
-        Feature à venir avec la possibilité de poster un message "je cherche un copain"
-      </p>
+
+      <div id="messages">
+
+          <% if @tournament.messages.blank? %>
+             Be the first to leave a message for <%= @tournament.name %>
+           <% else %>
+             <% @tournament.messages.each do |message| %>
+               <%= render 'messages/show', message: message %>
+             <% end %>
+           <% end %>
+        <%= render 'messages/form', tournament: @tournament, message: @message %>
+      </div>
+
     </section>
 
   </main>

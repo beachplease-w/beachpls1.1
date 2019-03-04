@@ -1,0 +1,18 @@
+#map {
+  position: sticky;
+  top: 60px;
+  flex: 0 0 40%;
+}
+
+.mapboxgl-popup-content {
+  padding: 0 !important;
+}
+
+.content {
+  padding: 15px 10px;
+  text-align: center;
+  color: white;
+  p {
+    margin: 0px;
+  }
+}

@@ -11,12 +11,13 @@ import { previewImageOnFileSelect } from '../components/photo_preview'
 initUpdateNavbarOnScroll();
 // mapbox js
 
-
 initMapbox();
-
 
 previewImageOnFileSelect();
 
-
 initSelect2();
+
+import { initFullCalendar } from '../plugins/init_calendar'
+
+initFullCalendar();
 

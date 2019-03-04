@@ -24,6 +24,7 @@ class TournamentsController < ApplicationController
 
   def show
     @my_teams = current_user.teams
+    @message = Message.new
   end
 
   private

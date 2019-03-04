@@ -1,4 +1,6 @@
-<%= simple_form_for([ tournament, message ], remote: true) do |form| %>
-  <%= form.input :content, as: :text %>
-  <%= form.button :submit %>
-<% end %>
+<div class="container">
+    <%= simple_form_for([ tournament, message ], remote: true) do |form| %>
+     <div class= 'formitude'> <%= form.input :content, as: :text, label: 'Ton message:' %>
+      <%= form.button :submit, class:'btn-yours2'%> </div>
+    <% end %>
+</div>

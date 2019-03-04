@@ -204,7 +204,7 @@
              Be the first to leave a message for <%= @tournament.name %>
            <% else %>
              <% @tournament.messages.each do |message| %>
-               <div class="container"><%= render 'messages/show', message: message %></div>
+               <%= render 'messages/show', message: message %>
              <% end %>
            <% end %>
         <%= render 'messages/form', tournament: @tournament, message: @message %>

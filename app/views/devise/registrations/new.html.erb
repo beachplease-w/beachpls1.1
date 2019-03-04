@@ -1,49 +1,54 @@
-<h2>S'inscrire</h2>
+<div class="container">
+  <div class="connexion">
+    <h2>S'inscrire</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :first_name,
-                label: "Prénom",
-                required: true,
-                autofocus: true %>
-    <%= f.input :last_name,
-                label: "Nom de famille",
-                required: true,
-                autofocus: true %>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :license_no,
-                label: "Numéro de licence",
-                required: true, as: :integer,
-                autofocus: true %>
-    <div class='input-group date' id='datetimepicker'>
-      <%= f.input :birth_date,
-                  label: "Date de naissance",
-                  required: true,
-                  autofocus: true %>
-    </div>
-    <%= f.input :password,
-                label: "Mot de passe",
-                required: true,
-                placeholder: "••••••",
-                hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                label: "Confirmation du mot de passe",
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Ajoute une photo' %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+      <div class="form-inputs">
+        <%= f.input :first_name,
+                    label: "Prénom",
+                    required: true,
+                    autofocus: true %>
+        <%= f.input :last_name,
+                    label: "Nom de famille",
+                    required: true,
+                    autofocus: true %>
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :license_no,
+                    label: "Numéro de licence",
+                    required: true, as: :integer,
+                    autofocus: true %>
+        <div class='input-group date' id='datetimepicker'>
+          <%= f.input :birth_date,
+                      label: "Date de naissance",
+                      required: true,
+                      autofocus: true %>
+        </div>
+        <%= f.input :password,
+                    label: "Mot de passe",
+                    required: true,
+                    placeholder: "••••••",
+                    hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    label: "Confirmation du mot de passe",
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Ajoute une photo' %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "S'inscrire" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "S'inscrire" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

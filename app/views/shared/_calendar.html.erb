@@ -1,9 +1,0 @@
-<%= month_calendar attribute: :date, events: events do |date, tournaments| %>
-  <%= date.day %>
-
-  <% tournaments.each do |tournament| %>
-      <i class="fas fa-circle">
-        <% tournament.name %>
-      </i>
-  <% end %>
-<% end %>

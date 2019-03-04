@@ -28,7 +28,7 @@
 }
 
 .tab-content {
-  width: 100%;
+  width: 600px;
   background-color: rgba(255,255,255,0.5);
   display: flex;
   justify-content: center;
@@ -56,25 +56,6 @@
   margin-top: 50px;
 }
 
-.simple-calendar {
-  margin-left: 15px;
-}
-
-.simple-calendar {
-  .table.table-striped {
-    width: 10px;
-  }
-  th {
-    text-align: center;
-  }
-}
-
-.simple-calendar {
-  .fas {
-    font-size: 10px;
-  }
-}
-
 .fa-user-edit:hover {
     color: #ffda63;
   }
@@ -100,3 +81,6 @@
   background-color: white;
 }
 
+#calendar {
+  margin-left: 15px;
+}

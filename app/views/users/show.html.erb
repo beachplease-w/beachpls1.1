@@ -37,8 +37,7 @@
           <hr>
       </div>
     </div>
-    <div id="calendar" class="text-center">
-      <%#= render 'shared/calendar', events: @user.tournaments %>
+    <div id="calendar" class="text-center" data-events="<%= @events.to_json %>">
     </div>
   </div>
 </div>

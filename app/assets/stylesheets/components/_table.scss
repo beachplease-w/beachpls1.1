@@ -14,8 +14,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .table {
-  width: 100%;
   border:1px solid $color-form-highlight;
+  font-size: 16px;
+  margin-top: 20px;
 }
 
 .table-header {
@@ -34,7 +35,6 @@ h1,h2,h3,h4,h5,h6 {
     background:$color-form-highlight;
   }
 }
-
 
 .table-data, .header__item {
   flex: 1 1 20%;

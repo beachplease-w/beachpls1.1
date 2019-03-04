@@ -3,6 +3,7 @@
     <div class="tournament-product">
       <img src="https://www.sandsystem.com/beach-volley/wp-content/uploads/2019/01/cropped-jersey.jpg">
       <div class="tournament-product-infos">
+        <%= link_to tournament_path(tournament) do %>
         <div class="tournament">
           <p><%= tournament.name %></p>
           <p><%= tournament.date %></p>
@@ -10,5 +11,6 @@
         </div>
       </div>
     </div>
+        <% end %>
   <% end %>
 <% end %>

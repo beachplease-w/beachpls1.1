@@ -1,17 +1,22 @@
 import "bootstrap";
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import { initSelect2 } from '../plugins/init_select2';
+import { initUpdateNavbarOnScroll } from './navbar';
+import { initMapbox } from '../plugins/init_mapbox';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { previewImageOnFileSelect } from '../components/photo_preview'
 
 // navbar js
-import { initUpdateNavbarOnScroll } from './navbar';
 
 initUpdateNavbarOnScroll();
 // mapbox js
-import 'mapbox-gl/dist/mapbox-gl.css';
 
-import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
-import { previewImageOnFileSelect } from '../components/photo_preview'
 
 previewImageOnFileSelect();
+
+
+initSelect2();
+

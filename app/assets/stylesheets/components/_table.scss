@@ -1,4 +1,4 @@
-w$half-spacing-unit: $base-spacing-unit / 2;
+// w$half-spacing-unit: $base-spacing-unit / 2;
 
 $color-alpha: #1772FF;
 $color-form-highlight: #EEEEEE;
@@ -21,16 +21,16 @@ h1,h2,h3,h4,h5,h6 {
   display:flex;
   width:100%;
   background:#0c7489;
-  padding:($half-spacing-unit * 1.5) 0;
+  // padding:($half-spacing-unit * 1.5) 0;
 }
 
 .table-row {
   display:flex;
   width:100%;
-  padding:($half-spacing-unit * 1.5) 0;
+  // padding:($half-spacing-unit * 1.5) 0;
 
   &:nth-of-type(odd) {
-    background:$color-form-highlight;
+    // background:$color-form-highlight;
   }
 }
 
@@ -49,15 +49,15 @@ h1,h2,h3,h4,h5,h6 {
   text-decoration: none;
   position:relative;
   display:inline-block;
-  padding-left:$base-spacing-unit;
-  padding-right:$base-spacing-unit;
+  // padding-left:$base-spacing-unit;
+  // padding-right:$base-spacing-unit;
 
   &::after {
     content:'';
     position:absolute;
-    right:-($half-spacing-unit * 1.5);
+    // right:-($half-spacing-unit * 1.5);
     color:white;
-    font-size:$half-spacing-unit;
+    // font-size:$half-spacing-unit;
     top: 50%;
     transform: translateY(-50%);
   }

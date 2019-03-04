@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
+ActiveRecord::Schema.define(version: 2019_03_04_114950) do
+
 ActiveRecord::Schema.define(version: 2019_03_04_094939) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "classements", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "category"
+    t.integer "point"
+    t.string "club"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "inscriptions", force: :cascade do |t|
     t.bigint "team_id"

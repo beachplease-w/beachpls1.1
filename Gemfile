@@ -21,6 +21,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'jquery-rails'
 gem 'momentjs-rails', '>= 2.9'
 gem "geocoder"
+gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'pg_search'

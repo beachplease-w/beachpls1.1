@@ -3,4 +3,3 @@
 //= require jquery
 //= require moment
 //= require moment/fr.js
-

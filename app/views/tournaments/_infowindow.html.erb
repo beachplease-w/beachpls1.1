@@ -1,5 +1,7 @@
-<ul style="list-style-type: none;">
-  <li><h4><%= tournament.name%> </h4></li>
-  <li>Série: <%= tournament.serie%></li>
-  <li>Date: <%= tournament.date %></li>
-</ul>
+<div class="background-popup" style=" background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('https://picsum.photos/150/95<%#= cl_image_path @article.photo, height: 100, width: 200, crop: :lfill %>')">
+  <div class="content">
+    <h4><%= tournament.name%></h4>
+    <p><%= tournament.serie%></p>
+    <p>Date: <%= tournament.date %></p>
+  </div>
+</div>

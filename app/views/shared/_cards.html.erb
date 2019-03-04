@@ -4,8 +4,13 @@
       <h2><%= tournament.name %></h2>
       <div class="tournament-info">
         <p><%= tournament.address %></p>
-        <p><i class="fas fa-trophy"></i><%= humanized_money_with_symbol(tournament.price) %></p>
-        <p><i class="fas fa-male"></i><i class="fas fa-male"></i> 15 / 24</p>
+        <p><i class="fas fa-trophy" style="color: gold"></i> <%= humanized_money_with_symbol(tournament.prize_money) %></p>
+        <p><% if tournament.genre == "Homme" %>
+            <i class="fas fa-male"></i><i class="fas fa-male"></i>
+          <% else %>
+            <i class="fas fa-female"></i><i class="fas fa-female"></i>
+          <% end %>
+        <%= tournament.inscriptions.count %> / <%= tournament.equipe_tableau_principal + tournament.place_reservees_qualif %></p>
         <p><%= image_tag "ball_mikasa.jpg", width: 20 %> </i>Mikasa</p>
         <p><i class="far fa-calendar-alt"></i> <%= tournament.date %></p>
       </div>

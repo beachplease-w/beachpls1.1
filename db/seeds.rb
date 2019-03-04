@@ -2,6 +2,10 @@ puts "Cleaning Tournaments"
 Tournament.destroy_all
 puts "Cleaning Users"
 User.destroy_all
+puts "Cleaning team players"
+TeamPlayer.destroy_all
+puts "Cleaning Teams"
+Team.destroy_all
 
 puts 'creating user 1..'
 user1 = User.new
@@ -72,7 +76,7 @@ address.each do |city, ad|
   ad.each do |address|
     date = "Sat, 02 Mar 2019"
     Tournament.create!({
-      name: Faker::Esport.event,
+      name: ['SSA Open #1', 'Beach Chiller #2', 'Beach Open #3', 'Mangeurs de sables #1', 'SSA Open #2', 'Beach Chiller #3', 'Beach Open #4', 'Mangeurs de sables #2'].sample,
       date: date,
       serie: ['Série 3 - 150', 'Série 2 - 1000', 'Série 2 - 250', 'Série 2 - 500', 'Série 2 - 750', 'Série 1 - 1500', 'Série 1 - 2500'].sample,
       address: address,
@@ -85,14 +89,14 @@ address.each do |city, ad|
       terrains_normes: (0..4).to_a.sample,
       date_qualif: date,
       date_principal: date,
-      prize_money: [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000].sample,
+      prize_money: [100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
       split_prize_money: "1-60€ 2-40€ 3-30€",
       limit_inscription: date,
       reunion_qualif: date ,
       reunion_principal: date,
       ville: city,
       club_organisateur: Faker::Company.name,
-      contact: Faker::PhoneNumber.cell_phone,
+      contact: ['0607080910', '0611121314', '0621222324'].sample,
       genre: "Homme",
       sku: "qwerty",
       price_cents: [1000, 1500, 2000, 2500, 3000].sample,
@@ -107,7 +111,7 @@ address.each do |city, ad|
   ad.each do |address|
     date = "Sat, 09 Mar 2019"
     Tournament.create!({
-      name: Faker::Esport.event,
+      name: ['SSA Open #1', 'Beach Chiller #2', 'Beach Open #3', 'Mangeurs de sables #1', 'SSA Open #2', 'Beach Chiller #3', 'Beach Open #4', 'Mangeurs de sables #2'].sample,
       date: date,
       serie: ['Série 3 - 150', 'Série 2 - 1000', 'Série 2 - 250', 'Série 2 - 500', 'Série 2 - 750', 'Série 1 - 1500', 'Série 1 - 2500'].sample,
       address: address,
@@ -120,14 +124,14 @@ address.each do |city, ad|
       terrains_normes: (0..4).to_a.sample,
       date_qualif: date,
       date_principal: date,
-      prize_money: [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000].sample,
+      prize_money: [100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
       split_prize_money: "1-60€ 2-40€ 3-30€",
       limit_inscription: date,
       reunion_qualif: date ,
       reunion_principal: date,
       ville: city,
       club_organisateur: Faker::Company.name,
-      contact: Faker::PhoneNumber.cell_phone,
+      contact: ['0607080910', '0611121314', '0621222324'].sample,
       genre: "Homme",
       sku: "qwerty",
       price_cents: [1000, 1500, 2000, 2500, 3000].sample,
@@ -138,7 +142,7 @@ address.each do |city, ad|
   ad.each do |address|
     date = "Sat, 09 Mar 2019"
     Tournament.create!({
-      name: Faker::Esport.event,
+      name: ['SSA Open #1', 'Beach Chiller #2', 'Beach Open #3', 'Mangeurs de sables #1', 'SSA Open #2', 'Beach Chiller #3', 'Beach Open #4', 'Mangeurs de sables #2'].sample,
       date: date,
       serie: ['Série 3 - 150', 'Série 2 - 1000', 'Série 2 - 250', 'Série 2 - 500', 'Série 2 - 750', 'Série 1 - 1500', 'Série 1 - 2500'].sample,
       address: address,
@@ -151,14 +155,14 @@ address.each do |city, ad|
       terrains_normes: (0..4).to_a.sample,
       date_qualif: date,
       date_principal: date,
-      prize_money: [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000].sample,
+      prize_money: [100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
       split_prize_money: "1-60€ 2-40€ 3-30€",
       limit_inscription: date,
       reunion_qualif: date ,
       reunion_principal: date,
       ville: city,
       club_organisateur: Faker::Company.name,
-      contact: Faker::PhoneNumber.cell_phone,
+      contact: ['0607080910', '0611121314', '0621222324'].sample,
       genre: "Femme",
       sku: "qwerty",
       price_cents: [1000, 1500, 2000, 2500, 3000].sample,
@@ -173,7 +177,7 @@ address.each do |city, ad|
   ad.each do |address|
     date = Faker::Date.between(Date.today, 1.year.from_now)
     Tournament.create!({
-      name: Faker::Esport.event,
+      name: ['SSA Open #1', 'Beach Chiller #2', 'Beach Open #3', 'Mangeurs de sables #1', 'SSA Open #2', 'Beach Chiller #3', 'Beach Open #4', 'Mangeurs de sables #2'].sample,
       date: date,
       serie: ['Série 3 - 150', 'Série 2 - 1000', 'Série 2 - 250', 'Série 2 - 500', 'Série 2 - 750', 'Série 1 - 1500', 'Série 1 - 2500'].sample,
       address: address,
@@ -186,14 +190,14 @@ address.each do |city, ad|
       terrains_normes: (0..4).to_a.sample,
       date_qualif: date,
       date_principal: date,
-      prize_money: [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000].sample,
+      prize_money: [100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
       split_prize_money: "1-60€ 2-40€ 3-30€",
       limit_inscription: date,
       reunion_qualif: date ,
       reunion_principal: date,
       ville: city,
       club_organisateur: Faker::Company.name,
-      contact: Faker::PhoneNumber.cell_phone,
+      contact: ['0607080910', '0611121314', '0621222324'].sample,
       genre: %w[Femme Homme].sample,
       sku: "qwerty",
       price_cents: [1000, 1500, 2000, 2500, 3000].sample,

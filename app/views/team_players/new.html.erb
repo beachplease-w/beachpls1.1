@@ -1,7 +1,7 @@
 <div class="container">
   <div class="new_team">
     <%= simple_form_for @team_player, url: team_players_path do |f| %>
-      <%= f.input :user, label: "Partenaire", collection: User.all, label_method: :last_name %>
+      <%= f.input :user, label: "Partenaire", collection: User.all, label_method: :full_name, input_html: {class: "select2"} %>
       <%= f.submit "Créer l'équipe" %>
     <% end %>
     <br>

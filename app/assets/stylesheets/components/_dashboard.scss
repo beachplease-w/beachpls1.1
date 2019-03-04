@@ -68,11 +68,18 @@
   width: 100%;
 }
 
+.equipe {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .names p {
   margin: 0;
 }
 .team {
   display: flex;
+  width: 400px;
   align-items: center;
   justify-content: space-around;
   margin: 20px;
@@ -84,5 +91,6 @@
 #calendar {
   margin-left: 15px;
   background-color: rgba(255,255,255,0.5);
+  padding: 5px;
 }
 

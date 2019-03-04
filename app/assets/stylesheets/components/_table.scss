@@ -1,13 +1,11 @@
 
-// w$half-spacing-unit: $base-spacing-unit / 2;
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
-// $base-spacing-unit: 24px;
-// $half-spacing-unit: $base-spacing-unit / 2;
-// >>>>>>> master
+$base-spacing-unit: 24px;
+$half-spacing-unit: $base-spacing-unit / 2;
 
-// $color-alpha: #1772FF;
-// $color-form-highlight: #EEEEEE;
+$color-alpha: #1772FF;
+$color-form-highlight: #EEEEEE;
 
 *, *:before, *:after {
   box-sizing:border-box;
@@ -28,16 +26,16 @@ h1,h2,h3,h4,h5,h6 {
   display:flex;
   width:100%;
   background:#0c7489;
-  // padding:($half-spacing-unit * 1.5) 0;
+  padding:($half-spacing-unit * 1.5) 0;
 }
 
 .table-row {
   display:flex;
   width:100%;
-  // padding:($half-spacing-unit * 1.5) 0;
+  padding:($half-spacing-unit * 1.5) 0;
   align-items: center;
   &:nth-of-type(odd) {
-    // background:$color-form-highlight;
+    background:$color-form-highlight;
   }
 }
 
@@ -56,15 +54,15 @@ h1,h2,h3,h4,h5,h6 {
   text-decoration: none;
   position:relative;
   display:inline-block;
-  // padding-left:$base-spacing-unit;
-  // padding-right:$base-spacing-unit;
+  padding-left:$base-spacing-unit;
+  padding-right:$base-spacing-unit;
 
   &::after {
     content:'';
     position:absolute;
-    // right:-($half-spacing-unit * 1.5);
+    right:-($half-spacing-unit * 1.5);
     color:white;
-    // font-size:$half-spacing-unit;
+    font-size:$half-spacing-unit;
     top: 50%;
     transform: translateY(-50%);
   }

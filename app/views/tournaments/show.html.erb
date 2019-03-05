@@ -204,14 +204,16 @@
     <section id="content4">
 
       <div id="messages">
-          <% if @tournament.messages.blank? %>
-             <p>Sois le premier à laisser un message pour <%= @tournament.name %></p>
-           <% else %>
+        <div id="written-messages">
+          <% if @tournament.messages %>
              <% @tournament.messages.each do |message| %>
                <%= render 'messages/show', message: message %>
              <% end %>
            <% end %>
-        <%= render 'messages/form', tournament: @tournament, message: @message %>
+        </div>
+        <div id="form-message">
+          <%= render 'messages/form', tournament: @tournament, message: @message %>
+        </div>
       </div>
 
     </section>

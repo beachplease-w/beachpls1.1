@@ -4,8 +4,8 @@ function refreshForm(innerHTML) {
 }
 
 function addMessage(messageHTML) {
-  const messages = document.getElementById('messages');
-  messages.insertAdjacentHTML('afterbegin', messageHTML);
+  const messages = document.getElementById('written-messages');
+  messages.insertAdjacentHTML('beforeend', messageHTML);
 }
 
 <% if @message.errors.any? %>

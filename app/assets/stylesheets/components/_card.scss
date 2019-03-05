@@ -2,9 +2,9 @@
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 14px;
-  width: 100%;
-  height: 300px;
-  margin: 15px 0px 0px;
+  width: 85%;
+  height: 250px;
+  margin: 15px 7.5% 0px;
   background-color: rgba(255, 255, 255, 0.6)
 }
 
@@ -18,10 +18,9 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  border-bottom: solid blue 2px;
-  padding: 0px 0px 10px;
-  width: 75%;
 }
+
+
 
 .card-trip p {
   font-size: 12px;
@@ -36,7 +35,11 @@
 .card-top-line {
   display: flex;
   justify-content: space-between;
-
+  h2 {
+    border-bottom: solid #347AA9 2px;
+    padding: 0px 0px 10px;
+    width: 75%;
+  }
 }
 
 .card-trip-infos {
@@ -64,19 +67,23 @@
 .card-trip-infos .series {
   position: absolute;
   right: 10px;
-  top: -130px;
-  width: 70px;
+  top: -105px;
+  width: 115px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   color: white;
 }
 
 .card-link {
  top: 15px;
- right: 15px;
- left: 15px;
+ right: 40px;
+ left: 40px;
  position: absolute;
  bottom: 0;
  background-color: black;
  opacity:0;
  z-index: 0;
+}
+
+.tournament-info p {
+  margin: 3px 0px 0px !important;
 }

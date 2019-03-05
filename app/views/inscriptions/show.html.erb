@@ -1,1 +1,11 @@
-<h1>HELLO</h1>
+<h1>Confirmation d'inscription à <%= @inscription.tournament.name %> </h1>
+<p>En binome avec
+  <% player1 = @inscription.team.users[0] %>
+  <% if player1 == current_user %>
+    <%= @inscription.team.users[1].first_name %>
+  <% else %>
+    <%= @inscription.team.users[0].first_name %>
+  <% end %>
+</p>
+<p>Le <%= @inscription.tournament.date %></p>
+<p>Prix: <%= humanized_money_with_symbol(@inscription.amount_cents) %></p>

@@ -1,5 +1,5 @@
 class InscriptionsController < ApplicationController
-  before_action :find_tournament
+  before_action :find_tournament, only: [:create]
 
   def create
     @inscription = Inscription.new
@@ -9,11 +9,14 @@ class InscriptionsController < ApplicationController
     @inscription.amount_cents = @tournament.price
     @inscription.state = 'pending'
     if @inscription.save
-      #redirect_to new_order_payment_path(order)
-      redirect_to user_path(current_user, "#tournois", class: :active)
+      redirect_to inscription_path(@inscription)
     else
       redirect_to tournament_teams_path(@tournament)
     end
+  end
+
+  def show
+    @inscription = Inscription.find(params[:id])
   end
 
   private

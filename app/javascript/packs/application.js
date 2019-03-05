@@ -6,7 +6,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { previewImageOnFileSelect } from '../components/photo_preview'
 import { initFullCalendar } from '../plugins/init_calendar'
-// import { toggleActiveClass, toggleActiveOnClick } from './modal'
+import { teamMateSelector } from './modal'
 // navbar js
 
 initUpdateNavbarOnScroll();
@@ -21,15 +21,4 @@ initSelect2();
 
 initFullCalendar();
 
-const clickcables = document.querySelectorAll(".clickable");
-if (clickcables) {
-  const toggleActiveClass = (target) => {
-    target.currentTarget.classList.toggle("active");
-  };
-
-  const toggleActiveOnClick = (clickable) => {
-    clickable.addEventListener("click", event => toggleActiveClass(event));
-  };
-
-  clickcables.forEach(clickable => toggleActiveOnClick(clickable));
-}
+teamMateSelector();

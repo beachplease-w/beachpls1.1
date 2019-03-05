@@ -1,0 +1,17 @@
+.clickable {
+  cursor: pointer;
+}
+
+
+.clickable:hover {
+  background-color: #52ACF4;
+}
+
+.clickable.active {
+  color: inherit;
+  border-color: inherit;
+}
+
+.clickable.active i {
+  color: #52ACF4;
+}

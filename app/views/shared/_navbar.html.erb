@@ -5,7 +5,16 @@
   <% end %>
 
   <!-- Center Navigation -->
+  <div class="navbar-beach-right">
+
     <% if user_signed_in? %>
+
+      <!-- Links when logged in -->
+      <div class="link-log">
+      <%= link_to "Tournois", tournaments_path, class: "navbar-beach-item navbar-beach-link" %>
+      <%= link_to "Classements", classements_path, class: "navbar-beach-item navbar-beach-link" %>
+      </div>
+      <!-- Avatar with dropdown menu -->
       <div class="navbar-beach-item">
         <div class="dropdown">
           <%= cl_image_tag current_user.photo, width: 40, height: 40, crop: :thumb, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
@@ -23,19 +32,11 @@
           </ul>
         </div>
       </div>
-  <div class="navbar-beach-right">
-
-
-      <!-- Links when logged in -->
-      <%= link_to "Tournois", tournaments_path, class: "navbar-beach-item navbar-beach-link" %>
-      <%= link_to "Classements", classements_path, class: "navbar-beach-item navbar-beach-link" %>
-
-      <!-- Avatar with dropdown menu -->
-  </div>
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-beach-item navbar-beach-link" %>
     <% end %>
+  </div>
 
   <!-- Dropdown list appearing on mobile only -->
 <!--   <div class="navbar-beach-item hidden-md hidden-lg">

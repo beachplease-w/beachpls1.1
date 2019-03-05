@@ -1,4 +1,4 @@
-<!-- <h1>Confirmation d'inscription à <%= @inscription.tournament.name %> </h1>
+<h1>Confirmation d'inscription à <%= @inscription.tournament.name %> </h1>
 <p>En binome avec
   <% player1 = @inscription.team.users[0] %>
   <% if player1 == current_user %>
@@ -8,13 +8,10 @@
   <% end %>
 </p>
 <p>Le <%= @inscription.tournament.date %></p>
-<p>Prix: <%= humanized_money_with_symbol(@inscription.amount_cents) %></p> -->
-
-<h1>Purchase of teddy <%= @inscription.tournament_sku %></h1>
 <%= form_tag inscription_payments_path(@inscription) do %>
   <article>
     <label class="amount">
-      <span>Amount: <%= humanized_money_with_symbol(@inscription.tournament.price) %></span>
+      <span>Prix: <%= humanized_money_with_symbol(@inscription.tournament.price) %></span>
     </label>
   </article>
 
@@ -23,7 +20,7 @@
     data-name="My Tournament"
     data-email="<%= current_user.email %>"
     data-description="Teddy <%= @inscription.tournament_sku %>"
-    data-amount="<%= @inscription.tournament.price %>"
+    data-amount="<%= @inscription.tournament.price_cents %>"
     data-currency="<%= @inscription.tournament.price.currency %>"></script>
 
 <% end %>

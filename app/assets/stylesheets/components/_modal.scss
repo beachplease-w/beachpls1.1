@@ -15,3 +15,11 @@
 .clickable.active i {
   color: #52ACF4;
 }
+
+.modal-footer {
+  display : flex;
+  justify-content: flex-end;
+  .btn {
+    margin-right: 5px;
+  }
+}

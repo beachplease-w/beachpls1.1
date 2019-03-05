@@ -40,14 +40,12 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary">On Beach</button>
-        <%= link_to "boom", tournament_team_inscriptions_path(tournament, teams), class:"btn btn-primary", method: :post %>
-        <form action="<%= tournament_team_inscriptions_path(tournament, teams) %>" method="post">
+        <form action="<%= tournament_team_inscriptions_path(tournament.id, 0) %>" method="post">
           <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
           <input type="hidden" name="team-id" value="2" id="team-id-input">
-          <input type="submit">
+          <input type="submit" class="btn btn-primary hidden" value="On Beach">
         </form>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
       </div>
     </div>
   </div>

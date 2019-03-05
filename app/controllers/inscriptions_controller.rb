@@ -9,8 +9,8 @@ class InscriptionsController < ApplicationController
     @inscription.amount_cents = @tournament.price
     @inscription.state = 'pending'
     if @inscription.save
-      redirect_to new_tournament_team_inscription_payment_path(@inscription)
-      # redirect_to user_path(current_user, "#tournois", class: :active)
+      #redirect_to new_order_payment_path(order)
+      redirect_to user_path(current_user, "#tournois", class: :active)
     else
       redirect_to tournament_teams_path(@tournament)
     end

@@ -1,4 +1,3 @@
-
 const teamMateSelector = () => {
   const clickcables = document.querySelectorAll(".clickable");
   if (clickcables) {
@@ -12,6 +11,8 @@ const teamMateSelector = () => {
           clickable.classList.remove("active")
         })
         toggleActiveClass(event)
+        const button = document.querySelector("input.btn")
+        button.classList.remove("hidden")
         const teamIdInput = document.getElementById("team-id-input")
         teamIdInput.value = event.currentTarget.id
       });

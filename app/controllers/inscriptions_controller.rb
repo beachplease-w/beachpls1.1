@@ -1,5 +1,6 @@
 class InscriptionsController < ApplicationController
   before_action :find_tournament, only: [:create]
+  before_action :set_inscription, only: [:show]
 
   def create
     @inscription = Inscription.new
@@ -23,6 +24,10 @@ class InscriptionsController < ApplicationController
 
   def find_tournament
     @tournament = Tournament.find(params[:tournament_id])
+  end
+
+  def set_inscription
+    @inscription = current_user.inscriptions.where(state: 'pending').find(params[:id])
   end
 
   # def inscriptions_params

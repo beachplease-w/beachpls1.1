@@ -37,18 +37,18 @@
 }
 
 .search-bar {
+  position: relative;
   #query {
     height: 60px;
     width: 500px;
     border-radius: 30px;
     margin-left: 13%;
-    position: relative;
   }
   .btn.btn-search {
     background-color: transparent;
     position: absolute;
-    top: 37%;
-    left: 63%;
+    top: 8%;
+    left: 77%;
     font-size: 30px;
     :hover {
       color: #ffda63;

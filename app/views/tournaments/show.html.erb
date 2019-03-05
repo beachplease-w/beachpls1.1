@@ -80,15 +80,19 @@
     </section>
 
     <section id="content2">
-      <% @tournament.inscriptions.each do |t| %>
-        <div class="beach-boxes">
-            <div class="rdg-expertise-category-beach"><span><%=cl_image_tag t.team.users[0].photo, width: 50, height: 50, crop: :thumb, class: 'avatar'%> <%=cl_image_tag t.team.users[1].photo, width: 50, height: 50, crop: :thumb, class: 'avatar' %></span></div>
-            <div class="rdg-expertise-bar-beach rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-            <div style="clear: both;"></div>
-            <div class="rdg-expertise-description-beach"><span>
-              <%= t.team.users[0].first_name %> <%= t.team.users[0].last_name %> / <%= t.team.users[1].first_name %> <%= t.team.users[1].last_name %>
-            </span></div>
-        </div>
+      <% if @tournament.inscriptions.blank? %>
+        <p>Il n'y a aucune équipe inscrite pour le moment ... 😔</p>
+      <% else %>
+        <% @tournament.inscriptions.each do |t| %>
+          <div class="beach-boxes">
+              <div class="rdg-expertise-category-beach"><span><%=cl_image_tag t.team.users[0].photo, width: 50, height: 50, crop: :thumb, class: 'avatar'%> <%=cl_image_tag t.team.users[1].photo, width: 50, height: 50, crop: :thumb, class: 'avatar' %></span></div>
+              <div class="rdg-expertise-bar-beach rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+              <div style="clear: both;"></div>
+              <div class="rdg-expertise-description-beach"><span>
+                <%= t.team.users[0].first_name %> <%= t.team.users[0].last_name %> / <%= t.team.users[1].first_name %> <%= t.team.users[1].last_name %>
+              </span></div>
+          </div>
+        <% end %>
       <% end %>
     </section>
 

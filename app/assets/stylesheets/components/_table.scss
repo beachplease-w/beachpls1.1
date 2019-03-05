@@ -1,3 +1,4 @@
+
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 $base-spacing-unit: 24px;
@@ -31,8 +32,8 @@ h1,h2,h3,h4,h5,h6 {
 .table-row {
   display:flex;
   width:100%;
+  padding:($half-spacing-unit * 1.5) 0;
   align-items: center;
-
   &:nth-of-type(odd) {
     background:$color-form-highlight;
   }

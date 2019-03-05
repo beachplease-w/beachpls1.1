@@ -3,11 +3,12 @@
 // @import "dashboard";
 // @import "profile";
 @import "map";
-@import "sand-background";
+// @import "sand-background";
 @import "tournaments-index";
 
 .wrapper {
   min-height: 100vh;
   position: relative;
   padding-bottom: 100px;
+  background-color: white;
 }

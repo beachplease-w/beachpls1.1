@@ -10,10 +10,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <div class="link-log">
-        <%= link_to "Tournois", tournaments_path, class: "navbar-beach-item navbar-beach-link" %>
-        <%= link_to "Classements", classements_path, class: "navbar-beach-item navbar-beach-link" %>
-      </div>
+      <%= link_to "Tournois", tournaments_path, class: "navbar-beach-item navbar-beach-link" %>
+      <%= link_to "Classements", classements_path, class: "navbar-beach-item navbar-beach-link" %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-beach-item">
         <div class="dropdown">

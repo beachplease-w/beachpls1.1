@@ -1,15 +1,14 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://png.pngtree.com/thumb_back/fh260/back_pic/03/84/44/8757cabc79d0a07.jpg)">
+  <h2> <%= @tournament.name %> </h2>
+</div>
 
-<div class="container text-center">
-  <div class="flextitle">
-    <span>
-      <h2> <%= @tournament.name %> </h2>
-      <p> <%= @tournament.address %> </p>
-    </span>
+  <div class="pricecription">
     <% if !current_user.tournaments.where(id: @tournament).any?  %>
       <button type="button" class="btn btn-yours2" data-toggle="modal" data-target="#myModal-<%= @tournament.id %>">S'inscrire</button>
     <% end %>
+    <img src="http://www.gifsanimes.com/data/media/699/volley-ball-image-animee-0016.gif" border="0" alt="volley-ball-image-animee-0016"/ style="margin-left: 20px"></a>
   </div>
-</div>
+
 <%= render 'shared/modal', teams: @my_teams, tournament: @tournament %>
 
 <%#= form_tag orders_path do %>
@@ -21,7 +20,7 @@
   <main>
 
       <input id="tab1" type="radio" name="tabs" checked>
-      <label for="tab1">Informations</label>
+      <label for="tab1"><i class="fas fa-info-circle"></i> Informations</label>
 
       <input id="tab2" type="radio" name="tabs">
       <label for="tab2">Equipes</label>

@@ -1,26 +1,40 @@
-.card-trip {
+.tournament-name{
+ width: 212px;
+}
+
+.tournament-name h2 {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(178, 175, 174);
+  border-bottom: solid;
+  padding-bottom: 7px;
+  width: 212px;
+  border-bottom-color: rgb(48, 121, 171);
+}
+.card-tournament {
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 14px;
-  width: 100%;
+  width: 70%;
   height: 300px;
   margin: 15px 0px 0px;
   background-color: rgba(255, 255, 255, 0.6)
 }
 
-.card-trip > img {
+.card-tournament > img {
   height: 50%;
-  width: 100%;
+  width: 95%;
+  margin-left: 5px;
+  margin-top: 5%;
   object-fit: cover;
 }
 
-.card-trip h2 {
+.card-tournament h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-trip p {
+.card-tournament p {
   font-size: 12px;
   margin: 0px !important;
 }
@@ -37,15 +51,16 @@
 }
 
 
-.card-trip-infos {
-  padding: 16px;
+.card-tournament-infos {
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   position: relative;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.card-trip-infos .card-trip-user {
+.card-tournament-infos .card-tournament-user {
   position: absolute;
   right: 16px;
   top: -25px;
@@ -59,7 +74,7 @@
   border: white 1px solid;
 }
 
-.card-trip-infos .series {
+.card-tournament-infos .series {
   position: absolute;
   right: 10px;
   top: -130px;
@@ -69,6 +84,7 @@
 }
 
 .card-link {
+ width: 70%;
  top: 15px;
  right: 15px;
  left: 15px;
@@ -77,6 +93,10 @@
  background-color: black;
  opacity:0;
  z-index: 0;
+}
+
+.price {
+  font-weight: bold;
 }
 // Fliping
 

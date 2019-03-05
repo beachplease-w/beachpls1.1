@@ -1,15 +1,15 @@
 class InscriptionsController < ApplicationController
+  before_action :find_tournament
 
   def create
     @inscription = Inscription.new
-    @inscription.team = Team.find(params[:team_id])
+    @inscription.team = Team.find(params["team-id"])
     @inscription.tournament = @tournament
     @inscription.tournament_sku = @tournament.sku
-    @inscription.amount = @tournament.price
+    @inscription.amount_cents = @tournament.price
     @inscription.state = 'pending'
-    @inscription.user = current_user
     if @inscription.save
-      redirect_to new_order_payment_path(order)
+      redirect_to new_tournament_team_inscription_payment_path(@inscription)
       # redirect_to user_path(current_user, "#tournois", class: :active)
     else
       redirect_to tournament_teams_path(@tournament)
@@ -27,11 +27,6 @@ class InscriptionsController < ApplicationController
   # end
 end
 
-
-  end
-  def show
-    @order = current_user.orders.where(state: 'paid').find(params[:id])
-  end
-
-  private
-
+  # def show
+  #   @order = current_user.orders.where(state: 'paid').find(params[:id])
+  # end

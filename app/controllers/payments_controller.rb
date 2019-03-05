@@ -11,23 +11,22 @@ class PaymentsController < ApplicationController
     )
 
     charge = Stripe::Charge.create(
-      customer:     customer.id,   # You should store this customer id and re-use it.
-      amount:       @order.amount_cents,
-      description:  "Payment for tournament #{@order.tournament_sku} for order #{@order.id}",
-      currency:     @order.amount.currency
+      customer:     customer.id,  # You should store this customer id and re-use it.
+      amount:       @inscription.amount_cents,
+      description:  "Payment for tournament #{@inscription.tournament_sku} for order #{@inscription.id}",
+      currency:     @inscription.amount.currency
     )
 
-    @order.update(payment: charge.to_json, state: 'paid')
-    redirect_to order_path(@order)
-
+    @inscription.update(payment: charge.to_json, state: 'paid')
+    redirect_to order_path(@inscription)
   rescue Stripe::CardError => e
     flash[:alert] = e.message
-    redirect_to new_order_payment_path(@order)
+    redirect_to new_order_payment_path(@inscription)
   end
 
 private
 
-  def set_order
-    @order = current_user.orders.where(state: 'pending').find(params[:order_id])
+  def set_inscription
+    @inscription = current_user.inscriptions.where(state: 'pending').find(params[:inscription_id])
   end
 end

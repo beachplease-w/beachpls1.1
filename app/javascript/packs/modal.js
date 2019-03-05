@@ -11,7 +11,10 @@ const teamMateSelector = () => {
         clickcables.forEach((clickable) => {
           clickable.classList.remove("active")
         })
-        toggleActiveClass(event)});
+        toggleActiveClass(event)
+        const teamIdInput = document.getElementById("team-id-input")
+        teamIdInput.value = event.currentTarget.id
+      });
     };
   clickcables.forEach(clickable => toggleActiveOnClick(clickable));
   }

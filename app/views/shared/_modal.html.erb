@@ -16,9 +16,8 @@
       </div>
       <div class="scroll-box">
         <div class="modal-body">
-          <%#=  render 'teams/index', teams: teams, tournament: tournament %>
           <% teams.each do |team| %>
-            <div class="team clickable">
+            <div class="team clickable" id="<%= team.id %>">
               <% first_player = team.users[0] %>
               <% if first_player == current_user %>
                 <div>
@@ -43,6 +42,12 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
         <button type="button" class="btn btn-primary">On Beach</button>
+        <%= link_to "boom", tournament_team_inscriptions_path(tournament, teams), class:"btn btn-primary", method: :post %>
+        <form action="<%= tournament_team_inscriptions_path(tournament, teams) %>" method="post">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <input type="hidden" name="team-id" value="2" id="team-id-input">
+          <input type="submit">
+        </form>
       </div>
     </div>
   </div>

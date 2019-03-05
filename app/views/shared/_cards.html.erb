@@ -1,10 +1,12 @@
 <div class="card-trip">
     <%= image_tag "https://www.sandsystem.com/beach-volley/wp-content/uploads/2019/01/cropped-jersey.jpg" %>
     <div class="card-trip-infos">
-      <h2><%= tournament.name %></h2>
+      <div class="card-top-line">
+        <h2><%= tournament.name %></h2>
+        <p id="card-price-symbol"><i class="fas fa-trophy" style="color: gold"></i> <%= humanized_money_with_symbol(tournament.prize_money) %></p>
+      </div>
       <div class="tournament-info">
         <p><%= tournament.address.split.last(2).join(" ") %></p>
-        <p><i class="fas fa-trophy" style="color: gold"></i> <%= humanized_money_with_symbol(tournament.prize_money) %></p>
         <p><% if tournament.genre == "Homme" %>
             <i class="fas fa-male"></i><i class="fas fa-male"></i>
           <% else %>

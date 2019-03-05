@@ -18,11 +18,25 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  border-bottom: solid blue 2px;
+  padding: 0px 0px 10px;
+  width: 75%;
 }
 
 .card-trip p {
   font-size: 12px;
   margin: 0px !important;
+}
+
+#card-price-symbol {
+  font-weight : bold;
+  font-size: 15px;
+}
+
+.card-top-line {
+  display: flex;
+  justify-content: space-between;
+
 }
 
 .card-trip-infos {

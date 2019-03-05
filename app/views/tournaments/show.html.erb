@@ -199,9 +199,8 @@
     <section id="content4">
 
       <div id="messages">
-
           <% if @tournament.messages.blank? %>
-             Be the first to leave a message for <%= @tournament.name %>
+             <p>Sois le premier à laisser un message pour <%= @tournament.name %></p>
            <% else %>
              <% @tournament.messages.each do |message| %>
                <%= render 'messages/show', message: message %>

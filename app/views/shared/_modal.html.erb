@@ -6,13 +6,18 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Choisis ton équipe</h4>
+        <h4 class="modal-title" id="myModalLabel">
+        <% if tournament.genre.downcase == "femme" %>
+          <%= "Choisis ta partenaire" %>
+        <% else %>
+          <%= "Choisis ton partenaire" %>
+        <% end %>
+       </h4>
       </div>
       <div class="scroll-box">
         <div class="modal-body">
-          <%#=  render 'teams/index', teams: teams, tournament: tournament %>
           <% teams.each do |team| %>
-            <div class="team clickable">
+            <div class="team clickable" id="<%= team.id %>">
               <% first_player = team.users[0] %>
               <% if first_player == current_user %>
                 <div>
@@ -35,8 +40,12 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-        <!-- <button type="button" class="btn btn-primary">C'est good</button> -->
+        <form action="<%= tournament_team_inscriptions_path(tournament.id, 0) %>" method="post">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <input type="hidden" name="team-id" value="2" id="team-id-input">
+          <input type="submit" class="btn btn-primary hidden" value="On Beach">
+        </form>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
       </div>
     </div>
   </div>

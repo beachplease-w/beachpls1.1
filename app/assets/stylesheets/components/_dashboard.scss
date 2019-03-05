@@ -3,7 +3,6 @@
 
 .nav-sidebar {
     width: 175px;
-    padding: 30px 0;
     border-right: 1px solid #ddd;
 }
 .nav-sidebar a {
@@ -29,12 +28,13 @@
 
 .tab-content {
   width: 800px;
-  background-color: rgba(255,255,255,0.5);
+  box-shadow: 2px 0 15px rgba(0,0,0,0.15);
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   text-align: center;
   padding: 40px 0;
-  height: 400px;
+  height: 500px;
   overflow: scroll;
 }
 
@@ -52,7 +52,7 @@
 .contenant {
   display: flex;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
   margin-top: 50px;
 }
 

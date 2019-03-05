@@ -12,7 +12,7 @@
         <div class="modal-body">
           <%#=  render 'teams/index', teams: teams, tournament: tournament %>
           <% teams.each do |team| %>
-            <div class="team">
+            <div class="team clickable">
               <% first_player = team.users[0] %>
               <% if first_player == current_user %>
                 <div>

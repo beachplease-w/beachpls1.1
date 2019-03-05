@@ -3,7 +3,8 @@ import 'fullcalendar';
 
 const initFullCalendar = () => {
   const calendar = document.getElementById("calendar");
-  const events = JSON.parse(calendar.dataset.events);
+  if (calendar)
+    {const events = JSON.parse(calendar.dataset.events);
 
   $('#calendar').fullCalendar({
     locale: "fr",
@@ -11,8 +12,7 @@ const initFullCalendar = () => {
       events: events,
       color: "#0c7489"
     }]
-  });
-
+  })};
 };
 
 

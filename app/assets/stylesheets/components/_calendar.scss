@@ -319,16 +319,16 @@ temporary rendered events).
 
 /* Scrolling Container
 --------------------------------------------------------------------------------------------------*/
-.fc-scroller {
-  -webkit-overflow-scrolling: touch; }
+// .fc-scroller {
+//   -webkit-overflow-scrolling: touch; }
 
 /* TODO: move to agenda/basic */
-.fc-scroller > .fc-day-grid,
-.fc-scroller > .fc-time-grid {
-  position: relative;
+// .fc-scroller > .fc-day-grid,
+// .fc-scroller > .fc-time-grid {
+//   position: relative;
   /* re-scope all positions */
-  width: 100%;
-  /* hack to force re-sizing this inner element when scrollbars appear/disappear */ }
+  // width: 100%;
+  // /* hack to force re-sizing this inner element when scrollbars appear/disappear */ }
 
 /* Global Event Styles
 --------------------------------------------------------------------------------------------------*/

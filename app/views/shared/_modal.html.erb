@@ -6,7 +6,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Choisis ton équipe</h4>
+        <h4 class="modal-title" id="myModalLabel">
+        <% if tournament.genre.downcase == "femme" %>
+          <%= "Choisis ta partenaire" %>
+        <% else %>
+          <%= "Choisis ton partenaire" %>
+        <% end %>
+       </h4>
       </div>
       <div class="scroll-box">
         <div class="modal-body">
@@ -35,8 +41,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-        <!-- <button type="button" class="btn btn-primary">C'est good</button> -->
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary">On Beach</button>
       </div>
     </div>
   </div>

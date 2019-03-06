@@ -37,6 +37,9 @@
   padding: 40px 0;
   height: 500px;
   overflow: scroll;
+  h4 {
+    font-weight: bolder;
+  }
 }
 
 .nav>li.active>a:hover, .nav>li.active>a:focus {

@@ -23,11 +23,12 @@
             <%= link_to "Sur le sable", user_path(current_user), class:"btn-yours btn-yours3" %>
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-name="My Tournament"
+              data-name="Mon tournoi"
               data-email="<%= current_user.email %>"
               data-description="Tournois <%= @inscription.tournament_sku %>"
               data-amount="<%= @inscription.tournament.price_cents %>"
-              data-currency="<%= @inscription.tournament.price.currency %>">
+              data-currency="<%= @inscription.tournament.price.currency %>"
+              data-label="En CB">
             </script>
           </div>
         <% end %>

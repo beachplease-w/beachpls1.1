@@ -10,7 +10,7 @@ class PaymentsController < ApplicationController
     charge = Stripe::Charge.create(
       customer:     customer.id, # You should store this customer id and re-use it.
       amount:       @inscription.tournament.price_cents,
-      description:  "Payment for tournament #{@inscription.tournament_sku} for order #{@inscription.id}",
+      description:  "Paiement du tournoi #{@inscription.tournament_sku} pour la commande #{@inscription.id}",
       currency:     @inscription.tournament.price.currency
     )
 

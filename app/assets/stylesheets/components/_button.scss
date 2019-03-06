@@ -9,7 +9,6 @@
   opacity: 0.8;
   transition: 0.5s ease;
   position: absolute;
-  // right: 15px;
 }
 
 .btn-yours a {
@@ -30,14 +29,12 @@
   color: white;
   size: 100%;
   font-weight: bold;
-  // border: 1px solid #53BDFF;
   border: 2px solid #ffda63;
   padding: 10px 20px;
   border-bottom-left-radius: 14px;
   border-top-right-radius: 14px;
   opacity: 0.8;
   transition: 0.5s ease;
-  // position: absolute;
   right: 15px;
   margin-left: 50px;
 }
@@ -77,12 +74,11 @@
 .stripe-button-el span {
   border: 1px solid #53BDFF !important;
   padding: 6px 15px !important;
-  border-radius: 0px 14px !important;
+  border-radius: 14px 0px !important;
   background: transparent !important;
   height: 100% !important;
   line-height: inherit !important;
   color: #0C7489 !important;
-  // font-weight: normal !important;
   font-family: "Quicksand", sans-serif !important;
   font-size: 16px !important;
   opacity: 0.8 !important;
@@ -92,10 +88,8 @@
 }
 
 .stripe-button-el span:hover {
-  border-bottom-right-radius: 14px !important;
-  border-top-left-radius: 14px !important;
-  border-bottom-left-radius: 0px !important;
-  border-top-right-radius: 0px !important;
+  border-radius: 0px 14px !important;
   border: 1px solid #e6b30e !important;
+  color: #063843 !important;
   opacity: 1 !important;
 }

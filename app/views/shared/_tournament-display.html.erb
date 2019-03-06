@@ -1,4 +1,4 @@
-<p>Tournois à venir</p>
+<h3>Tournois à venir</h3>
   <% @user.teams.each do |team| %>
     <% team.tournaments.each do |tournament| %>
       <% if tournament.date >= Date.today %>
@@ -25,7 +25,7 @@
     <% end %>
   <% end %>
 <hr>
-<p>Tournois passés</p>
+<h3>Tournois passés</h3>
 <% @user.teams.each do |team| %>
   <% team.tournaments.each do |tournament| %>
     <% if tournament.date < Date.today %>

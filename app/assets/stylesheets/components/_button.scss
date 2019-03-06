@@ -66,3 +66,36 @@
     text-decoration: none;
   }
 }
+
+
+.stripe-button-el {
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0px !important;
+}
+
+.stripe-button-el span {
+  border: 1px solid #53BDFF !important;
+  padding: 6px 15px !important;
+  border-radius: 0px 14px !important;
+  background: transparent !important;
+  height: 100% !important;
+  line-height: inherit !important;
+  color: #0C7489 !important;
+  // font-weight: normal !important;
+  font-family: "Quicksand", sans-serif !important;
+  font-size: 16px !important;
+  opacity: 0.8 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  transition: 0.5s ease !important;
+}
+
+.stripe-button-el span:hover {
+  border-bottom-right-radius: 14px !important;
+  border-top-left-radius: 14px !important;
+  border-bottom-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border: 1px solid #e6b30e !important;
+  opacity: 1 !important;
+}

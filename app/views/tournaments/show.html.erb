@@ -6,7 +6,6 @@
     <% if !current_user.tournaments.where(id: @tournament).any?  %>
       <button type="button" class="btn btn-yours2" data-toggle="modal" data-target="#myModal-<%= @tournament.id %>">S'inscrire</button>
     <% end %>
-    <img src="http://www.gifsanimes.com/data/media/699/volley-ball-image-animee-0016.gif" border="0" alt="volley-ball-image-animee-0016"/ style="margin-left: 20px"></a>
   </div>
 
 <%= render 'shared/modal', teams: @my_teams, tournament: @tournament %>
@@ -59,8 +58,8 @@
             <div class="rdg-expertise-description"><span>
               Tableau principal : <%= @tournament.equipe_tableau_principal %> <br>
               Tableau qualif: <%= @tournament.equipe_qualif %> <br>
-              Tableau principal: <%= @tournament.date_principal.iso8601 %> <br>
-              Tableau qualif:    <%= @tournament.date_qualif %> <br>
+              Tableau principal: <%= @tournament.date_principal.strftime("%d/%m/%Y") %> <br>
+              Tableau qualif:    <%= @tournament.date_qualif.strftime("%d/%m/%Y") %> <br>
             </span></div>
         </div>
         <div class="boxes">
@@ -69,9 +68,9 @@
             <!-- <div style="clear: both;"></div> -->
             <div class="rdg-expertise-description"><span>
 
-              Date limite d'inscription: <%= @tournament.limit_inscription %> <br>
-              Horaire réunion technique qualif: <%= @tournament.reunion_qualif.strftime("%I:%M%p")  %> <br>
-              Horaire réunion technique principal: <%= @tournament.reunion_principal.strftime("%I:%M%p")  %> <br>
+              Date limite d'inscription: <%= @tournament.limit_inscription.strftime("%d/%m/%Y") %> <br>
+              Horaire réunion technique qualif: <%= @tournament.reunion_qualif.strftime("%Ih")  %> <br>
+              Horaire réunion technique principal: <%= @tournament.reunion_principal.strftime("%Ih")  %> <br>
                 <%= @tournament.remarques %> <br>
                 Terrains :<%= @tournament.terrains_normes %>
             </span></div>

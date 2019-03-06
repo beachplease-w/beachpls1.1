@@ -1,6 +1,5 @@
 <div id="my-flex">
   <div class="cards">
-    <div class="col-xs-12 col-sm-10">
     <%= form_tag tournaments_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
@@ -8,8 +7,7 @@
         placeholder: "Adresse, série ou nom"
       %>
     <% end %>
-    </div>
-    <div class="row" id= "cards-container">
+    <div class="row">
       <% @tournaments.each do |tournament| %>
         <div class="col-xs-12 col-sm-6">
           <%= render 'shared/cards', tournament: tournament %>
@@ -21,7 +19,7 @@
   <div
     id="map"
     style="width: 100%;
-    height: calc(100vh - 60px);"
+    height: 600px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>

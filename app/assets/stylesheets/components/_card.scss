@@ -48,6 +48,17 @@
   justify-content: space-between;
   position: relative;
   flex-direction: column;
+  &:before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 126%;
+    margin-top: -53%;
+    background-color: rgba(56, 120, 173, 0.4);
+  }
 }
 
 .card-trip-infos .card-trip-user {
@@ -69,7 +80,7 @@
   right: 10px;
   top: -105px;
   width: 115px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 0 rgb(0,0,0);
   color: white;
 }
 

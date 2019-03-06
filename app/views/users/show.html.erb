@@ -7,8 +7,8 @@
       <ul class="nav tabs">
             <li class="active"><a href="#tournois" data-toggle="tab">Mes tournois</a></li>
             <li class=""><a href="#equipes" data-toggle="tab">Mes coéquipiers</a></li>
-            <li class=""><a href="#informations" data-toggle="tab">Mes informations</a></li>
             <li class=""><a href="#stats" data-toggle="tab">Mes stats</a></li>
+            <li class=""><a href="#informations" data-toggle="tab">Mes informations</a></li>
       </ul>
       </nav>
     </div>
@@ -18,6 +18,10 @@
         <hr>
       </div>
       <%= render 'shared/team-display' %>
+      <div class="tab-pane" id="stats">
+        <%= render 'shared/stats' %>
+          <hr>
+      </div>
       <div class="tab-pane" id="informations">
         <%= cl_image_tag current_user.photo, width: 100, height: 100, crop: :thumb, class: "avatar"%>
         <hr>
@@ -28,10 +32,6 @@
         <%= link_to edit_user_registration_path do %>
         <i class="fas fa-user-edit"></i>
         <% end %>
-      </div>
-      <div class="tab-pane" id="stats">
-        <%= render 'shared/stats' %>
-          <hr>
       </div>
     </div>
     <div id="calendar" class="text-center" data-events="<%= @events.to_json %>">

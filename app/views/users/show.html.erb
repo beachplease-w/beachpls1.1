@@ -9,6 +9,7 @@
             <li class=""><a href="#tournois" data-toggle="tab">Mes tournois</a></li>
             <li class=""><a href="#equipes" data-toggle="tab">Mes partenaires</a></li>
             <li class=""><a href="#stats" data-toggle="tab">Mes stats</a></li>
+            <li class=""><a href="#mymessages" data-toggle="tab">Mes messages</a></li>
       </ul>
       </nav>
     </div>
@@ -31,6 +32,10 @@
       <%= render 'shared/team-display' %>
       <div class="tab-pane" id="stats">
         <%= render 'shared/stats' %>
+          <hr>
+      </div>
+      <div class="tab-pane" id="mymessages">
+        <%= render 'shared/messages' %>
           <hr>
       </div>
     </div>

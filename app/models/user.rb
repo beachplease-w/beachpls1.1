@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :inscriptions, through: :teams
   has_many :tournaments, through: :inscriptions
   has_many :orders
+  has_many :messages
 
   validates :last_name, presence: true
   validates :first_name, presence: true

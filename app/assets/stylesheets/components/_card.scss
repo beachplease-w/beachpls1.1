@@ -1,66 +1,56 @@
-.tournament-name{
- width: 212px;
-}
-
-.tournament-name h2 {
-  font-family: 'Roboto', sans-serif;
-  color: rgb(178, 175, 174);
-  border-bottom: solid;
-  padding-bottom: 7px;
-  width: 212px;
-  border-bottom-color: rgb(48, 121, 171);
-}
-.card-tournament {
+.card-trip {
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 14px;
-  width: 80%;
-  height: 300px;
-  margin: 15px 0px 0px;
+  width: 85%;
+  height: 250px;
+  margin: 15px 7.5% 0px;
   background-color: rgba(255, 255, 255, 0.6)
 }
 
-.card-tournament > img {
+.card-trip > img {
   height: 50%;
-  width: 95%;
-  margin-left: 5px;
-  margin-top: 5%;
+  width: 100%;
   object-fit: cover;
 }
 
-.card-tournament h2 {
-  font-size: 15px;
+.card-trip h2 {
+  font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-tournament p {
+
+
+.card-trip p {
   font-size: 12px;
   margin: 0px !important;
 }
 
-.btn-position-card {
-  bottom: 0px;
-  right: 15px;
-  padding: 8px 15px !important;
+#card-price-symbol {
+  font-weight : bold;
   font-size: 15px;
-  z-index: 1;
-  a:hover {
-    text-decoration: none !important;
+}
+
+.card-top-line {
+  display: flex;
+  justify-content: space-between;
+  h2 {
+    border-bottom: solid #347AA9 2px;
+    padding: 0px 0px 10px;
+    width: 75%;
   }
 }
 
-
-.card-tournament-infos {
-  padding: 10px;
+.card-trip-infos {
+  padding: 16px;
   display: flex;
   justify-content: space-between;
   position: relative;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.card-tournament-infos .card-tournament-user {
+.card-trip-infos .card-trip-user {
   position: absolute;
   right: 16px;
   top: -25px;
@@ -74,20 +64,19 @@
   border: white 1px solid;
 }
 
-.card-tournament-infos .series {
+.card-trip-infos .series {
   position: absolute;
   right: 10px;
-  top: -130px;
-  width: 70px;
+  top: -105px;
+  width: 115px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   color: white;
 }
 
 .card-link {
- width: 70%;
  top: 15px;
- right: 15px;
- left: 15px;
+ right: 40px;
+ left: 40px;
  position: absolute;
  bottom: 0;
  background-color: black;
@@ -95,55 +84,6 @@
  z-index: 0;
 }
 
-.price {
-  font-weight: bold;
+.tournament-info p {
+  margin: 3px 0px 0px !important;
 }
-// Fliping
-
-// .beachcard {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   width: 300px;
-//   height: 300px;
-//   margin: -150px;
-//   float: left;
-//   perspective: 500px;
-// }
-
-// .content {
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-
-//   transition: transform 1s;
-//   transform-style: preserve-3d;
-// }
-
-// .beachcard:hover .content {
-//   transform: rotateY( 180deg ) ;
-//   transition: transform 0.5s;
-//   .front {
-//     opacity: 0.1;
-//   }
-// }
-
-// .front,
-// .back {
-//   position: absolute;
-//   height: 100%;
-//   width: 100%;
-//   background: white;
-//   color: #03446A;
-//   text-align: center;
-//   font-size: 60px;
-//   border-radius: 5px;
-//   backface-visibility: hidden;
-// }
-
-// .back {
-//   background: #03446A;
-//   color: white;
-//   transform: rotateY( 180deg );
-// }

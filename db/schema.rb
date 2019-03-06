@@ -48,6 +48,17 @@ ActiveRecord::Schema.define(version: 2019_03_04_165833) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "tournament_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.jsonb "payment"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "team_players", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "team_id"
@@ -116,6 +127,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_165833) do
   add_foreign_key "inscriptions", "tournaments"
   add_foreign_key "messages", "tournaments"
   add_foreign_key "messages", "users"
+  add_foreign_key "orders", "users"
   add_foreign_key "team_players", "teams"
   add_foreign_key "team_players", "users"
 end

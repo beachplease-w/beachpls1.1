@@ -317,6 +317,10 @@ temporary rendered events).
   /* don't put a border between event cells */
   border-top: 0; }
 
+.fc-scroller {
+  height: auto !important;
+}
+
 /* Scrolling Container
 --------------------------------------------------------------------------------------------------*/
 // .fc-scroller {

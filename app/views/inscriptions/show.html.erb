@@ -27,7 +27,8 @@
               data-email="<%= current_user.email %>"
               data-description="Tournois <%= @inscription.tournament_sku %>"
               data-amount="<%= @inscription.tournament.price_cents %>"
-              data-currency="<%= @inscription.tournament.price.currency %>">
+              data-currency="<%= @inscription.tournament.price.currency %>"
+              data-label="En CB">
             </script>
           </div>
         <% end %>

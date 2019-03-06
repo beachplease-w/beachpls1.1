@@ -9,7 +9,7 @@ const initFullCalendar = () => {
   $('#calendar').fullCalendar({
     locale: "fr",
     height: 500,
-    view: 'month',
+    defaultView: 'listMonth',
     eventSources: [{
       events: events,
       color: "#0c7489"

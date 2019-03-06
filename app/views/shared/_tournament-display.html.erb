@@ -9,7 +9,7 @@
               <div class="tournament">
                 <p><%= tournament.name %></p>
                 <p><%= tournament.date %></p>
-                <p><%= tournament.address %></p>
+                <p><%= tournament.address.split.last(2).join(" ") %></p>
               </div>
             </div>
           </div>
@@ -29,7 +29,7 @@
             <div class="tournament">
               <p><%= tournament.name %></p>
               <p><%= tournament.date %></p>
-              <p><%= tournament.address %></p>
+              <p><%= tournament.address.split.last(2).join(" ") %></p>
             </div>
           </div>
         </div>

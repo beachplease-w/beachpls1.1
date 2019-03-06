@@ -26,10 +26,12 @@
 }
 
 .btn-yours2 {
-  color: #0C7489;
-  size: 75vh;
+  background-color: #0C7489;
+  color: white;
+  size: 100%;
   font-weight: bold;
-  border: 1px solid #53BDFF;
+  // border: 1px solid #53BDFF;
+  border: 2px solid #ffda63;
   padding: 10px 20px;
   border-bottom-left-radius: 14px;
   border-top-right-radius: 14px;
@@ -49,6 +51,9 @@
   border-top-left-radius: 14px;
   border-bottom-left-radius: 0px;
   border-top-right-radius: 0px;
-  border: 1px solid #e6b30e;
+  border: 2px solid #0C7489;
+  background-color: #ffda63;
+  color: white;
+  text-shadow: 0 2px 3px rgba(0,0,0,0.3);
   opacity: 1;
 }

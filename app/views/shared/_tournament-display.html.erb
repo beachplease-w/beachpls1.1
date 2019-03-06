@@ -1,4 +1,4 @@
-<p>Tournois à venir</p>
+<h3>Tournois à venir</h3>
   <% @user.teams.each do |team| %>
     <% team.tournaments.each do |tournament| %>
       <% if tournament.date >= Date.today %>
@@ -7,9 +7,16 @@
             <img src="https://www.sandsystem.com/beach-volley/wp-content/uploads/2019/01/cropped-jersey.jpg">
             <div class="tournament-product-infos">
               <div class="tournament">
-                <p><%= tournament.name %></p>
+                <h4><%= tournament.name %></h4>
                 <p><%= tournament.date %></p>
-                <p><%= tournament.address %></p>
+                <p><%= tournament.address.split.last(2).join(" ") %></p>
+                <% tournament.inscriptions.each do |inscription| %>
+                  <% if inscription.state == "pending" %>
+                    <p>À régler sur le sable <i class="fas fa-hourglass-half"></i></p>
+                  <% else %>
+                    <p>Réglé <i class="fas fa-check-circle"></i></p>
+                  <% end %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -18,18 +25,25 @@
     <% end %>
   <% end %>
 <hr>
-<p>Tournois passés</p>
+<h3>Tournois passés</h3>
 <% @user.teams.each do |team| %>
   <% team.tournaments.each do |tournament| %>
     <% if tournament.date < Date.today %>
-      <%= link_to tournament_url do %>
+      <%= link_to tournament_url, class: "tournament-link"  do %>
         <div class="tournament-product">
           <img src="https://www.sandsystem.com/beach-volley/wp-content/uploads/2019/01/cropped-jersey.jpg">
           <div class="tournament-product-infos">
             <div class="tournament">
-              <p><%= tournament.name %></p>
+              <h4><%= tournament.name %></h4>
               <p><%= tournament.date %></p>
-              <p><%= tournament.address %></p>
+              <p><%= tournament.address.split.last(2).join(" ") %></p>
+              <% tournament.inscriptions.each do |inscription| %>
+                <% if inscription.state == "pending" %>
+                  <p>À régler sur le sable <i class="fas fa-hourglass-half"></i></p>
+                <% else %>
+                  <p>Réglé <i class="fas fa-check-circle"></i></p>
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>

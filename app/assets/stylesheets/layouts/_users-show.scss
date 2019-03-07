@@ -1,0 +1,14 @@
+.message-counter {
+  border-radius: 50%;
+  background-color: rgb(239, 21, 65);
+  width: 24px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.user-messages {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}

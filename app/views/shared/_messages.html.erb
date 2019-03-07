@@ -6,12 +6,10 @@
 <% else %>
   <% @messages.each do |message| %>
     <% if message.user != current_user %>
-      <div class="rdg-expertise-description-name">
-        <span>
-          <h4><%= message.tournament.name %></h4>
-        </span>
-      </div>
-      <%= link_to tournament_path(message.tournament) do %>
+      <div class="rdg-expertise-description-beach"><span>
+        <%= message.tournament.name %>
+      </span></div>
+      <%= link_to tournament_path(message.tournament, tab: 4) do %>
         <div class="dashboard-messages">
           <div class="rdg-expertise-category-messages">
             <span>

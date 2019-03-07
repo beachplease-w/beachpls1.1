@@ -2,8 +2,7 @@
 .add{background: #333; padding: 10%; height: 300px;}
 
 .nav-sidebar {
-    width: 175px;
-    border-right: 1px solid #ddd;
+  width: 175px;
 }
 .nav-sidebar a {
     color: #333;
@@ -27,15 +26,19 @@
 }
 
 .tab-content {
-  width: 800px;
-  box-shadow: 2px 0 15px rgba(0,0,0,0.15);
-  border-radius: 5px;
+  width: 500px;
+  // box-shadow: 2px 0 15px rgba(0,0,0,0.15);
+  border: 0.5px solid #ddd;
+  // border-radius: 15px;
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 40px 0;
+  padding: 15px 0;
   height: 500px;
   overflow: scroll;
+  h4 {
+    font-weight: bolder;
+  }
 }
 
 .nav>li.active>a:hover, .nav>li.active>a:focus {

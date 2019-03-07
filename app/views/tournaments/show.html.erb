@@ -1,4 +1,4 @@
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://png.pngtree.com/thumb_back/fh260/back_pic/03/84/44/8757cabc79d0a07.jpg)">
+<div class="card-category" style="background-image: linear-gradient(-270deg, rgba(56, 120, 173, 0.4) 70%, rgba(0,0,0,0.3)), url(<%= @tournament.photos %>)">
   <h2> <%= @tournament.name %> </h2>
 </div>
 
@@ -28,7 +28,7 @@
       <label for="tab3">Le tableau</label>
 
       <input id="tab4" type="radio" name="tabs">
-      <label for="tab4">Je cherche un partenaire</label>
+      <label for="tab4">Je cherche un coéquipier</label>
 
     <section id="content1">
         <div class="boxes">
@@ -222,3 +222,5 @@
 
   </main>
 </div>
+
+

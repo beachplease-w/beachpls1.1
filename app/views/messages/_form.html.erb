@@ -1,6 +1,6 @@
 <div class="container">
     <%= simple_form_for([ tournament, message ], remote: true) do |form| %>
-     <div class= 'formitude'> <%= form.input :content, as: :text, label: 'Ton message:', placeholder: 'Ecris ton message' %>
+     <div class= 'formitude'> <%= form.input :content, as: :text, label: false, placeholder: 'Ecris ton message' %>
       <%= form.button :submit, value: 'Envoyer', class:'btn-yours2'%> </div>
     <% end %>
 </div>

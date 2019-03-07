@@ -9,7 +9,27 @@
             <li class=""><a href="#tournois" data-toggle="tab">Mes tournois</a></li>
             <li class=""><a href="#equipes" data-toggle="tab">Mes partenaires</a></li>
             <li class=""><a href="#stats" data-toggle="tab">Mes stats</a></li>
-            <li class=""><a href="#mymessages" data-toggle="tab">Mes messages</a></li>
+            <li class="">
+              <a href="#mymessages" data-toggle="tab">
+                <div class="user-messages">
+                  Mes messages
+                  <% current_user.messages.each do |message| %>
+                    <% @messages = Message.where(tournament_id: message.tournament_id) %>
+                  <% end %>
+                  <% @messages_count = [] %>
+                  <% @messages.each do |message| %>
+                    <% if message.user != current_user %>
+                      <% @messages_count << message %>
+                    <% end %>
+                  <% end %>
+                  <div class="message-counter">
+                    <% if @messages_count != 0 %>
+                      <%= @messages_count.count %>
+                    <% end %>
+                  </div>
+                </div>
+              </a>
+            </li>
       </ul>
       </nav>
     </div>

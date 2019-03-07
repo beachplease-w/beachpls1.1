@@ -7,8 +7,8 @@
       <ul class="nav tabs">
             <li class="active"><a href="#tournois" data-toggle="tab">Mes tournois (<%= @upcoming_tournaments.size %>)</a></li>
             <li class=""><a href="#equipes" data-toggle="tab">Mes coéquipiers</a></li>
-            <li class=""><a href="#stats" data-toggle="tab">Mes stats</a></li>
             <li class=""><a href="#mymessages" data-toggle="tab">Mes messages</a></li>
+            <li class=""><a href="#stats" data-toggle="tab">Mes stats</a></li>
             <li class=""><a href="#informations" data-toggle="tab">Mes informations</a></li>
       </ul>
       </nav>
@@ -19,6 +19,10 @@
         <hr>
       </div>
       <%= render 'shared/team-display' %>
+      <div class="tab-pane" id="mymessages">
+        <%= render 'shared/messages' %>
+          <hr>
+      </div>
       <div class="tab-pane" id="stats">
         <%= render 'shared/stats' %>
           <hr>
@@ -33,19 +37,6 @@
         <%= link_to edit_user_registration_path do %>
         <i class="fas fa-user-edit"></i>
         <% end %>
-      </div>
-      <div class="tab-pane" id="tournois">
-        <%= render 'shared/tournament-display' %>
-        <hr>
-      </div>
-      <%= render 'shared/team-display' %>
-      <div class="tab-pane" id="stats">
-        <%= render 'shared/stats' %>
-          <hr>
-      </div>
-      <div class="tab-pane" id="mymessages">
-        <%= render 'shared/messages' %>
-          <hr>
       </div>
     </div>
     <div id="calendar" class="text-center" data-events="<%= @events.to_json %>">

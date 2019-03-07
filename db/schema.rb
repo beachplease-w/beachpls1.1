@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_165833) do
+ActiveRecord::Schema.define(version: 2019_03_06_162336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,17 +48,6 @@ ActiveRecord::Schema.define(version: 2019_03_04_165833) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.string "state"
-    t.string "tournament_sku"
-    t.integer "amount_cents", default: 0, null: false
-    t.jsonb "payment"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_orders_on_user_id"
-  end
-
   create_table "team_players", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "team_id"
@@ -83,7 +72,6 @@ ActiveRecord::Schema.define(version: 2019_03_04_165833) do
     t.string "name"
     t.float "latitude"
     t.float "longitude"
-    t.string "photo"
     t.text "remarques"
     t.integer "equipe_tableau_principal"
     t.integer "wildcard_principal"
@@ -104,6 +92,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_165833) do
     t.string "genre"
     t.string "sku"
     t.integer "price_cents", default: 0, null: false
+    t.string "photos"
   end
 
   create_table "users", force: :cascade do |t|
@@ -127,7 +116,6 @@ ActiveRecord::Schema.define(version: 2019_03_04_165833) do
   add_foreign_key "inscriptions", "tournaments"
   add_foreign_key "messages", "tournaments"
   add_foreign_key "messages", "users"
-  add_foreign_key "orders", "users"
   add_foreign_key "team_players", "teams"
   add_foreign_key "team_players", "users"
 end

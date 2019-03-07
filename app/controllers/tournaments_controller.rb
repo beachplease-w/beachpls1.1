@@ -1,6 +1,6 @@
 class TournamentsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
-  before_action :find_tournament, only: [:show]
+  skip_before_action :authenticate_user!, only: [:show, :update]
+  before_action :find_tournament, only: [:show, :edit, :update]
 
   def index
     if params[:query].present?
@@ -25,6 +25,13 @@ class TournamentsController < ApplicationController
   def show
     @my_teams = current_user.teams
     @message = Message.new
+  end
+
+  def edit
+  end
+
+  def update
+    @tournament.save
   end
 
   private

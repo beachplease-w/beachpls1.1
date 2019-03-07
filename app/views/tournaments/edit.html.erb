@@ -1,0 +1,9 @@
+<%= simple_form_for(@tournament, html: { method: :put }) do |f| %>
+        <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Ajoute une photo' %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Mettre à jour" %>
+      </div>
+    <% end %>

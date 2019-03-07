@@ -80,7 +80,7 @@ address.each do |city, ad|
       date: date,
       serie: 'Série 2 - 250',
       address: address,
-      remarques: "Pas de débardeurs, Pas d'arbitre officiel",
+      remarques: "Pas de débardeur, Pas d'arbitre officiel",
       equipe_tableau_principal: [12, 16].sample,
       wildcard_principal: [0, 2, 4].sample,
       place_reservees_qualif: [2, 4].sample,

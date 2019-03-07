@@ -9,7 +9,7 @@
       <div class="rdg-expertise-description-beach"><span>
         <%= message.tournament.name %>
       </span></div>
-      <%= link_to tournament_path(message.tournament) do %>
+      <%= link_to tournament_path(message.tournament, tab: 4) do %>
         <div class="dashboard-messages">
         <div class="rdg-expertise-category-messages"><span><%=cl_image_tag message.user.photo, width: 50, height: 50, crop: :thumb, class: 'avatar'%> <%= message.user.first_name %></span></div>
         <div class="rdg-expertise-bar-beach rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>

@@ -7,6 +7,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { previewImageOnFileSelect } from '../components/photo_preview'
 import { initFullCalendar } from '../plugins/init_calendar'
 import { teamMateSelector } from './modal'
+import tableSwitcher from "../plugins/table_switcher"
 // navbar js
 
 initUpdateNavbarOnScroll();
@@ -22,3 +23,5 @@ initSelect2();
 initFullCalendar();
 
 teamMateSelector();
+
+tableSwitcher();

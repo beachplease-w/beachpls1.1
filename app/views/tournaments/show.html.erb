@@ -5,7 +5,7 @@
 <div class="pricecription">
   <%= @tournament.serie %> <br>
   <div class="prize-money">
-    <i class="fas fa-trophy" style="color: gold"></i></i><%= humanized_money_with_symbol(@tournament.prize_money) %>
+    <i class="fas fa-trophy" style="color: gold"></i></i><p><%= humanized_money_with_symbol(@tournament.prize_money) %></p>
   </div>
   <% if !current_user.tournaments.where(id: @tournament).any?  %>
     <button type="button" class="btn btn-fun btn-yours2" data-toggle="modal" data-target="#myModal-<%= @tournament.id %>"><span class="btn-content">S'inscrire</span>
@@ -32,39 +32,46 @@
         <label for="tab4">Je cherche un coéquipier</label>
 
       <section id="content1">
-          <div class="boxes">
-              <div class="rdg-expertise-category"><span>Organisateur</span></div>
-              <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-              <div style="clear: both;"></div>
-              <div class="rdg-expertise-description"><span>
-                <%= @tournament.club_organisateur %> <br>
-                <%= @tournament.contact %> <br>
-                <%= @tournament.address %>
-              </span></div>
+        <div class="row">
+          <div class="col-xs-5 col-xs-offset-1">
+            <div class="boxes">
+                <div class=""><span>Organisateur</span></div>
+                <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+                <div class="orga">
+                  <p><%= @tournament.club_organisateur %></p>
+                   <p><%= @tournament.contact %></p>
+                   <p><%= @tournament.address %></p>
+                  </div>
+            </div>
           </div>
-          <div class="boxes">
-              <div class="rdg-expertise-category"><span>Tableaux</span></div>
-              <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-              <div class="rdg-expertise-description"><span>
-                Tableau principal : <% @tournament.equipe_tableau_principal %> <br>
-                Tableau qualif: <% @tournament.equipe_qualif %> <br>
-                Tableau principal: <% @tournament.date_principal.strftime("%d/%m/%Y") %> <br>
-                Tableau qualif:    <% @tournament.date_qualif.strftime("%d/%m/%Y") %> <br>
-              </span></div>
+          <div class="col-xs-5">
+            <div class="boxes">
+                <div class=""><span>Tableaux</span></div>
+                <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+                <div class="orga">
+                  <p>Tableau principal : <% @tournament.equipe_tableau_principal %></p>
+                  <p>Tableau qualif:<% @tournament.equipe_qualif %></p>
+                  <p>Tableau principal:<% @tournament.date_principal.strftime("%d/%m/%Y") %> </p>
+                  <p>Tableau qualif:<% @tournament.date_qualif.strftime("%d/%m/%Y") %> </p>
+                </div>
+            </div>
           </div>
-          <div class="boxes">
-              <div class="rdg-expertise-category"><span>Autres Infos</span></div>
-              <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-              <!-- <div style="clear: both;"></div> -->
-              <div class="rdg-expertise-description"><span>
+          <div class="col-xs-12">
+              <div class="boxes2">
+                  <div class="rdg-expertise-category"><span>Autres Infos</span></div>
+                  <div class="rdg2-expertise-bar rdg2-brief-bg rdg2-animated-delay-0 text-right" style="float: left;"></div>
+                  <!-- <div style="clear: both;"></div> -->
+                  <div class="rdg2-expertise-description"><span>
 
-                Date limite d'inscription: <%= @tournament.limit_inscription.strftime("%d/%m/%Y") %> <br>
-                Horaire réunion technique qualif: <%= @tournament.reunion_qualif.strftime("%Ih")  %> <br>
-                Horaire réunion technique principal: <%= @tournament.reunion_principal.strftime("%Ih")  %> <br>
-                  <%= @tournament.remarques %> <br>
-                  Terrains :<%= @tournament.terrains_normes %>
-              </span></div>
+                    Date limite d'inscription: <%= @tournament.limit_inscription.strftime("%d/%m/%Y") %> <br>
+                    Horaire réunion technique qualif: <%= @tournament.reunion_qualif.strftime("%Ih")  %> <br>
+                    Horaire réunion technique principal: <%= @tournament.reunion_principal.strftime("%Ih")  %> <br>
+                      <%= @tournament.remarques %> <br>
+                      Terrains :<%= @tournament.terrains_normes %>
+                  </span></div>
+            </div>
           </div>
+        </div>
       </section>
 
       <section id="content2">

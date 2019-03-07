@@ -120,6 +120,7 @@
   display: inline !important;
 }
 
+
 #content2 p {
   margin-left: 15px;
 }
@@ -130,6 +131,7 @@
 .btn-fun {
     padding: 24px 60px 24px 16px;
     position: relative;
+    z-index: 1000;
     .btn-content {
         font-size: 1em;
         line-height: 1.2;

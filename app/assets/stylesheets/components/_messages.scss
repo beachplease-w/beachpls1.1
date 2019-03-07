@@ -1,1 +1,14 @@
+.dashboard-messages {
+  display: flex;
+  align-items: center;
+  border : #0C7489 1px dashed;
+  border-radius: 30px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 45px;
+  margin-bottom: 20px;
+  height: 60px;
+}
 
+.rdg-expertise-category-messages { margin-left: 15px; margin-right: 0px; width: 120px;}
+.rdg-expertise-category-messages span { margin-top:auto; font-size: 18px; font-weight: bold; float: right; }

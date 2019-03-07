@@ -8,6 +8,8 @@ class UsersController < ApplicationController
         allDay: true,
       }
     end
+
+    @upcoming_tournaments = current_user.tournaments.where("date > ?", Date.today)
   end
 
   def update

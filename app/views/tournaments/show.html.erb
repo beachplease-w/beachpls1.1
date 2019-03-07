@@ -2,225 +2,216 @@
   <h2> <%= @tournament.name %> </h2>
 </div>
 
-  <div class="pricecription">
-    <% if !current_user.tournaments.where(id: @tournament).any?  %>
-      <button type="button" class="btn btn-yours2" data-toggle="modal" data-target="#myModal-<%= @tournament.id %>">S'inscrire</button>
-    <% end %>
+<div class="pricecription">
+  <%= @tournament.serie %> <br>
+  <div class="prize-money">
+    <i class="fas fa-trophy" style="color: gold"></i></i><%= humanized_money_with_symbol(@tournament.prize_money) %>
   </div>
+  <% if !current_user.tournaments.where(id: @tournament).any?  %>
+    <button type="button" class="btn btn-fun btn-yours2" data-toggle="modal" data-target="#myModal-<%= @tournament.id %>"><span class="btn-content">S'inscrire</span>
+      <span class="icon"><div class="money"><%= humanized_money_with_symbol(@tournament.price) %></div></span></button>
+  <% end %>
+</div>
 
 <%= render 'shared/modal', teams: @my_teams, tournament: @tournament %>
 
-<%#= form_tag orders_path do %>
-  <%#= hidden_field_tag 'tournament_id', @tournament.id %>
-  <%#= submit_tag 'Purchase', class: 'btn btn-yours' %>
-<%# end %>
+<div class="container">
+  <div id="tabs">
+    <main>
 
-<div class="container" id="tabs">
-  <main>
+        <input id="tab1" type="radio" name="tabs" checked>
+        <label for="tab1"><i class="fas fa-info-circle"></i> Informations</label>
 
-      <input id="tab1" type="radio" name="tabs" checked>
-      <label for="tab1"><i class="fas fa-info-circle"></i> Informations</label>
+        <input id="tab2" type="radio" name="tabs" >
+        <label for="tab2">Equipes</label>
 
-      <input id="tab2" type="radio" name="tabs" >
-      <label for="tab2">Equipes</label>
+        <input id="tab3" type="radio" name="tabs">
+        <label for="tab3">Le tableau</label>
 
-      <input id="tab3" type="radio" name="tabs">
-      <label for="tab3">Le tableau</label>
+        <input id="tab4" type="radio" name="tabs">
+        <label for="tab4">Je cherche un coéquipier</label>
 
-      <input id="tab4" type="radio" name="tabs">
-      <label for="tab4">Je cherche un coéquipier</label>
-
-    <section id="content1">
-        <div class="boxes">
-            <div class="rdg-expertise-category"><span>Organisateur</span></div>
-            <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-            <div style="clear: both;"></div>
-            <div class="rdg-expertise-description"><span>
-              <%= @tournament.club_organisateur %> <br>
-              <%= @tournament.contact %> <br>
-              <%= @tournament.address %>
-            </span></div>
-        </div>
-        <div class="boxes">
-            <div class="rdg-expertise-category"><span>Rankings</span></div>
-            <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-            <!-- <div style="clear: both;"></div> -->
-            <div class="rdg-expertise-description"><span>
-              <%= @tournament.serie %> <br>
-              <i class="fas fa-trophy" style="color: gold"></i></i><%= humanized_money_with_symbol(@tournament.prize_money) %> <br>
-            Inscription: <%= humanized_money_with_symbol(@tournament.price) %>
-            </span></div>
-        </div>
-        <div class="boxes">
-            <div class="rdg-expertise-category"><span>Tableaux</span></div>
-            <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-            <!-- <div style="clear: both;"></div> -->
-            <div class="rdg-expertise-description"><span>
-              Tableau principal : <%= @tournament.equipe_tableau_principal %> <br>
-              Tableau qualif: <%= @tournament.equipe_qualif %> <br>
-              Tableau principal: <%= @tournament.date_principal.strftime("%d/%m/%Y") %> <br>
-              Tableau qualif:    <%= @tournament.date_qualif.strftime("%d/%m/%Y") %> <br>
-            </span></div>
-        </div>
-        <div class="boxes">
-            <div class="rdg-expertise-category"><span>Autres Infos</span></div>
-            <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
-            <!-- <div style="clear: both;"></div> -->
-            <div class="rdg-expertise-description"><span>
-
-              Date limite d'inscription: <%= @tournament.limit_inscription.strftime("%d/%m/%Y") %> <br>
-              Horaire réunion technique qualif: <%= @tournament.reunion_qualif.strftime("%Ih")  %> <br>
-              Horaire réunion technique principal: <%= @tournament.reunion_principal.strftime("%Ih")  %> <br>
-                <%= @tournament.remarques %> <br>
-                Terrains :<%= @tournament.terrains_normes %>
-            </span></div>
-        </div>
-    </section>
-
-    <section id="content2">
-      <% if @tournament.inscriptions.blank? %>
-        <p>Il n'y a aucune équipe inscrite pour le moment ... 😔</p>
-      <% else %>
-        <% @tournament.inscriptions.each do |t| %>
-          <div class="beach-boxes">
-              <div class="rdg-expertise-category-beach"><span><%=cl_image_tag t.team.users[0].photo, width: 50, height: 50, crop: :thumb, class: 'avatar'%> <%=cl_image_tag t.team.users[1].photo, width: 50, height: 50, crop: :thumb, class: 'avatar' %></span></div>
-              <div class="rdg-expertise-bar-beach rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+      <section id="content1">
+          <div class="boxes">
+              <div class="rdg-expertise-category"><span>Organisateur</span></div>
+              <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
               <div style="clear: both;"></div>
-              <div class="rdg-expertise-description-beach"><span>
-                <%= t.team.users[0].first_name %> <%= t.team.users[0].last_name %> / <%= t.team.users[1].first_name %> <%= t.team.users[1].last_name %>
+              <div class="rdg-expertise-description"><span>
+                <%= @tournament.club_organisateur %> <br>
+                <%= @tournament.contact %> <br>
+                <%= @tournament.address %>
               </span></div>
           </div>
+          <div class="boxes">
+              <div class="rdg-expertise-category"><span>Tableaux</span></div>
+              <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+              <div class="rdg-expertise-description"><span>
+                Tableau principal : <% @tournament.equipe_tableau_principal %> <br>
+                Tableau qualif: <% @tournament.equipe_qualif %> <br>
+                Tableau principal: <% @tournament.date_principal.strftime("%d/%m/%Y") %> <br>
+                Tableau qualif:    <% @tournament.date_qualif.strftime("%d/%m/%Y") %> <br>
+              </span></div>
+          </div>
+          <div class="boxes">
+              <div class="rdg-expertise-category"><span>Autres Infos</span></div>
+              <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+              <!-- <div style="clear: both;"></div> -->
+              <div class="rdg-expertise-description"><span>
+
+                Date limite d'inscription: <%= @tournament.limit_inscription.strftime("%d/%m/%Y") %> <br>
+                Horaire réunion technique qualif: <%= @tournament.reunion_qualif.strftime("%Ih")  %> <br>
+                Horaire réunion technique principal: <%= @tournament.reunion_principal.strftime("%Ih")  %> <br>
+                  <%= @tournament.remarques %> <br>
+                  Terrains :<%= @tournament.terrains_normes %>
+              </span></div>
+          </div>
+      </section>
+
+      <section id="content2">
+        <% if @tournament.inscriptions.blank? %>
+          <p>Il n'y a aucune équipe inscrite pour le moment ... 😔</p>
+        <% else %>
+          <% @tournament.inscriptions.each do |t| %>
+            <div class="beach-boxes">
+                <div class="rdg-expertise-category-beach"><span><%=cl_image_tag t.team.users[0].photo, width: 50, height: 50, crop: :thumb, class: 'avatar'%> <%=cl_image_tag t.team.users[1].photo, width: 50, height: 50, crop: :thumb, class: 'avatar' %></span></div>
+                <div class="rdg-expertise-bar-beach rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+                <div style="clear: both;"></div>
+                <div class="rdg-expertise-description-beach"><span>
+                  <%= t.team.users[0].first_name %> <%= t.team.users[0].last_name %> / <%= t.team.users[1].first_name %> <%= t.team.users[1].last_name %>
+                </span></div>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </section>
+      </section>
 
-    <section id="content3">
-      <div class="beachbody">
-        <div class="beachmain" id="tournament">
-            <ul class="round round-1">
-                <li class="spacer">&nbsp;</li>
+      <section id="content3">
+        <div class="beachbody">
+          <div class="beachmain" id="tournament">
+              <ul class="round round-1">
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top winner">team <span>79</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom ">team <span>48</span></li>
+                  <li class="game game-top winner">team <span>79</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom ">team <span>48</span></li>
 
-                <li class="spacer">&nbsp;</li>
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top winner">team <span>84</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom ">team <span>72</span></li>
+                  <li class="game game-top winner">team <span>84</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom ">team <span>72</span></li>
 
-                <li class="spacer">&nbsp;</li>
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top ">team <span>55</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom winner">team <span>68</span></li>
+                  <li class="game game-top ">team <span>55</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom winner">team <span>68</span></li>
 
-                <li class="spacer">&nbsp;</li>
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top winner">team <span>64</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom ">team <span>44</span></li>
+                  <li class="game game-top winner">team <span>64</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom ">team <span>44</span></li>
 
-                <li class="spacer">&nbsp;</li>
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top winner">team <span>54</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom ">team <span>52</span></li>
+                  <li class="game game-top winner">team <span>54</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom ">team <span>52</span></li>
 
-                <li class="spacer">&nbsp;</li>
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top winner">team <span>65</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom ">team <span>54</span></li>
+                  <li class="game game-top winner">team <span>65</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom ">team <span>54</span></li>
 
-                <li class="spacer">&nbsp;</li>
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top winner">team <span>67</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom ">team <span>63</span></li>
+                  <li class="game game-top winner">team <span>67</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom ">team <span>63</span></li>
 
-                <li class="spacer">&nbsp;</li>
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top winner">team <span>73</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom ">team <span>61</span></li>
+                  <li class="game game-top winner">team <span>73</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom ">team <span>61</span></li>
 
-                <li class="spacer">&nbsp;</li>
-            </ul>
-            <ul class="round round-2">
-                <li class="spacer">&nbsp;</li>
+                  <li class="spacer">&nbsp;</li>
+              </ul>
+              <ul class="round round-2">
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top winner">team <span>82</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom ">team <span>56</span></li>
+                  <li class="game game-top winner">team <span>82</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom ">team <span>56</span></li>
 
-                <li class="spacer">&nbsp;</li>
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top winner">team <span>74</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom ">team <span>57</span></li>
+                  <li class="game game-top winner">team <span>74</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom ">team <span>57</span></li>
 
-                <li class="spacer">&nbsp;</li>
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top ">team <span>48</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom winner">team <span>70</span></li>
+                  <li class="game game-top ">team <span>48</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom winner">team <span>70</span></li>
 
-                <li class="spacer">&nbsp;</li>
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top ">team <span>50</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom winner">team <span>66</span></li>
+                  <li class="game game-top ">team <span>50</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom winner">team <span>66</span></li>
 
-                <li class="spacer">&nbsp;</li>
-            </ul>
-            <ul class="round round-3">
-                <li class="spacer">&nbsp;</li>
+                  <li class="spacer">&nbsp;</li>
+              </ul>
+              <ul class="round round-3">
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top winner">team <span>77</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom ">team <span>69</span></li>
+                  <li class="game game-top winner">team <span>77</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom ">team <span>69</span></li>
 
-                <li class="spacer">&nbsp;</li>
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top ">team <span>61</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom winner">team <span>71</span></li>
+                  <li class="game game-top ">team <span>61</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom winner">team <span>71</span></li>
 
-                <li class="spacer">&nbsp;</li>
-            </ul>
-            <ul class="round round-4">
-                <li class="spacer">&nbsp;</li>
+                  <li class="spacer">&nbsp;</li>
+              </ul>
+              <ul class="round round-4">
+                  <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top winner">team <span>85</span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom ">team <span>63</span></li>
+                  <li class="game game-top winner">team <span>85</span></li>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom ">team <span>63</span></li>
 
-                <li class="spacer">&nbsp;</li>
-            </ul>
+                  <li class="spacer">&nbsp;</li>
+              </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="content4">
+      <section id="content4">
 
-      <div id="messages">
-        <div id="written-messages">
-          <% if @tournament.messages %>
-             <% @tournament.messages.each do |message| %>
-               <%= render 'messages/show', message: message %>
+        <div id="messages">
+          <div id="written-messages">
+            <% if @tournament.messages %>
+               <% @tournament.messages.each do |message| %>
+                 <%= render 'messages/show', message: message %>
+               <% end %>
              <% end %>
-           <% end %>
+          </div>
+          <div id="form-message">
+            <%= render 'messages/form', tournament: @tournament, message: @message %>
+          </div>
         </div>
-        <div id="form-message">
-          <%= render 'messages/form', tournament: @tournament, message: @message %>
-        </div>
-      </div>
 
-    </section>
+      </section>
 
-  </main>
+    </main>
+  </div>
 </div>
 
 

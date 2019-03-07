@@ -6,10 +6,15 @@
       <nav class="nav-sidebar">
       <ul class="nav tabs">
         <li class="active">
-          <a href="#tournois" data-toggle="tab">Mes tournois
-            <% if @upcoming_tournaments.size != 0 %>
-              (<%= @upcoming_tournaments.size %>)
-            <% end %>
+          <a href="#tournois" data-toggle="tab">
+            <div class="user-messages">
+              Mes tournois
+              <% if @upcoming_tournaments.size != 0 %>
+                <div class="message-counter">
+                  <%= @upcoming_tournaments.size %>
+              </div>
+              <% end %>
+            </div>
           </a>
         </li>
         <li class=""><a href="#equipes" data-toggle="tab">Mes coéquipiers</a></li>

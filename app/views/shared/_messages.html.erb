@@ -1,5 +1,5 @@
 <% current_user.messages.each do |message| %>
- <% @messages = Message.where(tournament_id: message.tournament_id) %>
+  <% @messages = Message.where(tournament_id: message.tournament_id) %>
 <% end %>
 <% if @messages == nil %>
   <div style="clear: both;"></div>

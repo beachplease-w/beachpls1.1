@@ -5,11 +5,44 @@
     <div class="col-sm-2">
       <nav class="nav-sidebar">
       <ul class="nav tabs">
-            <li class="active"><a href="#tournois" data-toggle="tab">Mes tournois (<%= @upcoming_tournaments.size %>)</a></li>
-            <li class=""><a href="#equipes" data-toggle="tab">Mes coéquipiers</a></li>
-            <li class=""><a href="#mymessages" data-toggle="tab">Mes messages</a></li>
-            <li class=""><a href="#stats" data-toggle="tab">Mes stats</a></li>
-            <li class=""><a href="#informations" data-toggle="tab">Mes informations</a></li>
+        <li class="active">
+          <a href="#tournois" data-toggle="tab">
+            <div class="user-messages">
+              Mes tournois
+              <% if @upcoming_tournaments.size != 0 %>
+                <div class="message-counter">
+                  <%= @upcoming_tournaments.size %>
+              </div>
+              <% end %>
+            </div>
+          </a>
+        </li>
+        <li class=""><a href="#equipes" data-toggle="tab">Mes coéquipiers</a></li>
+        <li class="">
+          <a href="#mymessages" data-toggle="tab">
+            <div class="user-messages">
+              Mes messages
+              <% current_user.messages.each do |message| %>
+                <% @messages = Message.where(tournament_id: message.tournament_id) %>
+              <% end %>
+              <% @messages_count = [] %>
+              <% if @messages.present? %>
+                <% @messages.each do |message| %>
+                  <% if message.user != current_user %>
+                    <% @messages_count << message %>
+                  <% end %>
+                <% end %>
+                <div class="message-counter">
+                  <% if @messages_count != 0 %>
+                    <%= @messages_count.count %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </a>
+        </li>
+        <li class=""><a href="#stats" data-toggle="tab">Mes stats</a></li>
+        <li class=""><a href="#informations" data-toggle="tab">Mes informations</a></li>
       </ul>
       </nav>
     </div>

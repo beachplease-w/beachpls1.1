@@ -1,6 +1,6 @@
 <h4>Tournois à venir</h4>
   <% @upcoming_tournaments.each do |tournament| %>
-    <%= link_to tournament_url, class: "tournament-link" do %>
+    <%= link_to tournament_path(tournament), class: "tournament-link" do %>
       <div class="tournament-product">
         <img src="https://www.sandsystem.com/beach-volley/wp-content/uploads/2019/01/cropped-jersey.jpg">
         <div class="tournament-product-infos">
@@ -24,7 +24,7 @@
 <% @user.teams.each do |team| %>
   <% team.tournaments.each do |tournament| %>
     <% if tournament.date < Date.today %>
-      <%= link_to tournament_url, class: "tournament-link"  do %>
+      <%= link_to to tournament_path(tournament), class: "tournament-link"  do %>
         <div class="tournament-product">
           <img src="https://www.sandsystem.com/beach-volley/wp-content/uploads/2019/01/cropped-jersey.jpg">
           <div class="tournament-product-infos">

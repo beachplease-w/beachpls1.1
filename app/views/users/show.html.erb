@@ -5,7 +5,13 @@
     <div class="col-sm-2">
       <nav class="nav-sidebar">
       <ul class="nav tabs">
-        <li class="active"><a href="#tournois" data-toggle="tab">Mes tournois (<%= @upcoming_tournaments.size %>)</a></li>
+        <li class="active">
+          <a href="#tournois" data-toggle="tab">Mes tournois
+            <% if @upcoming_tournaments.size != 0 %>
+              (<%= @upcoming_tournaments.size %>)
+            <% end %>
+          </a>
+        </li>
         <li class=""><a href="#equipes" data-toggle="tab">Mes coéquipiers</a></li>
         <li class="">
           <a href="#mymessages" data-toggle="tab">
@@ -15,16 +21,18 @@
                 <% @messages = Message.where(tournament_id: message.tournament_id) %>
               <% end %>
               <% @messages_count = [] %>
-              <% @messages.each do |message| %>
-                <% if message.user != current_user %>
-                  <% @messages_count << message %>
+              <% if @messages.present? %>
+                <% @messages.each do |message| %>
+                  <% if message.user != current_user %>
+                    <% @messages_count << message %>
+                  <% end %>
                 <% end %>
+                <div class="message-counter">
+                  <% if @messages_count != 0 %>
+                    <%= @messages_count.count %>
+                  <% end %>
+                </div>
               <% end %>
-              <div class="message-counter">
-                <% if @messages_count != 0 %>
-                  <%= @messages_count.count %>
-                <% end %>
-              </div>
             </div>
           </a>
         </li>

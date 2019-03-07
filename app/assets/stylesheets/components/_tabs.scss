@@ -14,7 +14,7 @@
     box-shadow: 2 2px 11px rgba(0,0,0,.2);
     border-radius: 14px;
     width: 80%;
-    margin-top: -175px;
+    margin-top: -330px;
   }
 
   section {
@@ -102,17 +102,27 @@
 
   .pricecription {
     height: auto;
-    margin-left: 78%;
+    margin-left: 79%;
+    margin-right: 2%;
     margin-top: 50px;
+    padding-bottom: 20px;
     top: 100px;
     position: sticky;
     display: flex;
-    border: solid black 1px;
+    border: solid lightgrey 1px;
+    border-radius: 30px;
+    // box-shadow: 0 0 15px rgba(0,0,0,0.2);
     justify-content: center;
     align-items: center;
     flex-direction: column;
     .btn-yours2 {
-      margin: 0;
+      margin-left: 12%;
+    }
+    .seriees {
+      font-size: 30px;
+      margin-bottom: -40px;
+      margin-top: 5px;
+      color: $blue;
     }
   }
 

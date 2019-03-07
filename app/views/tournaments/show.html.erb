@@ -3,14 +3,18 @@
 </div>
 
 <div class="pricecription">
-  <%= @tournament.serie %> <br>
-  <div class="prize-money">
-    <i class="fas fa-trophy" style="color: gold"></i></i><p><%= humanized_money_with_symbol(@tournament.prize_money) %></p>
+  <div class='seriees'>
+  <p> <%= @tournament.serie %> </p><br>
+  </div>
+    <p style='font-weight: 20px !important; color: $blue'>Prize Money</p> <br>
+    <div class="prize-money">
+    <p><%= humanized_money(@tournament.prize_money) %>€</p>
   </div>
   <% if !current_user.tournaments.where(id: @tournament).any?  %>
     <button type="button" class="btn btn-fun btn-yours2" data-toggle="modal" data-target="#myModal-<%= @tournament.id %>"><span class="btn-content">S'inscrire</span>
-      <span class="icon"><div class="money"><%= humanized_money_with_symbol(@tournament.price) %></div></span></button>
+      <span class="icon"><div class="money"><%= humanized_money(@tournament.price) %>€*</div></span></button>
   <% end %>
+  <p style="font-size: 10px;">* Frais d'inscription par équipe</p>
 </div>
 
 <%= render 'shared/modal', teams: @my_teams, tournament: @tournament %>

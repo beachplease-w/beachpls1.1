@@ -11,6 +11,9 @@ const initFullCalendar = () => {
     height: 500,
     defaultView: 'listMonth',
     noEventsMessage: "Aucun tournoi à afficher",
+    buttonText: {
+      today:    'Aujourd\'hui',
+    },
     eventSources: [{
       events: events,
       color: "#0c7489"

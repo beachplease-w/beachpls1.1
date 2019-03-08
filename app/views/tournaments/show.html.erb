@@ -13,6 +13,9 @@
   <% if !current_user.tournaments.where(id: @tournament).any?  %>
     <button type="button" class="btn btn-fun btn-yours2" data-toggle="modal" data-target="#myModal-<%= @tournament.id %>"><span class="btn-content">S'inscrire</span>
       <span class="icon"><div class="money"><%= humanized_money(@tournament.price) %>€*</div></span></button>
+    <% else %>
+    <button type="button" class="btn btn-fun btn-yours4" data-toggle="modal" data-target="#myModal-<%= @tournament.id %>"><span class="btn-content">S'inscrire</span>
+      <span class="icon"><div class="money"><%= humanized_money(@tournament.price) %>€*</div></span></button>
   <% end %>
   <p style="font-size: 10px;">* Frais d'inscription par équipe</p>
 </div>
@@ -53,10 +56,10 @@
                 <div class=""><span>Tableaux</span></div>
                 <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
                 <div class="orga">
-                  <p>Tableau principal : <% @tournament.equipe_tableau_principal %></p>
-                  <p>Tableau qualif:<% @tournament.equipe_qualif %></p>
-                  <p>Tableau principal:<% @tournament.date_principal.strftime("%d/%m/%Y") %> </p>
-                  <p>Tableau qualif:<% @tournament.date_qualif.strftime("%d/%m/%Y") %> </p>
+                  <p>Tableau principal : <%= @tournament.equipe_tableau_principal %></p>
+                  <p>Tableau qualif:<%= @tournament.equipe_qualif %></p>
+                  <p>Tableau principal:<%= @tournament.date_principal.strftime("%d/%m/%Y") %> </p>
+                  <p>Tableau qualif:<%= @tournament.date_qualif.strftime("%d/%m/%Y") %> </p>
                 </div>
             </div>
           </div>
@@ -85,7 +88,7 @@
           <% @tournament.inscriptions.each do |t| %>
             <div class="beach-boxes">
                 <div class="rdg-expertise-category-beach"><span><%=cl_image_tag t.team.users[0].photo, width: 50, height: 50, crop: :thumb, class: 'avatar'%> <%=cl_image_tag t.team.users[1].photo, width: 50, height: 50, crop: :thumb, class: 'avatar' %></span></div>
-                <div class="rdg-expertise-bar-beach rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
+                <div class="rdg-expertise-bar-beach rdg-brief-bg rdg2-animated-delay-0 text-right" style="float: left;"></div>
                 <div style="clear: both;"></div>
                 <div class="rdg-expertise-description-beach"><span>
                   <%= t.team.users[0].first_name %> <%= t.team.users[0].last_name %> / <%= t.team.users[1].first_name %> <%= t.team.users[1].last_name %>

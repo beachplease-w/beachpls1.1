@@ -93,3 +93,25 @@
   color: #063843 !important;
   opacity: 1 !important;
 }
+
+
+.btn-yours4 {
+  background-color: darkgrey;
+  color: grey !important;
+  size: 100%;
+  font-weight: bold;
+  border: 2px solid darkgrey;
+  padding: 10px 20px;
+  border-bottom-left-radius: 14px;
+  border-top-right-radius: 14px;
+  opacity: 0.8;
+  transition: 0.5s ease;
+  right: 15px;
+  margin-left: 35px;
+  cursor: not-allowed;
+}
+
+.btn-yours4 a {
+  color: white !important;
+}
+

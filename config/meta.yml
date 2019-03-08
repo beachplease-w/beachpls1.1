@@ -1,5 +1,5 @@
 meta_product_name: "Beach Please"
 meta_title: "Beach Please - Trouve ton tournoi !"
 meta_description: "Tous les tournois du Beach Volley français au même endroit et surtout plus beau qu'avant :)"
-meta_image: "og-image.png" # should exist in `app/assets/images/`
+meta_image: "og-image-min.png" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards

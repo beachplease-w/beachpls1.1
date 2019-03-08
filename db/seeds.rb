@@ -106,7 +106,7 @@ address.each do |city, ad|
 end
 puts 'Tournaments created'
 
-address = { "Paris" => ["1 place de la porte de pantin, Paris, France"] }
+address = { "Monaco" => ["Plage du Larvotto, Monaco"] }
 puts "Tournois Parisien"
 address.each do |city, ad|
   ad.each do |address|

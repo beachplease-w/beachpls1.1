@@ -106,6 +106,42 @@ address.each do |city, ad|
 end
 puts 'Tournaments created'
 
+address = { "Paris" => ["1 place de la porte de pantin, Paris, France"] }
+puts "Tournois Parisien"
+address.each do |city, ad|
+  ad.each do |address|
+    date = "Sat, 06 Feb 2019"
+    Tournament.create!({
+      name: 'SSA Open',
+      date: date,
+      serie: 'Série 2 - 250',
+      address: address,
+      remarques: "Pas de débardeur, Pas d'arbitre officiel",
+      equipe_tableau_principal: [12, 16].sample,
+      wildcard_principal: [0, 2, 4].sample,
+      place_reservees_qualif: [2, 4].sample,
+      equipe_qualif: [12, 16].sample,
+      wildcard_qualif: [0, 2].sample,
+      terrains_normes: (0..4).to_a.sample,
+      date_qualif: date,
+      date_principal: date,
+      prize_money: 500,
+      split_prize_money: "1-200€ 2-100€ 3-60€ 4-40€ 5-€25",
+      limit_inscription: date,
+      reunion_qualif: date,
+      reunion_principal: date,
+      ville: city,
+      club_organisateur: Faker::Company.name,
+      contact: '0607080910',
+      genre: "Homme",
+      sku: (0...5).map { ('a'..'z').to_a[rand(26)] }.join,
+      price_cents: 3000,
+      photos: 'https://scontent-bru2-1.xx.fbcdn.net/v/t1.0-9/31093466_1742088709191707_126941160047378432_n.jpg?_nc_cat=106&_nc_ht=scontent-bru2-1.xx&oh=aff0b74ad78bb0c5a64704de7ffb3571&oe=5D0F2DA2',
+    })
+  end
+end
+puts 'Tournaments created'
+
 address = { "Marseille" => ["1 rue des Catalans, 13007 Marseille, France"] }
 puts "Tournois Marseillais"
 address.each do |city, ad|

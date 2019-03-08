@@ -112,7 +112,7 @@ address.each do |city, ad|
   ad.each do |address|
     date = "Sat, 06 Feb 2019"
     Tournament.create!({
-      name: 'SSA Open',
+      name: 'Big tour beach',
       date: date,
       serie: 'Série 2 - 250',
       address: address,

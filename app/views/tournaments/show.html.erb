@@ -56,10 +56,10 @@
                 <div class=""><span>Tableaux</span></div>
                 <div class="rdg-expertise-bar rdg-brief-bg rdg-animated-delay-0 text-right" style="float: left;"></div>
                 <div class="orga">
-                  <p>Tableau principal : <% @tournament.equipe_tableau_principal %></p>
-                  <p>Tableau qualif:<% @tournament.equipe_qualif %></p>
-                  <p>Tableau principal:<% @tournament.date_principal.strftime("%d/%m/%Y") %> </p>
-                  <p>Tableau qualif:<% @tournament.date_qualif.strftime("%d/%m/%Y") %> </p>
+                  <p>Tableau principal : <%= @tournament.equipe_tableau_principal %></p>
+                  <p>Tableau qualif:<%= @tournament.equipe_qualif %></p>
+                  <p>Tableau principal:<%= @tournament.date_principal.strftime("%d/%m/%Y") %> </p>
+                  <p>Tableau qualif:<%= @tournament.date_qualif.strftime("%d/%m/%Y") %> </p>
                 </div>
             </div>
           </div>

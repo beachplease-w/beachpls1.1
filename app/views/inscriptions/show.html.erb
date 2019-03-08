@@ -12,7 +12,7 @@
             <%= @inscription.team.users[0].first_name %>
           <% end %>
         </p>
-        <p> 🗓 Le <%= @inscription.tournament.date %></p>
+        <p> 🗓 Le <%= @inscription.tournament.date.strftime("%d/%m/%Y") %></p>
         <%= form_tag inscription_payments_path(@inscription) do %>
           <article>
             <label class="amount">

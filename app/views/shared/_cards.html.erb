@@ -3,7 +3,7 @@
     <div class="card-trip-infos">
       <div class="card-top-line">
         <h2><%= tournament.name %></h2>
-        <p id="card-price-symbol"><i class="fas fa-trophy" style="color: gold"></i> <%= humanized_money_with_symbol(tournament.prize_money) %></p>
+        <p id="card-price-symbol"><i class="fas fa-trophy" style="color: gold"></i> <%= humanized_money(tournament.prize_money) %>€</p>
       </div>
       <div class="tournament-info">
         <p><%= tournament.address.split.last(2).join(" ") %></p>

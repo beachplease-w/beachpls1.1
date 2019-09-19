@@ -86,10 +86,11 @@
 }
 .prize-money {
   display:flex;
-  font-size: 40px;
-  p {
-    font-weight: bold;
-  }
+  font-size: 50px;
+  margin-bottom: 5px;
+  margin-top: -40px;
+  color: $blue ;
+  p {font-size: 40px; font-weight: bold;}
 }
 .rdg-expertise-category-beach { margin-left: 150px; margin-right: 50px; width: 120px;}
 .rdg-expertise-category-beach span { margin-top:auto; font-size: 18px; font-weight: bold; float: right; }

@@ -16,6 +16,7 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem "nokogiri", ">= 1.10.4"
 
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'jquery-rails'
